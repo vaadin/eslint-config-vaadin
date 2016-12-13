@@ -70,7 +70,7 @@ module.exports = {
     // 'dot-location': 0,
     // 'dot-notation': 0,
     // 'eqeqeq': 0,
-    'guard-for-in': 2,
+    // 'guard-for-in': 0,
     // 'no-alert': 0,
     'no-caller': 2,
     'no-case-declarations': 2, // eslint:recommended
