@@ -24,7 +24,7 @@ module.exports = {
     // http://eslint.org/docs/rules/
 
     'no-cond-assign': 0, // eslint:recommended
-    'no-console': 2, // eslint:recommended
+    'no-console': ['error', {allow: ['warn', 'error']}], // eslint:recommended
     'no-constant-condition': 2, // eslint:recommended
     'no-control-regex': 2, // eslint:recommended
     'no-debugger': 2, // eslint:recommended
