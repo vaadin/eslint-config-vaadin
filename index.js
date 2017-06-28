@@ -184,7 +184,7 @@ module.exports = {
     'indent': [2, 2, {'SwitchCase': 1}],
     // 'jsx-quotes': 0,
     'key-spacing': 2,
-    'keyword-spacing': 0,
+    'keyword-spacing': 2,
     // 'line-comment-position': 0,
     'linebreak-style': 2,
     // 'lines-around-comment': 0,
