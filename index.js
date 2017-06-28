@@ -65,7 +65,7 @@ module.exports = {
     // 'class-methods-use-this': 0,
     // 'complexity': 0,
     // 'consistent-return': 0
-    // 'curly': 0,
+    'curly': 2,
     // 'default-case': 0,
     // 'dot-location': 0,
     // 'dot-notation': 0,
