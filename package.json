@@ -8,6 +8,6 @@
     "index.js"
   ],
   "peerDependencies": {
-    "eslint": "^3.11.1"
+    "eslint": "^4.0.0"
   }
 }
