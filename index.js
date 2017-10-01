@@ -238,7 +238,7 @@ module.exports = {
     // 'sort-vars': 0,
     'space-before-blocks': 2,
     'space-before-function-paren': [2, 'never'],
-    // 'space-in-parens': 0,
+    'space-in-parens': 2,
     'space-infix-ops': 2,
     // 'space-unary-ops': 0,
     'spaced-comment': [2, 'always'],
