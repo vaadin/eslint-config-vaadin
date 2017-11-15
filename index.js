@@ -217,7 +217,7 @@ module.exports = {
     // 'no-restricted-syntax': 0,
     // 'no-tabs': 0,
     // 'no-ternary': 0,
-    // 'no-trailing-spaces': 0,
+    'no-trailing-spaces': 2,
     // 'no-underscore-dangle': 0,
     // 'no-unneeded-ternary': 0,
     // 'no-whitespace-before-property': 0,
