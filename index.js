@@ -34,6 +34,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [
