@@ -44,6 +44,7 @@ module.exports = {
       },
     ],
     'class-methods-use-this': 'off',
+    'no-console': [ 'error', { allow: ['warn'] } ],
     'no-underscore-dangle': 'off'
   },
   overrides: [
