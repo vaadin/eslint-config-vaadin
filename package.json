@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-vaadin",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "ESLint shareable config for the Vaadin JavaScript coding style",
   "license": "Apache-2.0",
   "repository": "vaadin/eslint-config-vaadin",
