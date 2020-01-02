@@ -45,7 +45,11 @@ module.exports = {
     ],
     'class-methods-use-this': 'off',
     'no-console': [ 'error', { allow: ['warn'] } ],
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'no-unused-expressions': [
+      'error',
+      { allowShortCircuit: true, allowTernary: true }
+    ]
   },
   overrides: [
     {
