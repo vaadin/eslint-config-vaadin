@@ -1,0 +1,60 @@
+{
+  "name": "eslint-config-vaadin",
+  "version": "0.1.0",
+  "description": "Vaadin base JS/TS ESLint config",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "check": "node utils/missing-rule-checker/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaadin/eslint-config-vaadin.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "vaadin",
+    "javascript",
+    "typescript",
+    "styleguide",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018",
+    "es2019",
+    "es2020",
+    "es2021"
+  ],
+  "contributors": [
+    "Sergey Vinogradov <mr.vursen@gmail.com> (https://github.com/vursen)",
+    "Serhii Kulykov <iamkulykov@gmail.com> (https://github.com/web-padawan)",
+    "Vlad Rindevich <rindevich.vs@gmail.com> (https://github.com/Lodin)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vaadin/eslint-config-vaadin/issues"
+  },
+  "homepage": "https://github.com/vaadin/eslint-config-vaadin#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "babel-eslint": "^10.1.0",
+    "confusing-browser-globals": "^1.0.11",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-lit": "^1.6.1",
+    "prettier": "^2.6.2"
+  },
+  "peerDependencies": {
+    "eslint": "^7.5.0",
+    "prettier": "^2.6.2"
+  },
+  "devDependencies": {
+    "puppeteer": "^13.5.2"
+  }
+}
