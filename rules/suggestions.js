@@ -1,5 +1,3 @@
-const confusingBrowserGlobals = require('confusing-browser-globals');
-
 module.exports = {
   rules: {
     'accessor-pairs': 'error',
@@ -9,7 +7,8 @@ module.exports = {
     camelcase: ['error', { properties: 'always' }],
     'capitalized-comments': ['error', 'always', { ignoreConsecutiveComments: true }],
     'class-methods-use-this': 'error',
-    complexity: 'error',
+    // too strict; it is better to use other tools like IDE to calculate complexity
+    complexity: 'off',
     'consistent-return': 'error',
     'consistent-this': ['error', 'self'],
     // handled by Prettier
@@ -25,7 +24,8 @@ module.exports = {
     'func-names': ['error', 'always'],
     'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
     'grouped-accessor-pairs': ['error', 'getBeforeSet'],
-    'guard-for-in': 'error',
+    // for-in is forbidden
+    'guard-for-in': 'off',
     // no ID to forbid by default
     'id-denylist': 'off',
     // too strict
@@ -64,7 +64,8 @@ module.exports = {
     'no-div-regex': 'error',
     'no-else-return': 'error',
     'no-empty': ['error', { allowEmptyCatch: true }],
-    'no-empty-function': 'error',
+    // empty or no-op functions could be quite useful
+    'no-empty-function': 'off',
     // handled by "eqeqeq" rule
     'no-eq-null': 'off',
     'no-eval': 'error',
@@ -115,13 +116,29 @@ module.exports = {
     'no-regex-spaces': 'error',
     // no restricted exports by default
     'no-restricted-exports': 'off',
-    'no-restricted-globals': ['error', 'isFinite', 'isNaN', ...confusingBrowserGlobals],
+    // no restricted globals by default
+    'no-restricted-globals': 'off',
     // no restricted imports by default
     'no-restricted-imports': 'off',
     // no specific properties to restrict
     'no-restricted-properties': 'off',
-    // no restricted syntax by default
-    'no-restricted-syntax': 'off',
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'ForInStatement',
+        message: 'for..in loops are slower than Object.{keys,values,entries} and have their caveats.',
+      },
+      // From eslint-config-airbnb
+      // https://github.com/airbnb/javascript/blob/b4377fb03089dd7f08955242695860d47f9caab4/packages/eslint-config-airbnb-base/rules/style.js#L333
+      {
+        selector: 'LabeledStatement',
+        message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+      },
+      {
+        selector: 'WithStatement',
+        message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+      },
+    ],
     'no-return-assign': ['error', 'always'],
     'no-return-await': 'error',
     'no-script-url': 'error',
@@ -163,7 +180,8 @@ module.exports = {
     'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
     'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: true }],
     'prefer-exponentiation-operator': 'error',
-    'prefer-named-capture-group': 'error',
+    // let's leave it for the developer's choice
+    'prefer-named-capture-group': 'off',
     'prefer-numeric-literals': 'error',
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'error',

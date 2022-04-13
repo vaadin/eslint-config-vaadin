@@ -64,7 +64,8 @@ module.exports = {
     ],
     'no-use-before-define': ['error', { classes: true, functions: true, variables: true }],
     'no-useless-backreference': 'error',
-    'require-atomic-updates': 'error',
+    // appears to be too problematic to use
+    'require-atomic-updates': 'off',
     'use-isnan': 'error',
     'valid-typeof': ['error', { requireStringLiterals: false }],
   },

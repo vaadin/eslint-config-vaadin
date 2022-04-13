@@ -180,7 +180,8 @@ module.exports = {
 
     // Enforces naming conventions for everything across a codebase
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
-    '@typescript-eslint/naming-convention': 'error',
+    // it is hard to configure this rule accurately
+    '@typescript-eslint/naming-convention': 'off',
 
     // Disallow generic Array constructors
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
@@ -207,7 +208,7 @@ module.exports = {
     // Disallow Empty Functions
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md
     'no-empty-function': 'off',
-    '@typescript-eslint/no-empty-function': 'error',
+    '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
 
     // Disallow the declaration of empty interfaces
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md

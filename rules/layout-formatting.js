@@ -86,7 +86,8 @@ module.exports = {
     'operator-linebreak': 'off',
     // handled by Prettier
     'padded-blocks': 'off',
-    'padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }],
+    // no lines between statements by default
+    'padding-line-between-statements': 'off',
     quotes: 'off',
     // handled by Prettier
     'rest-spread-spacing': 'off',
