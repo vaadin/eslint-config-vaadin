@@ -4,7 +4,15 @@
   "description": "Vaadin base JS/TS ESLint config",
   "main": "index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./imports": "./imports.js",
+    "./lit": "./lit.js",
+    "./rules/eslint/layout-formatting": "./rules/eslint/layout-formatting.js",
+    "./rules/eslint/possible-problems": "./rules/eslint/possible-problems.js",
+    "./rules/eslint/suggestions": "./rules/eslint/suggestions.js",
+    "./rules/typescript/extensions": "./rules/typescript/extensions.js",
+    "./rules/typescript/original": "./rules/typescript/original.js",
+    "./typescript": "./typescript.js"
   },
   "scripts": {
     "check": "node utils/missing-rule-checker/index.js",
