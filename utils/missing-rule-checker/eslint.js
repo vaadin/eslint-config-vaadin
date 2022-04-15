@@ -5,9 +5,9 @@
 // const stylisticIssues = require('../../rules/stylistic-issues');
 // const variables = require('../../rules/variables');
 
-const layoutFormatting = require('../../rules/layout-formatting');
-const possibleProblems = require('../../rules/possible-problems');
-const suggestions = require('../../rules/suggestions');
+const layoutFormatting = require('../../rules/eslint/layout-formatting');
+const possibleProblems = require('../../rules/eslint/possible-problems');
+const suggestions = require('../../rules/eslint/suggestions');
 const { checkRules, init, createHeader, zip } = require('./utils');
 
 const url = 'https://eslint.org/docs/rules';

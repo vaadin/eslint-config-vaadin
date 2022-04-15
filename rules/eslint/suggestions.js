@@ -106,6 +106,7 @@ module.exports = {
     'no-new-func': 'error',
     'no-new-object': 'error',
     'no-new-wrappers': 'error',
+    'no-nonoctal-decimal-escape': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
     'no-param-reassign': ['error', { props: false }],
@@ -183,6 +184,7 @@ module.exports = {
     // let's leave it for the developer's choice
     'prefer-named-capture-group': 'off',
     'prefer-numeric-literals': 'error',
+    'prefer-object-has-own': 'error',
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'error',
     'prefer-regex-literals': 'error',

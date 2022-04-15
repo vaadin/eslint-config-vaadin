@@ -1,13 +1,10 @@
 module.exports = {
   parser: 'babel-eslint',
   extends: [
-    './rules/best-practices',
-    './rules/es6',
-    './rules/node',
-    './rules/possible-errors',
-    './rules/strict',
-    './rules/stylistic-issues',
-    './rules/variables',
+    './rules/eslint/layout-formatting',
+    './rules/eslint/possible-problems',
+    './rules/eslint/suggestions',
+    './rules/imports',
   ].map(require.resolve),
   parserOptions: {
     ecmaVersion: 2021,

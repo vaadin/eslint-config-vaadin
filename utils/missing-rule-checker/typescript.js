@@ -1,4 +1,5 @@
-const typescript = require('../../rules/typescript');
+const original = require('../../rules/typescript/original');
+const extensions = require('../../rules/typescript/extensions');
 const { checkRules, init, createHeader } = require('./utils');
 
 const url = 'https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin';
@@ -21,27 +22,35 @@ module.exports = async (browser) => {
     return [supportedRules, extensionRules];
   });
 
-  const tsExistingRules = {
-    ...typescript.rules,
-    ...Object.assign({}, ...typescript.overrides.map(({ rules }) => rules)),
+  const existingOriginalRules = {
+    ...original.rules,
+    ...Object.assign({}, ...original.overrides.map(({ rules }) => rules)),
   };
 
-  const result = checkRules(
-    'typescript',
-    {
-      modernRules: [...supportedRules, ...extensionRules],
-      existingRules: tsExistingRules,
-    },
-    {
-      filterWrongSetRules(rule) {
-        return !(
-          rule in tsExistingRules &&
-          tsExistingRules[rule] === 'off' &&
-          `@typescript-eslint/${rule}` in tsExistingRules
-        );
-      },
-    },
-  );
+  const existingExtensionsRules = extensions.rules;
 
-  return `${header}\n\n${result}`;
+  const results = [
+    checkRules('Original Rules', {
+      modernRules: supportedRules,
+      existingRules: existingOriginalRules,
+    }),
+    checkRules(
+      'Extension Rules',
+      {
+        modernRules: extensionRules,
+        existingRules: existingExtensionsRules,
+      },
+      {
+        filterWrongSetRules(rule) {
+          return rule !== 'no-return-await' && !(
+            rule in existingExtensionsRules &&
+            existingExtensionsRules[rule] === 'off' &&
+            `@typescript-eslint/${rule}` in existingExtensionsRules
+          );
+        },
+      },
+    ),
+  ];
+
+  return results.reduce((acc, result) => `${acc}\n\n${result}`, header);
 };

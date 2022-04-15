@@ -50,6 +50,8 @@ module.exports = {
     'no-unreachable-loop': 'error',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
+    'no-unsafe-optional-chaining': ['error', { disallowArithmeticOperators: true }],
+    'no-unused-private-class-members': 'error',
     'no-unused-vars': [
       'error',
       {
