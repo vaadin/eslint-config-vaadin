@@ -4,7 +4,6 @@ module.exports = {
     './rules/eslint/layout-formatting',
     './rules/eslint/possible-problems',
     './rules/eslint/suggestions',
-    './rules/imports',
   ].map(require.resolve),
   parserOptions: {
     ecmaVersion: 2021,
