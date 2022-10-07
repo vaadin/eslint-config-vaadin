@@ -1,5 +1,5 @@
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   extends: [
     './rules/eslint/layout-formatting',
     './rules/eslint/possible-problems',
@@ -8,5 +8,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',
+    requireConfigFile: false,
   },
 };
