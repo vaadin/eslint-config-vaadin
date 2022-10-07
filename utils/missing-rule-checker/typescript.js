@@ -2,7 +2,7 @@ const original = require('../../rules/typescript/original');
 const extensions = require('../../rules/typescript/extensions');
 const { checkRules, init, createHeader } = require('./utils');
 
-const url = 'https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin';
+const url = 'https://typescript-eslint.io/rules';
 
 module.exports = async (browser) => {
   const page = await init(browser, url);
@@ -10,14 +10,14 @@ module.exports = async (browser) => {
   const header = createHeader('@typescript-eslint', url);
 
   const [supportedRules, extensionRules] = await page.evaluate(async () => {
-    const extractRules = (id, heading) => {
-      const table = window.q(id).closest(heading).findSibling('table');
+    const extractRules = (id) => {
+      const table = window.q(id).findNextSibling('table');
 
-      return Array.from(table.querySelectorAll('td:first-child'), ({ textContent }) => textContent);
+      return Array.from(table.querySelectorAll('td:first-child > a'), ({ textContent }) => textContent);
     };
 
-    const supportedRules = extractRules('#user-content-supported-rules', 'h2');
-    const extensionRules = extractRules('#user-content-extension-rules', 'h3');
+    const supportedRules = extractRules('#supported-rules');
+    const extensionRules = extractRules('#extension-rules');
 
     return [supportedRules, extensionRules];
   });

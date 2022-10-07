@@ -105,12 +105,16 @@ async function init(browser, url) {
       return element;
     };
 
-    Element.prototype.findSibling = function (selector) {
+    Element.prototype.findNextSibling = function (selector) {
+      return this.findNextSiblings(selector).next().value;
+    };
+
+    Element.prototype.findNextSiblings = function * (selector, finishSelector) {
       let sibling = this.nextElementSibling;
 
-      while (sibling) {
+      while (sibling !== null && (finishSelector ? !sibling.matches(finishSelector) : true)) {
         if (sibling.matches(selector)) {
-          return sibling;
+          yield sibling;
         }
 
         sibling = sibling.nextElementSibling;
