@@ -95,7 +95,7 @@ module.exports = {
     // Disallow this keywords outside of classes or class-like objects
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-this.md
     'no-invalid-this': 'off',
-    '@typescript-eslint/no-invalid-this': layoutFormatting['no-invalid-this'],
+    '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'],
 
     // Disallow function declarations that contain unsafe references inside loop statements
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-loop-func.md
