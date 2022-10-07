@@ -77,7 +77,7 @@ module.exports = {
 
     // Consistent with type definition either interface or type
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    '@typescript-eslint/consistent-type-definitions': 'off',
 
     // Require a specific member delimiter style for interfaces and type literals
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
