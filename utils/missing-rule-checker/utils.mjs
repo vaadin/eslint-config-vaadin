@@ -1,4 +1,4 @@
-function checkRules(
+export function checkRules(
   setName,
   { modernRules, existingRules, deprecatedRules = [] },
   { filterMissingRules = () => true, filterWrongSetRules = () => true, filterDeprecatedRules = () => true } = {},
@@ -58,17 +58,7 @@ function checkRules(
   return `${header}EVERYTHING OK`;
 }
 
-function zip(arrA, arrB) {
-  const zipped = new Array(arrA.length);
-
-  for (let i = 0, len = zipped.length; i < len; i++) {
-    zipped[i] = [arrA[i], arrB[i]];
-  }
-
-  return zipped;
-}
-
-async function init(browser, url) {
+export async function init(browser, url) {
   const page = await browser.newPage();
 
   page.on('console', (msg) => {
@@ -125,12 +115,5 @@ async function init(browser, url) {
   return page;
 }
 
-const createHeader = (title, url) =>
+export const createHeader = (title, url) =>
   `=======================\n| ${title.toUpperCase()}\n=======================\n\nURL: ${url}`;
-
-module.exports = {
-  checkRules,
-  createHeader,
-  init,
-  zip,
-};

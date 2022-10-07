@@ -15,7 +15,7 @@
     "./typescript": "./typescript.js"
   },
   "scripts": {
-    "check": "node utils/missing-rule-checker/index.js",
+    "check": "node utils/missing-rule-checker/index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,10 +1,10 @@
-const original = require('../../rules/typescript/original');
-const extensions = require('../../rules/typescript/extensions');
-const { checkRules, init, createHeader } = require('./utils');
+import original from '../../rules/typescript/original.js';
+import extensions from '../../rules/typescript/extensions.js';
+import { checkRules, init, createHeader } from './utils.mjs';
 
 const url = 'https://typescript-eslint.io/rules';
 
-module.exports = async (browser) => {
+export default async function checkTypeScript(browser) {
   const page = await init(browser, url);
 
   const header = createHeader('@typescript-eslint', url);
