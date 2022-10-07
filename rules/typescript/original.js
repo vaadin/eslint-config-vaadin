@@ -75,10 +75,6 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-type-imports.md
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
 
-    // Consistent with type definition either interface or type
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
-    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-
     // Require a specific member delimiter style for interfaces and type literals
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
     // handled by Prettier
@@ -254,11 +250,6 @@ module.exports = {
     // Disallow aliasing this
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-this-alias.md
     '@typescript-eslint/no-this-alias': ['error', { allowDestructuring: true, allowedNames: ['self'] }],
-
-    // Disallow the use of type aliases
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-type-alias.md
-    // EXPLANATION: conflicts with @typescript-eslint/consistent-type-definitions
-    '@typescript-eslint/no-type-alias': 'off',
 
     // Flags unnecessary equality comparisons against boolean literals
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md
