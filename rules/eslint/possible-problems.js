@@ -10,6 +10,7 @@ module.exports = {
     'no-compare-neg-zero': 'error',
     'no-cond-assign': ['error', 'except-parens'],
     'no-const-assign': 'error',
+    'no-constant-binary-expression': 'error',
     'no-constant-condition': 'error',
     'no-constructor-return': 'error',
     'no-control-regex': 'error',

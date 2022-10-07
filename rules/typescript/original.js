@@ -52,6 +52,10 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
     '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
 
+    // Enforce specifying generic type arguments on type annotation or constructor name of a constructor call.
+    // https://typescript-eslint.io/rules/consistent-generic-constructors
+    '@typescript-eslint/consistent-generic-constructors': 'error',
+
     // Enforce or disallow the use of the record type.
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-indexed-object-style.md
     '@typescript-eslint/consistent-indexed-object-style': ['error', 'record'],
@@ -160,6 +164,10 @@ module.exports = {
     // too strict
     '@typescript-eslint/no-confusing-void-expression': 'off',
 
+    // Disallow duplicate enum member values.
+    // https://typescript-eslint.io/rules/no-duplicate-enum-values
+    '@typescript-eslint/no-duplicate-enum-values': 'error',
+
     // Disallow the delete operator with computed key expressions
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
     '@typescript-eslint/no-dynamic-delete': 'error',
@@ -188,6 +196,11 @@ module.exports = {
     // Disallow iterating over an array with a for-in loop
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-for-in-array.md
     '@typescript-eslint/no-for-in-array': 'error',
+
+    // Disallow usage of the implicit any type in catch clauses.
+    // https://typescript-eslint.io/rules/no-implicit-any-catch
+    // deprecated
+    '@typescript-eslint/no-implicit-any-catch': 'off',
 
     // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
@@ -306,6 +319,10 @@ module.exports = {
     // Prefers a non-null assertion over explicit type cast when possible
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/non-nullable-type-assertion-style.md
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
+
+    // Require or disallow parameter properties in class constructors.
+    // https://typescript-eslint.io/rules/parameter-properties
+    '@typescript-eslint/parameter-properties': 'error',
 
     // Prefer usage of as const over literal type
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-as-const.md

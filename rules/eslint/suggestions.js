@@ -34,6 +34,7 @@ module.exports = {
     'id-match': 'off',
     // handled by "no-var" rule
     'init-declarations': 'off',
+    'logical-assignment-operators': 'error',
     'max-classes-per-file': ['error', 3],
     'max-depth': ['error', 4],
     // usually, it is quite hard to avoid too big files
