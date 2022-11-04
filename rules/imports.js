@@ -57,7 +57,7 @@ module.exports = {
     'import/order': 'error',
     'import/newline-after-import': 'error',
     'import/prefer-default-export': 'error',
-    // who knows how much dependencies is needed
+    // who knows how many dependencies are needed
     'import/max-dependencies': 'off',
     'import/no-unassigned-import': 'error',
     'import/no-named-default': 'error',

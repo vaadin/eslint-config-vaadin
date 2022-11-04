@@ -5,6 +5,7 @@ module.exports = {
     // handled by "no-var" rule
     'block-scoped-var': 'off',
     camelcase: ['error', { properties: 'always' }],
+    // basically unnecessary
     'capitalized-comments': 'off',
     'class-methods-use-this': 'error',
     // too strict; it is better to use other tools like IDE to calculate complexity

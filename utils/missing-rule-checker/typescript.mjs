@@ -13,7 +13,7 @@ export default async function checkTypeScript(browser) {
     const extractRules = (id) => {
       const table = window.q(id).findNextSibling('table');
 
-      return Array.from(table.querySelectorAll('td:first-child > a'), ({ textContent }) => textContent);
+      return Array.from(table.querySelectorAll('td'), (td) => td.querySelector('a')?.textContent).filter(Boolean);
     };
 
     const supportedRules = extractRules('#supported-rules');
@@ -42,10 +42,13 @@ export default async function checkTypeScript(browser) {
       },
       {
         filterWrongSetRules(rule) {
-          return rule !== 'no-return-await' && !(
-            rule in existingExtensionsRules &&
-            existingExtensionsRules[rule] === 'off' &&
-            `@typescript-eslint/${rule}` in existingExtensionsRules
+          return (
+            rule !== 'no-return-await' &&
+            !(
+              rule in existingExtensionsRules &&
+              existingExtensionsRules[rule] === 'off' &&
+              `@typescript-eslint/${rule}` in existingExtensionsRules
+            )
           );
         },
       },
@@ -53,4 +56,4 @@ export default async function checkTypeScript(browser) {
   ];
 
   return results.reduce((acc, result) => `${acc}\n\n${result}`, header);
-};
+}
