@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".",
+    "module": "CommonJS",
+    "inlineSources": true,
+    "inlineSourceMap": true
+  },
+  "include": ["src"]
+}

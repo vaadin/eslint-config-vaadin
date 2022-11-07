@@ -1,5 +1,7 @@
-module.exports = {
-  extends: ['./rules/testing'].map(require.resolve),
+const resolve = require('./utils/resolve.js');
+
+export = {
+  extends: ['./rules/testing'].map(resolve),
   overrides: [
     {
       files: [
@@ -17,4 +19,4 @@ module.exports = {
       },
     },
   ],
-};
+} as const;

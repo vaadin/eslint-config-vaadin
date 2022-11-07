@@ -1,7 +1,38 @@
-export function checkRules(
-  setName,
-  { modernRules, existingRules, deprecatedRules = [] },
-  { filterMissingRules = () => true, filterWrongSetRules = () => true, filterDeprecatedRules = () => true } = {},
+import type { Browser } from 'puppeteer';
+
+declare global {
+  interface Window {
+    q<K extends keyof HTMLElementTagNameMap>(selectors: K): HTMLElementTagNameMap[K];
+    q<K extends keyof SVGElementTagNameMap>(selectors: K): SVGElementTagNameMap[K];
+    q<E extends Element = Element>(selectors: string): E;
+  }
+
+  interface Element {
+    findNextSibling(selector: string): Element | null;
+    findNextSiblings(selector: string, finishSelector?: string): Generator<Element, void>;
+  }
+}
+
+export type Rules<R extends Record<string, unknown>> = Readonly<{
+  modernRules: readonly string[];
+  existingRules: R;
+  deprecatedRules?: readonly string[];
+}>;
+
+export type Filters<R extends Record<string, unknown>> = Readonly<{
+  filterMissingRules?: (value: keyof R, index: number, array: string[]) => boolean;
+  filterWrongSetRules?: (value: keyof R, index: number, array: string[]) => boolean;
+  filterDeprecatedRules?: (value: keyof R, index: number, array: string[]) => boolean;
+}>;
+
+export function checkRules<R extends Record<string, unknown>>(
+  setName: string,
+  { modernRules, existingRules, deprecatedRules = [] }: Rules<R>,
+  {
+    filterMissingRules = () => true,
+    filterWrongSetRules = () => true,
+    filterDeprecatedRules = () => true,
+  }: Filters<R> = {},
 ) {
   let currentMissingRules = [];
   let currentWrongSetRules = [];
@@ -58,7 +89,7 @@ export function checkRules(
   return `${header}EVERYTHING OK`;
 }
 
-export async function init(browser, url) {
+export async function init(browser: Browser, url: string) {
   const page = await browser.newPage();
 
   page.on('console', (msg) => {
@@ -70,7 +101,7 @@ export async function init(browser, url) {
         cb = console.error;
         type = 'ERROR';
         break;
-      case 'warn':
+      case 'warning':
         cb = console.warn;
         type = 'WARNING';
         break;
@@ -85,7 +116,7 @@ export async function init(browser, url) {
 
   await page.goto(url);
   await page.evaluate(() => {
-    window.q = (selector) => {
+    window.q = (selector: string) => {
       const element = document.querySelector(selector);
 
       if (!element) {
@@ -96,10 +127,11 @@ export async function init(browser, url) {
     };
 
     Element.prototype.findNextSibling = function (selector) {
-      return this.findNextSiblings(selector).next().value;
+      const { done, value } = this.findNextSiblings(selector).next();
+      return done ? value! : null;
     };
 
-    Element.prototype.findNextSiblings = function * (selector, finishSelector) {
+    Element.prototype.findNextSiblings = function* (selector, finishSelector) {
       let sibling = this.nextElementSibling;
 
       while (sibling !== null && (finishSelector ? !sibling.matches(finishSelector) : true)) {
@@ -115,5 +147,11 @@ export async function init(browser, url) {
   return page;
 }
 
-export const createHeader = (title, url) =>
+export const createHeader = (title: string, url: string) =>
   `=======================\n| ${title.toUpperCase()}\n=======================\n\nURL: ${url}`;
+
+export function filterEmptyItems<I>(arr: Array<I | null | undefined | false>): Array<I>;
+export function filterEmptyItems<I>(arr: ReadonlyArray<I | null | undefined | false>): ReadonlyArray<I>;
+export function filterEmptyItems(arr: ReadonlyArray<unknown>): unknown[] {
+  return arr.filter(Boolean);
+}

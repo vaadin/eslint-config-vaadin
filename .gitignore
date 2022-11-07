@@ -1,1 +1,6 @@
 node_modules
+rules
+/index.js
+/imports.js",
+/lit.js
+/typescript.js

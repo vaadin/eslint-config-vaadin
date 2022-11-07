@@ -1,4 +1,4 @@
-module.exports = {
+export = {
   rules: {
     // handled by Prettier
     'array-bracket-newline': 'off',
@@ -122,4 +122,4 @@ module.exports = {
     // handled by Prettier
     'yield-star-spacing': 'off',
   },
-};
+} as const;

@@ -1,4 +1,4 @@
-module.exports = {
+export = {
   rules: {
     'accessor-pairs': 'error',
     'arrow-body-style': ['error', 'as-needed'],
@@ -212,4 +212,4 @@ module.exports = {
     'vars-on-top': 'off',
     yoda: ['error', 'never'],
   },
-};
+} as const;

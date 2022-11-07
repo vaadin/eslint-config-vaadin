@@ -1,4 +1,4 @@
-module.exports = {
+export = {
   rules: {
     'array-callback-return': 'error',
     'constructor-super': 'error',
@@ -72,4 +72,4 @@ module.exports = {
     'use-isnan': 'error',
     'valid-typeof': ['error', { requireStringLiterals: false }],
   },
-};
+} as const;

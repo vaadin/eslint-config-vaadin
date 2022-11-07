@@ -3,6 +3,17 @@
   "version": "0.1.0",
   "description": "Vaadin base JS/TS ESLint config",
   "main": "index.js",
+  "files": [
+    "./index.js",
+    "./imports.js",
+    "./lit.js",
+    "./rules/eslint/layout-formatting.ts",
+    "./rules/eslint/possible-problems.js",
+    "./rules/eslint/suggestions.js",
+    "./rules/typescript/extensions.js",
+    "./rules/typescript/original.js",
+    "./typescript.js"
+  ],
   "exports": {
     ".": "./index.js",
     "./imports": "./imports.js",
@@ -15,8 +26,10 @@
     "./typescript": "./typescript.js"
   },
   "scripts": {
-    "check": "node utils/missing-rule-checker/index.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "tsx utils/missing-rule-checker/index.mts",
+    "sort": "tsx utils/sorter/index.mts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -63,7 +76,9 @@
     "prettier": "^2.7.1"
   },
   "devDependencies": {
+    "@types/eslint": "^8.4.9",
     "puppeteer": "^18.2.1",
+    "tsx": "^3.11.0",
     "typescript": "^4.8.4"
   }
 }
