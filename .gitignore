@@ -1,7 +1,7 @@
 node_modules
 rules
 /index.js
-/imports.js",
+/imports.js
 /lit.js
 /testing.js
 /typescript.js
