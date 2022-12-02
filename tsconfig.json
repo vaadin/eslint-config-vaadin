@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["es2021", "dom"],
+    "strict": true,
+    "importsNotUsedAsValues": "error",
+    "noImplicitOverride": true,
+    "useDefineForClassFields": true,
+    "useUnknownInCatchVariables": true
+  },
+  "include": ["src", "utils"]
+}
