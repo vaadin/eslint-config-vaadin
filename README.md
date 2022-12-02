@@ -20,16 +20,16 @@ After you have installed `eslint-config-vaadin`, you should be able to extend th
 
 ## Available Configs
 
-### eslint-config-vaadin
+### eslint-config-vaadin/javascript
 
-The default config that contains the JavaScript linting rules.
+A config that contains the JavaScript linting rules.
 
 This config requires `eslint-config-vaadin/prettier` that must be added the very last i.e. after any other configs.
 
 ```json
 {
   "extends": [
-    "eslint-config-vaadin",
+    "eslint-config-vaadin/javascript",
     // ... any other configs
     "eslint-config-vaadin/prettier"
   ]
@@ -113,7 +113,7 @@ This config is supposed to be used in combination with `eslint-config-vaadin` or
 ```json
 {
   "extends": [
-    "eslint-config-vaadin",
+    "eslint-config-vaadin/javascript",
     "eslint-config-vaadin/lit",
     "eslint-config-vaadin/prettier"
   ]
