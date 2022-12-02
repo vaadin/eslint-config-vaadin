@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-vaadin",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Vaadin base JS/TS ESLint config",
   "main": "index.js",
   "files": [
