@@ -40,7 +40,7 @@ This config requires `eslint-config-vaadin/prettier` that must be added the very
 
 A config that contains the TypeScript linting rules.
 
-This config is designed on top of the default `eslint-config-vaadin` config so you don't have to enable the default config when using this one.
+This config is designed on top of the `eslint-config-vaadin/javascript` config so you don't have to enable the JavaScript config when using this one.
 
 This config requires `tsconfig.json` at the project root with the `include` section that includes all the files that are referenced in your project. If your `tsconfig.json` is located somewhere other than the project root, you can use the `parserOptions.project` property.
 
@@ -66,7 +66,7 @@ A config that contains the linting rules for tagged Lit templates.
 
 This config is designed on top of the `eslint-plugin-lit` plugin.
 
-This config is supposed to be used in combination with `eslint-config-vaadin` or `eslint-config-vaadin/typescript`.
+This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
 
 ```json
 {
@@ -82,7 +82,7 @@ A config that contains the linting rules for imports.
 
 This config is designed on top of the `eslint-plugin-import` plugin. Please note that adding this config to your project can significantly affect linting performance.
 
-This config is supposed to be used in combination with `eslint-config-vaadin` or `eslint-config-vaadin/typescript`.
+This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
 
 ```json
 {
@@ -96,7 +96,7 @@ This config is supposed to be used in combination with `eslint-config-vaadin` or
 
 A config that overrides some linting rules and sets up the `eslint-plugin-chai-friendly` plugin for test files.
 
-This config is supposed to be used in combination with `eslint-config-vaadin` or `eslint-config-vaadin/typescript`.
+This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
 
 ```json
 {
