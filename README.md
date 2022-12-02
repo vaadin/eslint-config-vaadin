@@ -40,7 +40,7 @@ This config requires `eslint-config-vaadin/prettier` that must be added the very
 
 A config that contains the TypeScript linting rules.
 
-This config is designed on top of the default `eslint-config-vaadin` config which means that you don't have to enable the default config when using this one.
+This config is designed on top of the default `eslint-config-vaadin` config so you don't have to enable the default config when using this one.
 
 This config requires `tsconfig.json` at the project root with the `include` section that includes all the files that are referenced in your project. If your `tsconfig.json` is located somewhere other than the project root, you can use the `parserOptions.project` property.
 
