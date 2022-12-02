@@ -5,6 +5,7 @@
   "main": "index.js",
   "files": [
     "./rules",
+    "./utils/resolve.js",
     "./index.js",
     "./imports.js",
     "./lit.js",
