@@ -22,7 +22,7 @@ After you have installed `eslint-config-vaadin`, you should be able to extend th
 
 ### eslint-config-vaadin
 
-A config config that contains the JavaScript linting rules.
+The default config that contains the JavaScript linting rules.
 
 This config requires `eslint-config-vaadin/prettier` that must be added the very last i.e. after any other configs.
 
