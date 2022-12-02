@@ -15,6 +15,7 @@
   ],
   "exports": {
     ".": "./index.js",
+    "./index": "./index.js",
     "./imports": "./imports.js",
     "./lit": "./lit.js",
     "./prettier": "./prettier.js",
