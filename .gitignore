@@ -1,9 +1,9 @@
 node_modules
 rules
-/index.js
 /imports.js
 /lit.js
 /prettier.js
 /testing.js
+/javascript.js
 /typescript.js
 /utils/resolve.js
