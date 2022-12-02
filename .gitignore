@@ -1,7 +1,7 @@
 node_modules
 rules
-/index.js
 /imports.js
+/javascript.js
 /lit.js
 /prettier.js
 /testing.js
