@@ -4,6 +4,7 @@
   "description": "Vaadin base JS/TS ESLint config",
   "main": "index.js",
   "files": [
+    "/utils/resolve.js",
     "./rules",
     "./index.js",
     "./imports.js",
