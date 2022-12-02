@@ -2,11 +2,11 @@
   "name": "eslint-config-vaadin",
   "version": "1.0.0-alpha.2",
   "description": "Vaadin base JS/TS ESLint config",
-  "main": "index.js",
+  "main": "javascript.js",
   "files": [
     "./rules",
     "./utils/resolve.js",
-    "./index.js",
+    "./javascript.js",
     "./imports.js",
     "./lit.js",
     "./prettier.js",
@@ -14,8 +14,8 @@
     "./typescript.js"
   ],
   "exports": {
-    ".": "./index.js",
-    "./index": "./index.js",
+    ".": "./javascript.js",
+    "./javascript": "./javascript.js",
     "./imports": "./imports.js",
     "./lit": "./lit.js",
     "./prettier": "./prettier.js",
