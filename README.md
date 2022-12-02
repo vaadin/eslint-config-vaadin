@@ -22,12 +22,16 @@ After you have installed `eslint-config-vaadin`, you should be able to extend th
 
 ### eslint-config-vaadin
 
-The default config that contains the JavaScript linting rules.
+A config config that contains the JavaScript linting rules.
+
+This config requires `eslint-config-vaadin/prettier` that must be added at the very end, after any other configs.
 
 ```json
 {
   "extends": [
-    "eslint-config-vaadin"
+    "eslint-config-vaadin",
+    // ... any other configs
+    "eslint-config-vaadin/prettier"
   ]
 }
 ```
@@ -40,13 +44,18 @@ This config is designed on top of the default `eslint-config-vaadin` config whic
 
 This config requires `tsconfig.json` at the project root with the `include` section that includes all the files that are referenced in your project. If your `tsconfig.json` is located somewhere other than the project root, you can use the `parserOptions.project` property.
 
+This config requires `eslint-config-vaadin/prettier` that must be added at the very end, after any other configs.
+
+
 ```json
 {
   "parserOptions": {
     "project": "path/to/your/tsconfig.json"
   },
   "extends": [
-    "eslint-config-vaadin/typescript"
+    "eslint-config-vaadin/typescript",
+    // ... any other configs
+    "eslint-config-vaadin/prettier"
   ]
 }
 ```
@@ -105,7 +114,8 @@ This config is supposed to be used in combination with `eslint-config-vaadin` or
 {
   "extends": [
     "eslint-config-vaadin",
-    "eslint-config-vaadin/lit"
+    "eslint-config-vaadin/lit",
+    "eslint-config-vaadin/prettier"
   ]
 }
 ```
@@ -116,7 +126,8 @@ This config is supposed to be used in combination with `eslint-config-vaadin` or
 {
   "extends": [
     "eslint-config-vaadin/typescript",
-    "eslint-config-vaadin/lit"
+    "eslint-config-vaadin/lit",
+    "eslint-config-vaadin/prettier"
   ]
 }
 ```
