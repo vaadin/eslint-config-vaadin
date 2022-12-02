@@ -11,6 +11,10 @@ declare global {
     findNextSibling(selector: string): Element | null;
     findNextSiblings(selector: string, finishSelector?: string): Generator<Element, void>;
   }
+
+  interface Array<T> {
+    filterEmptyItems(): T extends (undefined | null) ? never : Array<T>;
+  }
 }
 
 export type Rules<R extends Record<string, unknown>> = Readonly<{
@@ -111,7 +115,7 @@ export async function init(browser: Browser, url: string) {
         break;
     }
 
-    cb.apply(console, [`[${url}:${type}]`, msg.text()]);
+    cb.call(console, `[${url}:${type}]`, msg.text());
   });
 
   await page.goto(url);
@@ -141,6 +145,10 @@ export async function init(browser: Browser, url: string) {
 
         sibling = sibling.nextElementSibling;
       }
+
+      Array.prototype.filterEmptyItems = function() {
+        return this.filter(Boolean);
+      }
     };
   });
 
@@ -149,9 +157,3 @@ export async function init(browser: Browser, url: string) {
 
 export const createHeader = (title: string, url: string) =>
   `=======================\n| ${title.toUpperCase()}\n=======================\n\nURL: ${url}`;
-
-export function filterEmptyItems<I>(arr: Array<I | null | undefined | false>): Array<I>;
-export function filterEmptyItems<I>(arr: ReadonlyArray<I | null | undefined | false>): ReadonlyArray<I>;
-export function filterEmptyItems(arr: ReadonlyArray<unknown>): unknown[] {
-  return arr.filter(Boolean);
-}

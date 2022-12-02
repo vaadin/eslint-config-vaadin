@@ -1,7 +1,7 @@
 import type { Browser } from 'puppeteer';
-import original from '../../src/rules/typescript/original.js';
 import extensions from '../../src/rules/typescript/extensions.js';
-import { checkRules, init, createHeader, filterEmptyItems } from './utils.mjs';
+import original from '../../src/rules/typescript/original.js';
+import { checkRules, createHeader, init } from './utils.mjs';
 
 const url = 'https://typescript-eslint.io/rules';
 
@@ -10,19 +10,14 @@ export default async function checkTypeScript(browser: Browser) {
 
   const header = createHeader('@typescript-eslint', url);
 
-  const [supportedRules, extensionRules] = await page.evaluate(async (filterEmptyItems) => {
-    function extractRules(id: string): string[] {
+  const [supportedRules, extensionRules] = await page.evaluate(() =>
+    ['#supported-rules', '#extension-rules'].map((id: string) => {
       const table = window.q(id).findNextSibling('table');
       return table
-        ? filterEmptyItems(Array.from(table.querySelectorAll('td'), (td) => td.querySelector('a')?.textContent))
+        ? Array.from(table.querySelectorAll('td'), (td) => td.querySelector('a')?.textContent).filterEmptyItems()
         : [];
-    }
-
-    const supportedRules = extractRules('#supported-rules');
-    const extensionRules = extractRules('#extension-rules');
-
-    return [supportedRules, extensionRules];
-  }, filterEmptyItems);
+    }),
+  );
 
   const existingOriginalRules = {
     ...original.rules,
@@ -44,11 +39,7 @@ export default async function checkTypeScript(browser: Browser) {
         filterWrongSetRules(rule) {
           return (
             rule !== 'no-return-await' &&
-            !(
-              rule in extensions &&
-              extensions.rules[rule] === 'off' &&
-              `@typescript-eslint/${rule}` in extensions
-            )
+            !(rule in extensions && extensions.rules[rule] === 'off' && `@typescript-eslint/${rule}` in extensions)
           );
         },
       },

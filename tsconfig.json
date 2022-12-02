@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
     "target": "es2021",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",

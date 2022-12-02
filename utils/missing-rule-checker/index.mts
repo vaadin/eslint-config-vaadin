@@ -3,7 +3,7 @@ import checkEslint from './eslint.mjs';
 import checkTypeScript from './typescript.mjs';
 
 try {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: false, devtools: true });
 
   const results = await Promise.all([checkEslint(browser), checkTypeScript(browser)]);
 
