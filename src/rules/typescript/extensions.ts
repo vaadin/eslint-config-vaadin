@@ -23,7 +23,8 @@ export = {
     // https://typescript-eslint.io/rules/no-array-constructor
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
-    '@typescript-eslint/no-duplicate-imports': possibleProblems['no-duplicate-imports'],
+    // Deprecated in favor of "import/no-duplicates"
+    '@typescript-eslint/no-duplicate-imports': 'off',
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
     '@typescript-eslint/no-extra-parens': layoutFormatting['no-extra-parens'],
     '@typescript-eslint/no-extra-semi': suggestions['no-extra-semi'],
