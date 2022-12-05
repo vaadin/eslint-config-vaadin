@@ -400,6 +400,10 @@ export = {
     // https://typescript-eslint.io/rules/restrict-template-expressions
     '@typescript-eslint/restrict-template-expressions': 'error',
 
+    // Enforce constituents of a type union/intersection to be sorted alphabetically
+    // https://typescript-eslint.io/rules/sort-type-constituents
+    '@typescript-eslint/sort-type-constituents': 'error',
+
     // Enforces that members of a type union/intersection are sorted alphabetically
     // https://typescript-eslint.io/rules/sort-type-union-intersection-members
     '@typescript-eslint/sort-type-union-intersection-members': 'error',

@@ -2,9 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": ".",
-    "module": "CommonJS",
-    "inlineSources": true,
-    "inlineSourceMap": true
+    "declaration": false,
+    "module": "CommonJS"
   },
   "include": ["src"],
   "exclude": []

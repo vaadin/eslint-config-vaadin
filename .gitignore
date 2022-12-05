@@ -1,9 +1,22 @@
-node_modules
-rules
+# Mac
+*.DS_Store
+
+# Intellij Idea files
+.idea
+*.iml
+
+# VS Code
+.vscode
+
+# NodeJS files
+/node_modules
+
+# Generated sources
+/rules
+/utils
 /imports.js
 /javascript.js
 /lit.js
 /prettier.js
 /testing.js
 /typescript.js
-/utils/resolve.js

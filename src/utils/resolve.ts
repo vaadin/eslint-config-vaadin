@@ -1,4 +1,8 @@
-// It's better than just using `map(require.resolve)` because `map` provides more than one argument for the callback.
+const path = require('path');
+
+// `src` if directly imported, `<root>` if built.
+const root = path.resolve(__dirname, '..');
+
 export = function resolve(relativePath: string): string {
-  return require.resolve(relativePath);
+  return path.resolve(root, relativePath);
 }
