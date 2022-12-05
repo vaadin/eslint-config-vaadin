@@ -42,7 +42,7 @@ export function checkRules<R extends Record<string, unknown>>(
   let currentWrongSetRules = [];
   let currentDeprecatedRules = [];
 
-  const header = `SET: ${setName};\n`;
+  const header = `SET: ${setName}\n`;
 
   for (const rule of modernRules) {
     if (!(rule in existingRules)) {
@@ -131,8 +131,8 @@ export async function init(browser: Browser, url: string) {
     };
 
     Element.prototype.findNextSibling = function (selector) {
-      const { done, value } = this.findNextSiblings(selector).next();
-      return done ? value! : null;
+      const { value = null } = this.findNextSiblings(selector).next();
+      return value;
     };
 
     Element.prototype.findNextSiblings = function* (selector, finishSelector) {
@@ -145,11 +145,11 @@ export async function init(browser: Browser, url: string) {
 
         sibling = sibling.nextElementSibling;
       }
-
-      Array.prototype.filterEmptyItems = function() {
-        return this.filter(Boolean);
-      }
     };
+
+    Array.prototype.filterEmptyItems = function() {
+      return this.filter(Boolean);
+    }
   });
 
   return page;
