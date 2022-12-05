@@ -26,7 +26,7 @@ A config that contains the JavaScript linting rules.
 
 This config requires `eslint-config-vaadin/prettier` that must be added the very last i.e. after any other configs.
 
-```json
+```js
 {
   "extends": [
     "eslint-config-vaadin/javascript",
@@ -47,7 +47,7 @@ This config requires `tsconfig.json` at the project root with the `include` sect
 This config requires `eslint-config-vaadin/prettier` that must be added the very last i.e. after any other configs.
 
 
-```json
+```js
 {
   "parserOptions": {
     "project": "path/to/your/tsconfig.json"
@@ -68,7 +68,7 @@ This config is designed on top of the `eslint-plugin-lit` plugin.
 
 This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
 
-```json
+```js
 {
   "extends": [
     "eslint-config-vaadin/lit"
@@ -84,7 +84,7 @@ This config is designed on top of the `eslint-plugin-import` plugin. Please note
 
 This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
 
-```json
+```js
 {
   "extends": [
     "eslint-config-vaadin/imports"
@@ -98,7 +98,7 @@ A config that overrides some linting rules and sets up the `eslint-plugin-chai-f
 
 This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
 
-```json
+```js
 {
   "extends": [
     "eslint-config-vaadin/testing"
@@ -110,7 +110,7 @@ This config is supposed to be used in combination with `eslint-config-vaadin/jav
 
 ### Lit + JavaScript
 
-```json
+```js
 {
   "extends": [
     "eslint-config-vaadin/javascript",
@@ -122,7 +122,7 @@ This config is supposed to be used in combination with `eslint-config-vaadin/jav
 
 ### Lit + TypeScript
 
-```json
+```js
 {
   "extends": [
     "eslint-config-vaadin/typescript",
