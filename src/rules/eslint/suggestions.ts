@@ -68,6 +68,7 @@ export = {
     'no-empty': ['error', { allowEmptyCatch: true }],
     // empty or no-op functions could be quite useful
     'no-empty-function': 'off',
+    'no-empty-static-block': 'error',
     // handled by "eqeqeq" rule
     'no-eq-null': 'off',
     'no-eval': 'error',
