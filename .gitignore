@@ -13,10 +13,10 @@
 
 # Generated sources
 /rules
+/utils
 /imports.js
 /javascript.js
 /lit.js
 /prettier.js
 /testing.js
 /typescript.js
-/utils/resolve.js

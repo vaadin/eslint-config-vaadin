@@ -5,7 +5,7 @@
   "main": "javascript.js",
   "files": [
     "./rules",
-    "./utils/resolve.js",
+    "./utils",
     "./javascript.js",
     "./imports.js",
     "./lit.js",
