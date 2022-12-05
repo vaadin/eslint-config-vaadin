@@ -23,8 +23,8 @@
     "./typescript": "./typescript.js"
   },
   "scripts": {
-    "check": "tsx utils/missing-rule-checker/index.mts",
-    "sort": "tsx utils/sorter/index.mts",
+    "check": "tsx tools/missing-rule-checker/index.mts",
+    "sort": "tsx tools/sorter/index.mts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p tsconfig.build.json"
   },
