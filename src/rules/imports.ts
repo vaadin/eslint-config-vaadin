@@ -3,7 +3,7 @@ export = {
     es6: true,
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   plugins: ['import'],
@@ -72,10 +72,10 @@ export = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.mjs', '.js', '.json'],
+        extensions: ['.js', '.mjs', '.cjs', '.json'],
       },
     },
-    'import/extensions': ['.js', '.mjs', '.jsx'],
+    'import/extensions': ['.js', '.mjs', '.cjs', '.jsx'],
     'import/core-modules': [],
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
   },

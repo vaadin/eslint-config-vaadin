@@ -333,7 +333,7 @@ export = {
   overrides: [
     {
       // Use rules ONLY for TS(X) files and ignore JS(X)
-      files: ['*.ts', '*.tsx'],
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
       rules: {
         // Require explicit return types on functions and class methods
         // https://typescript-eslint.io/rules/explicit-function-return-type
