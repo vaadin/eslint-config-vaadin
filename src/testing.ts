@@ -14,10 +14,6 @@ export = {
         '*.test.jsx',
         '*.test.tsx',
       ],
-      rules: {
-        'max-classes-per-file': 'off',
-        'no-unused-expressions': 'off',
-      },
     },
   ],
 } as const;
