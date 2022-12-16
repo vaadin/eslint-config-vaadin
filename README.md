@@ -1,50 +1,50 @@
-# eslint-config-vaadin
+# vaadin
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for the Vaadin JavaScript style guide
 
 ## Installation
 
 ```sh
-npm install --save-dev eslint-config-vaadin
+npm install --save-dev vaadin
 ```
 
 or
 
 ```sh
-yarn add --dev eslint-config-vaadin
+yarn add --dev vaadin
 ```
 
 ## Usage
 
-After you have installed `eslint-config-vaadin`, you should be able to extend the following configs in the [`extends`](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) section of your [ESLint configuration](http://eslint.org/docs/user-guide/configuring).
+After you have installed `vaadin`, you should be able to extend the following configs in the [`extends`](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) section of your [ESLint configuration](http://eslint.org/docs/user-guide/configuring).
 
 ## Available Configs
 
-### eslint-config-vaadin/javascript
+### vaadin/javascript
 
 A config that contains the JavaScript linting rules.
 
-This config requires `eslint-config-vaadin/prettier` that must be added the very last i.e. after any other configs.
+This config requires `vaadin/prettier` that must be added the very last i.e. after any other configs.
 
 ```js
 {
   "extends": [
-    "eslint-config-vaadin/javascript",
+    "vaadin/javascript",
     // ... any other configs
-    "eslint-config-vaadin/prettier"
+    "vaadin/prettier"
   ]
 }
 ```
 
-### eslint-config-vaadin/typescript
+### vaadin/typescript
 
 A config that contains the TypeScript linting rules.
 
-This config is designed on top of the `eslint-config-vaadin/javascript` config so you don't have to enable the JavaScript config when using this one.
+This config is designed on top of the `vaadin/javascript` config so you don't have to enable the JavaScript config when using this one.
 
 This config requires `tsconfig.json` at the project root with the `include` section that includes all the files that are referenced in your project. If your `tsconfig.json` is located somewhere other than the project root, you can use the `parserOptions.project` property.
 
-This config requires `eslint-config-vaadin/prettier` that must be added the very last i.e. after any other configs.
+This config requires `vaadin/prettier` that must be added the very last i.e. after any other configs.
 
 
 ```js
@@ -53,55 +53,55 @@ This config requires `eslint-config-vaadin/prettier` that must be added the very
     "project": "path/to/your/tsconfig.json"
   },
   "extends": [
-    "eslint-config-vaadin/typescript",
+    "vaadin/typescript",
     // ... any other configs
-    "eslint-config-vaadin/prettier"
+    "vaadin/prettier"
   ]
 }
 ```
 
-### eslint-config-vaadin/lit
+### vaadin/lit
 
 A config that contains the linting rules for tagged Lit templates.
 
 This config is designed on top of the `eslint-plugin-lit` plugin.
 
-This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
+This config is supposed to be used in combination with `vaadin/javascript` or `vaadin/typescript`.
 
 ```js
 {
   "extends": [
-    "eslint-config-vaadin/lit"
+    "vaadin/lit"
   ]
 }
 ```
 
-### eslint-config-vaadin/imports
+### vaadin/imports
 
 A config that contains the linting rules for imports.
 
 This config is designed on top of the `eslint-plugin-import` plugin. Please note that adding this config to your project can significantly affect linting performance.
 
-This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
+This config is supposed to be used in combination with `vaadin/javascript` or `vaadin/typescript`.
 
 ```js
 {
   "extends": [
-    "eslint-config-vaadin/imports"
+    "vaadin/imports"
   ]
 }
 ```
 
-### eslint-config-vaadin/testing
+### vaadin/testing
 
 A config that overrides some linting rules and sets up the `eslint-plugin-chai-friendly` plugin for test files.
 
-This config is supposed to be used in combination with `eslint-config-vaadin/javascript` or `eslint-config-vaadin/typescript`.
+This config is supposed to be used in combination with `vaadin/javascript` or `vaadin/typescript`.
 
 ```js
 {
   "extends": [
-    "eslint-config-vaadin/testing"
+    "vaadin/testing"
   ]
 }
 ```
@@ -113,9 +113,10 @@ This config is supposed to be used in combination with `eslint-config-vaadin/jav
 ```js
 {
   "extends": [
-    "eslint-config-vaadin/javascript",
-    "eslint-config-vaadin/lit",
-    "eslint-config-vaadin/prettier"
+    "vaadin/javascript",
+    "vaadin/lit",
+    "vaadin/testing",
+    "vaadin/prettier"
   ]
 }
 ```
@@ -125,9 +126,10 @@ This config is supposed to be used in combination with `eslint-config-vaadin/jav
 ```js
 {
   "extends": [
-    "eslint-config-vaadin/typescript",
-    "eslint-config-vaadin/lit",
-    "eslint-config-vaadin/prettier"
+    "vaadin/typescript",
+    "vaadin/lit",
+    "vaadin/testing",
+    "vaadin/prettier"
   ]
 }
 ```
