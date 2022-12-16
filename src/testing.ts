@@ -1,9 +1,9 @@
 const resolve = require('./utils/resolve.js');
 
 export = {
-  extends: ['./rules/testing'].map(resolve),
   overrides: [
     {
+      extends: ['./rules/testing'].map(resolve),
       files: [
         '*.spec.js',
         '*.spec.ts',
@@ -14,9 +14,6 @@ export = {
         '*.test.jsx',
         '*.test.tsx',
       ],
-      rules: {
-        'max-classes-per-file': 'off',
-      },
     },
   ],
 } as const;
