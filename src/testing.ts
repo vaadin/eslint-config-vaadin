@@ -16,6 +16,7 @@ export = {
       ],
       rules: {
         'max-classes-per-file': 'off',
+        'no-unused-expressions': 'off',
       },
     },
   ],
