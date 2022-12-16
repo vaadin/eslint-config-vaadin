@@ -1,22 +1,22 @@
-# vaadin
+# eslint-config-vaadin
 
 > ESLint [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html) for the Vaadin JavaScript style guide
 
 ## Installation
 
 ```sh
-npm install --save-dev vaadin
+npm install --save-dev eslint-config-vaadin
 ```
 
 or
 
 ```sh
-yarn add --dev vaadin
+yarn add --dev eslint-config-vaadin
 ```
 
 ## Usage
 
-After you have installed `vaadin`, you should be able to extend the following configs in the [`extends`](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) section of your [ESLint configuration](http://eslint.org/docs/user-guide/configuring).
+After you have installed `eslint-config-vaadin`, you should be able to extend the following configs in the [`extends`](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) section of your [ESLint configuration](http://eslint.org/docs/user-guide/configuring).
 
 ## Available Configs
 
