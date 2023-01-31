@@ -103,10 +103,6 @@ export = {
     // https://typescript-eslint.io/rules/prefer-nullish-coalescing
     '@typescript-eslint/prefer-nullish-coalescing': 'error',
 
-    // Prefer using concise optional chain expressions instead of chained logical ands
-    // https://typescript-eslint.io/rules/prefer-optional-chain
-    '@typescript-eslint/prefer-optional-chain': 'error',
-
     // Requires that private members are marked as readonly if they're never modified outside the constructor
     // https://typescript-eslint.io/rules/prefer-readonly
     '@typescript-eslint/prefer-readonly': 'error',
