@@ -72,7 +72,7 @@ Please note that adding this config to your project can significantly affect lin
   },
   "extends": [
     "vaadin/typescript",
-    "vaadin/typescript-requireing-type-checking",
+    "vaadin/typescript-requiring-type-checking",
     // ... any other configs
     "vaadin/prettier"
   ]
