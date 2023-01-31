@@ -4,16 +4,12 @@ const suggestions = require('../eslint/suggestions').rules;
 
 export = {
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: `${process.cwd()}/tsconfig.json`,
-  },
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/brace-style': layoutFormatting['brace-style'],
     '@typescript-eslint/comma-dangle': layoutFormatting['comma-dangle'],
     '@typescript-eslint/comma-spacing': layoutFormatting['comma-spacing'],
     '@typescript-eslint/default-param-last': suggestions['default-param-last'],
-    '@typescript-eslint/dot-notation': suggestions['dot-notation'],
     '@typescript-eslint/func-call-spacing': layoutFormatting['func-call-spacing'],
     '@typescript-eslint/indent': layoutFormatting['indent'],
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
@@ -28,9 +24,6 @@ export = {
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
     '@typescript-eslint/no-extra-parens': layoutFormatting['no-extra-parens'],
     '@typescript-eslint/no-extra-semi': suggestions['no-extra-semi'],
-    // Disallow the use of eval()-like methods
-    // https://typescript-eslint.io/rules/no-implied-eval
-    '@typescript-eslint/no-implied-eval': 'error',
     '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'],
     '@typescript-eslint/no-loop-func': suggestions['no-loop-func'],
     '@typescript-eslint/no-loss-of-precision': possibleProblems['no-loss-of-precision'],
@@ -38,9 +31,6 @@ export = {
     '@typescript-eslint/no-redeclare': suggestions['no-redeclare'],
     '@typescript-eslint/no-restricted-imports': suggestions['no-restricted-imports'],
     '@typescript-eslint/no-shadow': suggestions['no-shadow'],
-    // Disallow throwing literals as exceptions
-    // https://typescript-eslint.io/rules/no-throw-literal
-    '@typescript-eslint/no-throw-literal': 'error',
     '@typescript-eslint/no-unused-expressions': suggestions['no-unused-expressions'],
     // Disabled due to the following issue: https://github.com/typescript-eslint/typescript-eslint/issues/1856
     '@typescript-eslint/no-unused-vars': 'off',
@@ -55,8 +45,6 @@ export = {
     '@typescript-eslint/object-curly-spacing': layoutFormatting['object-curly-spacing'],
     '@typescript-eslint/padding-line-between-statements': layoutFormatting['padding-line-between-statements'],
     '@typescript-eslint/quotes': layoutFormatting['quotes'],
-    '@typescript-eslint/require-await': 'error',
-    '@typescript-eslint/return-await': suggestions['no-return-await'],
     '@typescript-eslint/semi': layoutFormatting['semi'],
     '@typescript-eslint/space-before-blocks': layoutFormatting['space-before-blocks'],
     '@typescript-eslint/space-before-function-paren': layoutFormatting['space-before-function-paren'],
