@@ -24,7 +24,7 @@ After you have installed `eslint-config-vaadin`, you should be able to extend th
 
 A config that contains the JavaScript linting rules.
 
-This config requires `vaadin/prettier` that must be added the very last i.e. after any other configs.
+This config requires `vaadin/prettier` which must be added after any other configs.
 
 ```js
 {
@@ -42,10 +42,28 @@ A config that contains the TypeScript linting rules.
 
 This config is designed on top of the `vaadin/javascript` config so you don't have to enable the JavaScript config when using this one.
 
+This config requires `vaadin/prettier` which must be added after any other configs.
+
+
+```js
+{
+  "extends": [
+    "vaadin/typescript",
+    // ... any other configs
+    "vaadin/prettier"
+  ]
+}
+```
+
+### vaadin/typescript-requiring-type-checking
+
+A config that contains the TypeScript linting rules that require type information.
+
 This config requires `tsconfig.json` at the project root with the `include` section that includes all the files that are referenced in your project. If your `tsconfig.json` is located somewhere other than the project root, you can use the `parserOptions.project` property.
 
-This config requires `vaadin/prettier` that must be added the very last i.e. after any other configs.
+This config can be used in addition to `vaadin/typescript` to make it more strict.
 
+Please note that adding this config to your project can significantly affect linting performance since it requires TypeScript to build the whole project before ESLint can do its linting.
 
 ```js
 {
@@ -54,6 +72,7 @@ This config requires `vaadin/prettier` that must be added the very last i.e. aft
   },
   "extends": [
     "vaadin/typescript",
+    "vaadin/typescript-requireing-type-checking",
     // ... any other configs
     "vaadin/prettier"
   ]
@@ -127,6 +146,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 {
   "extends": [
     "vaadin/typescript",
+    "vaadin/typescript-requiring-type-checking",
     "vaadin/lit",
     "vaadin/testing",
     "vaadin/prettier"
