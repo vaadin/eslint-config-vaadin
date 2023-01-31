@@ -168,4 +168,42 @@ export = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/space-infix-ops
     'space-infix-ops': 'off',
   },
+  overrides: [
+    {
+      // Use rules ONLY for TS(X) files and ignore JS(X)
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        // ts(2335), ts(2377)
+        'constructor-super': 'off',
+        // ts(2378)
+        'getter-return': 'off',
+        // ts(2588)
+        'no-const-assign': 'off',
+        // ts(2300)
+        'no-dupe-args': 'off',
+        // ts(1117)
+        'no-dupe-keys': 'off',
+        // ts(2539)
+        'no-func-assign': 'off',
+        // ts(2539), ts(2540)
+        'no-import-assign': 'off',
+        // ts(7009)
+        'no-new-symbol': 'off',
+        // ts(2349)
+        'no-obj-calls': 'off',
+        // ts(2408)
+        'no-setter-return': 'off',
+        // ts(2376)
+        'no-this-before-super': 'off',
+        // ts(2304)
+        'no-undef': 'off',
+        // ts(7027)
+        'no-unreachable': 'off',
+        // ts(2365), ts(2360), ts(2358)
+        'no-unsafe-negation': 'off',
+        // ts(2367)
+        'valid-typeof': 'off',
+      },
+    },
+  ],
 } as const;
