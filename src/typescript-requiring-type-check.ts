@@ -3,8 +3,8 @@ const resolve = require('./utils/resolve.js');
 export = {
   extends: [
     './javascript',
-    './rules/typescript-requiring-type-checking/original.ts',
-    './rules/typescript-requiring-type-checking/extensions.ts',
+    './rules/typescript-requiring-type-check/original.ts',
+    './rules/typescript-requiring-type-check/extensions.ts',
   ].map(resolve),
   settings: {
     'import/resolver': {
