@@ -21,7 +21,7 @@
     "./prettier": "./prettier.js",
     "./testing": "./testing.js",
     "./typescript": "./typescript.js",
-    "./typescript-type-checking": "./typescript-type-checking.js"
+    "./typescript-requiring-type-checking": "./typescript-requiring-type-checking.js"
   },
   "scripts": {
     "check": "tsx tools/missing-rule-checker/index.mts",
