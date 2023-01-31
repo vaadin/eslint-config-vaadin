@@ -20,7 +20,8 @@
     "./lit": "./lit.js",
     "./prettier": "./prettier.js",
     "./testing": "./testing.js",
-    "./typescript": "./typescript.js"
+    "./typescript": "./typescript.js",
+    "./typescript-type-check": "./typescript-type-check.js"
   },
   "scripts": {
     "check": "tsx tools/missing-rule-checker/index.mts",
