@@ -205,4 +205,5 @@ export = {
         'valid-typeof': 'off',
       },
     },
+  ],
 } as const;
