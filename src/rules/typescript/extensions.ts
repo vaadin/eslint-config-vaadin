@@ -61,9 +61,6 @@ export = {
     // Enforce default parameters to be last
     // https://typescript-eslint.io/rules/default-param-last
     'default-param-last': 'off',
-    // Enforce dot notation whenever possible
-    // https://typescript-eslint.io/rules/dot-notation
-    'dot-notation': 'off',
     // Require or disallow spacing between function identifiers and their invocations
     // https://typescript-eslint.io/rules/func-call-spacing
     'func-call-spacing': 'off',
@@ -113,9 +110,6 @@ export = {
     // Disallow specified modules when loaded by import
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-restricted-imports
     'no-restricted-imports': 'off',
-    // Enforces consistent returning of awaited values
-    // https://typescript-eslint.io/rules/return-await
-    'no-return-await': 'off',
     // Disallow variable declarations from shadowing variables declared in the outer scope
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-shadow
     'no-shadow': 'off',
@@ -140,9 +134,6 @@ export = {
     // Enforce the consistent use of either backticks, double, or single quotes
     // https://typescript-eslint.io/rules/quotes
     quotes: 'off',
-    // Disallow async functions which have no await expression
-    // https://typescript-eslint.io/rules/require-await
-    'require-await': 'off',
     // Require or disallow semicolons instead of ASI
     // https://typescript-eslint.io/rules/semi
     semi: 'off',
