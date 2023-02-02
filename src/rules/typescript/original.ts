@@ -100,23 +100,18 @@ export = {
 
           'static-initialization',
 
-          'static-get',
-          'public-static-get',
-          'static-set',
-          'public-static-set',
+          ['static-get', 'static-set'],
+          ['public-static-get', 'public-static-set'],
           'static-method',
           'public-static-method',
 
-          'protected-static-get',
-          'protected-static-set',
+          ['protected-static-get', 'protected-static-set'],
           'protected-static-method',
 
-          'private-static-get',
-          'private-static-set',
+          ['private-static-get', 'private-static-set'],
           'private-static-method',
 
-          '#private-static-get',
-          '#private-static-set',
+          ['#private-static-get', '#private-static-set'],
           '#private-static-method',
 
           'field',
@@ -141,39 +136,22 @@ export = {
           'protected-constructor',
           'private-constructor',
 
-          'get',
-          'instance-get',
-          'public-get',
-          'public-instance-get',
-          'abstract-get',
-          'public-abstract-get',
+          ['get', 'set'],
+          ['instance-get', 'instance-set'],
+          ['public-get', 'public-set'],
+          ['public-instance-get', 'public-instance-set'],
+          ['abstract-get', 'abstract-set'],
+          ['public-abstract-get', 'public-abstract-set'],
 
-          'set',
-          'instance-set',
-          'public-set',
-          'public-instance-set',
-          'abstract-set',
-          'public-abstract-set',
+          ['protected-get', 'protected-set'],
+          ['protected-instance-get', 'protected-instance-set'],
+          ['protected-abstract-get', 'protected-abstract-set'],
 
-          'protected-get',
-          'protected-instance-get',
-          'protected-abstract-get',
+          ['private-get', 'private-set'],
+          ['private-instance-get', 'private-instance-set'],
 
-          'protected-set',
-          'protected-instance-set',
-          'protected-abstract-set',
-
-          'private-get',
-          'private-instance-get',
-
-          'private-set',
-          'private-instance-set',
-
-          '#private-get',
-          '#private-instance-get',
-
-          '#private-set',
-          '#private-instance-set',
+          ['#private-get', '#private-set'],
+          ['#private-instance-get', '#private-instance-set'],
 
           'method',
           'instance-method',
