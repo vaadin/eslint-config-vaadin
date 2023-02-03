@@ -155,7 +155,7 @@ Or, you can use a more strict config that requires type information:
 ```js
 {
   "extends": [
-    "vaadin/typescript-requiring-type-information",
+    "vaadin/typescript-requiring-type-checking",
     "vaadin/lit",
     "vaadin/testing",
     "vaadin/prettier"
