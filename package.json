@@ -11,7 +11,8 @@
     "./lit.js",
     "./prettier.js",
     "./testing.js",
-    "./typescript.js"
+    "./typescript.js",
+    "./typescript-requiring-type-checking.js"
   ],
   "exports": {
     ".": "./javascript.js",
