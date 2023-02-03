@@ -2,7 +2,7 @@ const resolve = require('./utils/resolve.js');
 
 export = {
   extends: [
-    './javascript',
+    './typescript',
     './rules/typescript-requiring-type-checking/original',
     './rules/typescript-requiring-type-checking/extensions',
   ].map(resolve),

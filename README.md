@@ -30,7 +30,7 @@ This config requires `vaadin/prettier` which must be added after any other confi
 {
   "extends": [
     "vaadin/javascript",
-    // ... any other configs
+    // ... other project configs
     "vaadin/prettier"
   ]
 }
@@ -38,9 +38,7 @@ This config requires `vaadin/prettier` which must be added after any other confi
 
 ### vaadin/typescript
 
-A config that contains the TypeScript linting rules.
-
-This config is designed on top of the `vaadin/javascript` config so you don't have to enable the JavaScript config when using this one.
+A config that extends `vaadin/javascript` with the TypeScript linting rules.
 
 This config requires `vaadin/prettier` which must be added after any other configs.
 
@@ -49,7 +47,7 @@ This config requires `vaadin/prettier` which must be added after any other confi
 {
   "extends": [
     "vaadin/typescript",
-    // ... any other configs
+    // ... other project configs
     "vaadin/prettier"
   ]
 }
@@ -57,13 +55,13 @@ This config requires `vaadin/prettier` which must be added after any other confi
 
 ### vaadin/typescript-requiring-type-checking
 
-A config that contains the TypeScript linting rules that require type information.
+A config that extends `vaadin/typescript` with the TypeScript linting rules that require type information.
+
+Please note that adding this config to your project can significantly affect linting performance since it requires TypeScript to build the whole project before ESLint can do its linting.
 
 This config requires `tsconfig.json` at the project root with the `include` section that includes all the files that are referenced in your project. If your `tsconfig.json` is located somewhere other than the project root, you can use the `parserOptions.project` property.
 
-This config can be used in addition to `vaadin/typescript` to make it more strict.
-
-Please note that adding this config to your project can significantly affect linting performance since it requires TypeScript to build the whole project before ESLint can do its linting.
+This config requires `vaadin/prettier` which must be added after any other configs.
 
 ```js
 {
@@ -71,9 +69,8 @@ Please note that adding this config to your project can significantly affect lin
     "project": "path/to/your/tsconfig.json"
   },
   "extends": [
-    "vaadin/typescript",
     "vaadin/typescript-requiring-type-checking",
-    // ... any other configs
+    // ... other project configs
     "vaadin/prettier"
   ]
 }
@@ -146,7 +143,19 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 {
   "extends": [
     "vaadin/typescript",
-    "vaadin/typescript-requiring-type-checking",
+    "vaadin/lit",
+    "vaadin/testing",
+    "vaadin/prettier"
+  ]
+}
+```
+
+Or, you can use a more strict config that requires type information:
+
+```js
+{
+  "extends": [
+    "vaadin/typescript-requiring-type-information",
     "vaadin/lit",
     "vaadin/testing",
     "vaadin/prettier"
