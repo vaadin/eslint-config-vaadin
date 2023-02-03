@@ -25,10 +25,11 @@
     "./typescript-requiring-type-checking": "./typescript-requiring-type-checking.js"
   },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "check": "tsx tools/missing-rule-checker/index.mts",
+    "prepack": "npm run build",
     "sort": "tsx tools/sorter/index.mts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p tsconfig.build.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
