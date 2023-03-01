@@ -2,39 +2,6 @@
   "name": "eslint-config-vaadin",
   "version": "1.0.0-alpha.11",
   "description": "Vaadin base JS/TS ESLint config",
-  "main": "javascript.js",
-  "files": [
-    "./rules",
-    "./utils",
-    "./javascript.js",
-    "./imports.js",
-    "./lit.js",
-    "./prettier.js",
-    "./testing.js",
-    "./typescript.js",
-    "./typescript-requiring-type-checking.js"
-  ],
-  "exports": {
-    ".": "./javascript.js",
-    "./javascript": "./javascript.js",
-    "./imports": "./imports.js",
-    "./lit": "./lit.js",
-    "./prettier": "./prettier.js",
-    "./testing": "./testing.js",
-    "./typescript": "./typescript.js",
-    "./typescript-requiring-type-checking": "./typescript-requiring-type-checking.js"
-  },
-  "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "check": "tsx tools/missing-rule-checker/index.mts",
-    "prepack": "npm run build",
-    "sort": "tsx tools/sorter/index.mts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vaadin/eslint-config-vaadin.git"
-  },
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -51,16 +18,50 @@
     "es2020",
     "es2021"
   ],
+  "homepage": "https://github.com/vaadin/eslint-config-vaadin#readme",
+  "bugs": {
+    "url": "https://github.com/vaadin/eslint-config-vaadin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaadin/eslint-config-vaadin.git"
+  },
+  "license": "Apache-2.0",
   "contributors": [
     "Sergey Vinogradov <mr.vursen@gmail.com> (https://github.com/vursen)",
     "Serhii Kulykov <iamkulykov@gmail.com> (https://github.com/web-padawan)",
     "Vlad Rindevich <rindevich.vs@gmail.com> (https://github.com/Lodin)"
   ],
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/vaadin/eslint-config-vaadin/issues"
+  "exports": {
+    ".": "./javascript.js",
+    "./javascript": "./javascript.js",
+    "./imports": "./imports.js",
+    "./lit": "./lit.js",
+    "./prettier": "./prettier.js",
+    "./testing": "./testing.js",
+    "./typescript": "./typescript.js",
+    "./typescript-requiring-type-checking": "./typescript-requiring-type-checking.js"
   },
-  "homepage": "https://github.com/vaadin/eslint-config-vaadin#readme",
+  "main": "javascript.js",
+  "files": [
+    "./imports.js",
+    "./javascript.js",
+    "./lit.js",
+    "./prettier.js",
+    "./rules",
+    "./testing.js",
+    "./typescript-requiring-type-checking.js",
+    "./typescript.js",
+    "./utils"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsx tools/missing-rule-checker/index.mts",
+    "format": "prettier . --write",
+    "prepack": "npm run build",
+    "sort": "tsx tools/sorter/index.mts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@babel/core": "^7.20.5",
     "@babel/eslint-parser": "^7.19.1",
@@ -72,14 +73,15 @@
     "eslint-plugin-lit": "^1.7.1",
     "prettier": "^2.8.1"
   },
-  "peerDependencies": {
-    "eslint": "^8.24.0",
-    "prettier": "^2.8.1"
-  },
   "devDependencies": {
     "@types/eslint": "^8.4.10",
+    "prettier-plugin-packagejson": "^2.4.3",
     "puppeteer": "^19.4.0",
     "tsx": "^3.12.1",
     "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "eslint": "^8.24.0",
+    "prettier": "^2.8.1"
   }
 }

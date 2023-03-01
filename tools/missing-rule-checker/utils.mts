@@ -13,7 +13,7 @@ declare global {
   }
 
   interface Array<T> {
-    filterEmptyItems(): T extends (undefined | null) ? never : Array<T>;
+    filterEmptyItems(): T extends undefined | null ? never : Array<T>;
   }
 }
 
@@ -147,9 +147,9 @@ export async function init(browser: Browser, url: string) {
       }
     };
 
-    Array.prototype.filterEmptyItems = function() {
+    Array.prototype.filterEmptyItems = function () {
       return this.filter(Boolean);
-    }
+    };
   });
 
   return page;
