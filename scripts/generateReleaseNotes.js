@@ -178,7 +178,9 @@ function generateReleaseNotes(commits) {
   if (commits.length) {
     console.log(`### Changes Since [${from}](https://github.com/vaadin/eslint-config-vaadin/releases/tag/${from})`);
   } else {
-    console.log(`### No Changes Since [${from}](https://github.com/vaadin/eslint-config-vaadin/releases/tag/${from})})`);
+    console.log(
+      `### No Changes Since [${from}](https://github.com/vaadin/eslint-config-vaadin/releases/tag/${from})})`,
+    );
   }
   logCommitsByType(commits);
 }

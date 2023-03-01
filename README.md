@@ -42,7 +42,6 @@ A config that extends `vaadin/javascript` with the TypeScript linting rules.
 
 This config requires `vaadin/prettier` which must be added after any other configs.
 
-
 ```js
 {
   "extends": [

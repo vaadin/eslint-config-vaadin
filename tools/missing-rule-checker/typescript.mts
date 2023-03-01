@@ -39,7 +39,11 @@ export default async function checkTypeScript(browser: Browser) {
         filterWrongSetRules(rule) {
           return (
             rule !== 'no-return-await' &&
-            !(rule in extensions.rules && extensions.rules[rule] === 'off' && `@typescript-eslint/${rule}` in extensions.rules)
+            !(
+              rule in extensions.rules &&
+              extensions.rules[rule] === 'off' &&
+              `@typescript-eslint/${rule}` in extensions.rules
+            )
           );
         },
       },
