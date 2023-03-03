@@ -1,8 +1,6 @@
 const suggestions = require('../eslint/suggestions').rules;
 
 export = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/dot-notation': suggestions['dot-notation'],
     '@typescript-eslint/no-implied-eval': suggestions['no-implied-eval'],

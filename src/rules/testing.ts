@@ -1,5 +1,4 @@
 export = {
-  plugins: ['chai-friendly'],
   rules: {
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions': 'off',
