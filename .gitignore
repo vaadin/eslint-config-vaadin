@@ -12,10 +12,10 @@
 /node_modules
 
 # Generated sources
-/imports
 /rules
 /utils
 /javascript.js
+/imports.js
 /lit.js
 /prettier.js
 /testing.js
