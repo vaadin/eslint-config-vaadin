@@ -1,15 +1,18 @@
-const resolve = require('./utils/resolve.js');
-
 export = {
   extends: [
     './typescript',
     './rules/typescript-requiring-type-checking/original',
     './rules/typescript-requiring-type-checking/extensions',
-  ].map(resolve),
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: `${process.cwd()}/tsconfig.json`,
+  },
+  plugins: ['@typescript-eslint'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.mjs', '.js', '.ts', '.tsx', '.json'],
+        extensions: ['.mjs', '.cjs', '.js', '.jsx', '.mts', '.cts', '.ts', '.tsx', '.json'],
       },
     },
   },

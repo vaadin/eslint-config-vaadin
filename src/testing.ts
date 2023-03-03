@@ -1,9 +1,8 @@
-const resolve = require('./utils/resolve.js');
-
 export = {
+  plugins: ['chai-friendly'],
   overrides: [
     {
-      extends: ['./rules/testing'].map(resolve),
+      extends: ['./rules/testing'],
       files: [
         '*.spec.js',
         '*.spec.ts',

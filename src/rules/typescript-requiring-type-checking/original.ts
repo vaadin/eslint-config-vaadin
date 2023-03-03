@@ -1,9 +1,4 @@
 export = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: `${process.cwd()}/tsconfig.json`,
-  },
-  plugins: ['@typescript-eslint'],
   rules: {
     // Disallows awaiting a value that is not a Promise
     // https://typescript-eslint.io/rules/await-thenable

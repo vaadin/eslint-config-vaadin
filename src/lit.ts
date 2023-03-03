@@ -1,6 +1,5 @@
-const resolve = require('./utils/resolve.js');
-
 export = {
-  extends: ['./rules/lit'].map(resolve),
+  plugins: ['lit'],
+  extends: ['./rules/lit'],
   rules: {},
 } as const;

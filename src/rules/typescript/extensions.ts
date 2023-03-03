@@ -3,9 +3,8 @@ const possibleProblems = require('../eslint/possible-problems').rules;
 const suggestions = require('../eslint/suggestions').rules;
 
 export = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
   rules: {
+    '@typescript-eslint/block-spacing': layoutFormatting['block-spacing'],
     '@typescript-eslint/brace-style': layoutFormatting['brace-style'],
     '@typescript-eslint/comma-dangle': layoutFormatting['comma-dangle'],
     '@typescript-eslint/comma-spacing': layoutFormatting['comma-spacing'],
@@ -13,6 +12,7 @@ export = {
     '@typescript-eslint/func-call-spacing': layoutFormatting['func-call-spacing'],
     '@typescript-eslint/indent': layoutFormatting['indent'],
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
+    '@typescript-eslint/key-spacing': layoutFormatting['key-spacing'],
     '@typescript-eslint/keyword-spacing': layoutFormatting['keyword-spacing'],
     '@typescript-eslint/lines-between-class-members': layoutFormatting['lines-between-class-members'],
     // Disallow generic Array constructors
