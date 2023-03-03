@@ -33,7 +33,7 @@ export = {
       'error',
       {
         // there can be loading files by http/2
-        esmodules: false,
+        esmodule: false,
         commonjs: true,
       },
     ],
