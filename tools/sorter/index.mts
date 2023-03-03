@@ -43,16 +43,16 @@ await fromAsync(fsWalk(rulesDir), async ([file]) => {
   );
 
   sourceFile = ts.transform(sourceFile, [
-    transform((node) => {
-      if (ts.isPropertyAssignment(node) && ts.isIdentifier(node.name) && node.name.text === 'rules') {
-        return sortRules(node);
-      } else {
-        return node;
-      }
-    }),
+    transform((node) =>
+      ts.isPropertyAssignment(node) && ts.isIdentifier(node.name) && node.name.text === 'rules'
+        ? sortRules(node)
+        : node,
+    ),
   ]).transformed[0];
 
   const printed = printer.printFile(sourceFile);
 
   await writeFile(path, printed, 'utf8');
+
+  console.log('Sorted ' + path);
 });
