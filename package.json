@@ -36,6 +36,7 @@
     ".": "./javascript.js",
     "./javascript": "./javascript.js",
     "./imports": "./imports.js",
+    "./imports-typescript": "./imports-typescript.js",
     "./lit": "./lit.js",
     "./prettier": "./prettier.js",
     "./testing": "./testing.js",
@@ -45,6 +46,7 @@
   "main": "javascript.js",
   "files": [
     "./imports.js",
+    "./imports-typescript.js",
     "./javascript.js",
     "./lit.js",
     "./prettier.js",
@@ -63,25 +65,28 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
-    "eslint-config-prettier": "^8.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-chai-friendly": "^0.7.2",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-lit": "^1.7.1",
-    "prettier": "^2.8.1"
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-lit": "^1.8.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4"
   },
   "devDependencies": {
-    "@types/eslint": "^8.4.10",
+    "@types/eslint": "^8.21.1",
     "prettier-plugin-packagejson": "^2.4.3",
-    "puppeteer": "^19.4.0",
-    "tsx": "^3.12.1",
-    "typescript": "^4.9.4"
+    "puppeteer": "^19.7.2",
+    "rimraf": "^4.2.0",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "eslint": "^8.24.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.4"
   }
 }
