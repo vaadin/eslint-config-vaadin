@@ -182,7 +182,7 @@ export = {
     'operator-assignment': ['error', 'always'],
     'prefer-arrow-callback': ['error', { allowNamedFunctions: false, allowUnboundThis: false }],
     'prefer-const': ['error', { ignoreReadBeforeAssign: true }],
-    'prefer-destructuring': ['error', { array: false, object: true }, { enforceForRenamedProperties: true }],
+    'prefer-destructuring': ['error', { array: false, object: true }],
     'prefer-exponentiation-operator': 'error',
     // let's leave it for the developer's choice
     'prefer-named-capture-group': 'off',
