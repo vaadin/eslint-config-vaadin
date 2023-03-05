@@ -7,7 +7,7 @@ export = {
   plugins: ['@typescript-eslint'],
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.mts', '.cts'],
     },
     'import/resolver': {
       typescript: {
