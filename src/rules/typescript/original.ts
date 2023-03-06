@@ -65,7 +65,10 @@ export = {
 
     // Enforces consistent usage of type imports
     // https://typescript-eslint.io/rules/consistent-type-imports
-    '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports', disallowTypeAnnotations: true }],
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { prefer: 'type-imports', disallowTypeAnnotations: true, fixStyle: 'inline-type-imports' },
+    ],
 
     // Require a specific member delimiter style for interfaces and type literals
     // https://typescript-eslint.io/rules/member-delimiter-style
@@ -82,7 +85,6 @@ export = {
           'call-signature',
 
           'static-field',
-          'public-static-field',
           'protected-static-field',
           'private-static-field',
           '#private-static-field',
@@ -90,35 +92,22 @@ export = {
           'static-initialization',
 
           ['static-get', 'static-set'],
-          ['public-static-get', 'public-static-set'],
           'static-method',
-          'public-static-method',
 
           ['protected-static-get', 'protected-static-set'],
           'protected-static-method',
 
           ['private-static-get', 'private-static-set'],
           'private-static-method',
-
           ['#private-static-get', '#private-static-set'],
           '#private-static-method',
 
           'field',
-          'instance-field',
-          'public-field',
-          'public-instance-field',
-          'abstract-field',
-          'public-abstract-field',
 
           'protected-field',
-          'protected-instance-field',
-          'protected-abstract-field',
 
           'private-field',
-          'private-instance-field',
-
           '#private-field',
-          '#private-instance-field',
 
           'constructor',
           'public-constructor',
@@ -126,38 +115,18 @@ export = {
           'private-constructor',
 
           ['get', 'set'],
-          ['instance-get', 'instance-set'],
-          ['public-get', 'public-set'],
-          ['public-instance-get', 'public-instance-set'],
-          ['abstract-get', 'abstract-set'],
-          ['public-abstract-get', 'public-abstract-set'],
 
           ['protected-get', 'protected-set'],
-          ['protected-instance-get', 'protected-instance-set'],
-          ['protected-abstract-get', 'protected-abstract-set'],
 
           ['private-get', 'private-set'],
-          ['private-instance-get', 'private-instance-set'],
-
           ['#private-get', '#private-set'],
-          ['#private-instance-get', '#private-instance-set'],
 
           'method',
-          'instance-method',
-          'public-method',
-          'public-instance-method',
-          'abstract-method',
-          'public-abstract-method',
 
           'protected-method',
-          'protected-instance-method',
-          'protected-abstract-method',
 
           'private-method',
-          'private-instance-method',
-
           '#private-method',
-          '#private-instance-method',
         ],
         interfaces: ['field', 'constructor', 'method'],
         typeLiterals: ['field', 'constructor', 'method'],
