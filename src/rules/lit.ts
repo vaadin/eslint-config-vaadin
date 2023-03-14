@@ -1,6 +1,5 @@
 export = {
-  plugins: ['lit'],
-  rules: {
+   rules: {
     // Disallows unencoded HTML entities in attribute values
     // https://github.com/43081j/eslint-plugin-lit/blob/master/docs/rules/attribute-value-entities.md
     'lit/attribute-value-entities': 'error',

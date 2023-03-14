@@ -1,6 +1,4 @@
 export = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
   rules: {
     // Require that member overloads be consecutive
     // https://typescript-eslint.io/rules/adjacent-overload-signatures
@@ -19,7 +17,7 @@ export = {
     // Bans // @ts-<directive> comments from being used or requires descriptions
     // after directive
     // https://typescript-eslint.io/rules/ban-ts-comment
-    // EXPLANATION: Complete banning is Too strict, but requiring the
+    // EXPLANATION: Complete banning is too strict, but requiring the
     // description is a nice idea
     '@typescript-eslint/ban-ts-comment': [
       'error',
@@ -65,7 +63,10 @@ export = {
 
     // Enforces consistent usage of type imports
     // https://typescript-eslint.io/rules/consistent-type-imports
-    '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports', disallowTypeAnnotations: true }],
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { prefer: 'type-imports', disallowTypeAnnotations: true, fixStyle: 'inline-type-imports' },
+    ],
 
     // Require a specific member delimiter style for interfaces and type literals
     // https://typescript-eslint.io/rules/member-delimiter-style
@@ -82,7 +83,6 @@ export = {
           'call-signature',
 
           'static-field',
-          'public-static-field',
           'protected-static-field',
           'private-static-field',
           '#private-static-field',
@@ -90,35 +90,22 @@ export = {
           'static-initialization',
 
           ['static-get', 'static-set'],
-          ['public-static-get', 'public-static-set'],
           'static-method',
-          'public-static-method',
 
           ['protected-static-get', 'protected-static-set'],
           'protected-static-method',
 
           ['private-static-get', 'private-static-set'],
           'private-static-method',
-
           ['#private-static-get', '#private-static-set'],
           '#private-static-method',
 
           'field',
-          'instance-field',
-          'public-field',
-          'public-instance-field',
-          'abstract-field',
-          'public-abstract-field',
 
           'protected-field',
-          'protected-instance-field',
-          'protected-abstract-field',
 
           'private-field',
-          'private-instance-field',
-
           '#private-field',
-          '#private-instance-field',
 
           'constructor',
           'public-constructor',
@@ -126,38 +113,18 @@ export = {
           'private-constructor',
 
           ['get', 'set'],
-          ['instance-get', 'instance-set'],
-          ['public-get', 'public-set'],
-          ['public-instance-get', 'public-instance-set'],
-          ['abstract-get', 'abstract-set'],
-          ['public-abstract-get', 'public-abstract-set'],
 
           ['protected-get', 'protected-set'],
-          ['protected-instance-get', 'protected-instance-set'],
-          ['protected-abstract-get', 'protected-abstract-set'],
 
           ['private-get', 'private-set'],
-          ['private-instance-get', 'private-instance-set'],
-
           ['#private-get', '#private-set'],
-          ['#private-instance-get', '#private-instance-set'],
 
           'method',
-          'instance-method',
-          'public-method',
-          'public-instance-method',
-          'abstract-method',
-          'public-abstract-method',
 
           'protected-method',
-          'protected-instance-method',
-          'protected-abstract-method',
 
           'private-method',
-          'private-instance-method',
-
           '#private-method',
-          '#private-instance-method',
         ],
         interfaces: ['field', 'constructor', 'method'],
         typeLiterals: ['field', 'constructor', 'method'],
@@ -202,6 +169,11 @@ export = {
     // EXPLANATION: Deprecated
     '@typescript-eslint/no-implicit-any-catch': 'off',
 
+    // Enforce the use of top-level import type qualifier when an import
+    // only has specifiers with inline type qualifiers.
+    // https://typescript-eslint.io/rules/no-import-type-side-effects
+    '@typescript-eslint/no-import-type-side-effects': 'error',
+
     // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
     // https://typescript-eslint.io/rules/no-inferrable-types
     '@typescript-eslint/no-inferrable-types': ['error', { ignoreParameters: true, ignoreProperties: true }],
@@ -213,6 +185,10 @@ export = {
     // Enforce valid definition of new and constructor
     // https://typescript-eslint.io/rules/no-misused-new
     '@typescript-eslint/no-misused-new': 'error',
+
+    // Disallow enums from having both number and string members.
+    // https://typescript-eslint.io/rules/no-mixed-enums
+    '@typescript-eslint/no-mixed-enums': 'error',
 
     // Disallow the use of custom TypeScript modules and namespaces
     // https://typescript-eslint.io/rules/no-namespace
