@@ -15,6 +15,7 @@
 /rules
 /utils
 /imports.js
+/imports-typescript.js
 /javascript.js
 /lit.js
 /prettier.js
