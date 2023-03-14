@@ -1,6 +1,4 @@
 export = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
   rules: {
     // Require that member overloads be consecutive
     // https://typescript-eslint.io/rules/adjacent-overload-signatures
@@ -19,7 +17,7 @@ export = {
     // Bans // @ts-<directive> comments from being used or requires descriptions
     // after directive
     // https://typescript-eslint.io/rules/ban-ts-comment
-    // EXPLANATION: Complete banning is Too strict, but requiring the
+    // EXPLANATION: Complete banning is too strict, but requiring the
     // description is a nice idea
     '@typescript-eslint/ban-ts-comment': [
       'error',
@@ -171,6 +169,11 @@ export = {
     // EXPLANATION: Deprecated
     '@typescript-eslint/no-implicit-any-catch': 'off',
 
+    // Enforce the use of top-level import type qualifier when an import
+    // only has specifiers with inline type qualifiers.
+    // https://typescript-eslint.io/rules/no-import-type-side-effects
+    '@typescript-eslint/no-import-type-side-effects': 'error',
+
     // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
     // https://typescript-eslint.io/rules/no-inferrable-types
     '@typescript-eslint/no-inferrable-types': ['error', { ignoreParameters: true, ignoreProperties: true }],
@@ -182,6 +185,10 @@ export = {
     // Enforce valid definition of new and constructor
     // https://typescript-eslint.io/rules/no-misused-new
     '@typescript-eslint/no-misused-new': 'error',
+
+    // Disallow enums from having both number and string members.
+    // https://typescript-eslint.io/rules/no-mixed-enums
+    '@typescript-eslint/no-mixed-enums': 'error',
 
     // Disallow the use of custom TypeScript modules and namespaces
     // https://typescript-eslint.io/rules/no-namespace
