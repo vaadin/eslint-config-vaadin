@@ -203,7 +203,8 @@ export = {
     'require-yield': 'error',
     // handled by "eslint-plugin-import" rules
     'sort-imports': 'off',
-    'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
+    // handled by "eslint-plugin-perfectionist" rules
+    'sort-keys': 'off',
     // handled by "one-var" rule
     'sort-vars': 'off',
     'spaced-comment': ['error', 'always'],

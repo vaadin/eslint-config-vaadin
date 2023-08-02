@@ -26,7 +26,7 @@ A config that contains the JavaScript linting rules.
 
 This config requires `vaadin/prettier` which must be added after any other configs.
 
-```js
+```json5
 {
   "extends": [
     "vaadin/javascript",
@@ -42,7 +42,7 @@ A config that extends `vaadin/javascript` with the TypeScript linting rules.
 
 This config requires `vaadin/prettier` which must be added after any other configs.
 
-```js
+```json5
 {
   "extends": [
     "vaadin/typescript",
@@ -62,7 +62,7 @@ This config requires `tsconfig.json` at the project root with the `include` sect
 
 This config requires `vaadin/prettier` which must be added after any other configs.
 
-```js
+```json5
 {
   "parserOptions": {
     "project": "path/to/your/tsconfig.json"
@@ -83,7 +83,7 @@ This config is designed on top of the `eslint-plugin-lit` plugin.
 
 This config is supposed to be used in combination with `vaadin/javascript` or `vaadin/typescript`.
 
-```js
+```json
 {
   "extends": [
     "vaadin/lit"
@@ -99,7 +99,7 @@ This config is designed on top of the `eslint-plugin-import` plugin. Please note
 
 This config is supposed to be used in combination with `vaadin/javascript` or `vaadin/typescript`.
 
-```js
+```json
 {
   "extends": [
     "vaadin/imports"
@@ -113,10 +113,22 @@ A config that overrides some linting rules and sets up the `eslint-plugin-chai-f
 
 This config is supposed to be used in combination with `vaadin/javascript` or `vaadin/typescript`.
 
-```js
+```json
 {
   "extends": [
     "vaadin/testing"
+  ]
+}
+```
+
+### vaadin/sort
+
+A config that enables alphabetical sorting for objects, enums, JSX props, and exports. It serves as a substitute for the ESLint `sort-keys` rule, which lacks an auto-fixer. Please be aware that the ESLint team has a significant reason for not implementing an auto-fixer for this rule (see [here](https://github.com/eslint/eslint/issues/7714#issuecomment-265542433)). Use the config with caution.
+
+```json
+{
+  "extends": [
+    "vaadin/sort"
   ]
 }
 ```
@@ -125,7 +137,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 
 ### Lit + JavaScript
 
-```js
+```json
 {
   "extends": [
     "vaadin/javascript",
@@ -138,7 +150,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 
 ### Lit + TypeScript
 
-```js
+```json
 {
   "extends": [
     "vaadin/typescript",
@@ -151,7 +163,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 
 Or, you can use a more strict config that requires type information:
 
-```js
+```json
 {
   "extends": [
     "vaadin/typescript-requiring-type-checking",

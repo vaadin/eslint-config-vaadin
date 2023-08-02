@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2021",
+    "esModuleInterop": true,
+    "target": "es2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "lib": ["es2021", "dom"],
+    "lib": ["es2022", "dom"],
     "strict": true,
-    "importsNotUsedAsValues": "error",
     "noImplicitOverride": true,
     "useDefineForClassFields": true,
-    "useUnknownInCatchVariables": true
+    "useUnknownInCatchVariables": true,
+    "verbatimModuleSyntax": true
   },
-  "include": ["src", "utils"]
+  "include": ["src", "tools"]
 }
