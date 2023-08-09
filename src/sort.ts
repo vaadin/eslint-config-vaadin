@@ -1,5 +1,5 @@
 export = {
-  plugin: ['perfectionist'],
+  plugins: ['perfectionist'],
   rules: {
     // sorting array will definitely break the code somewhere.
     'perfectionist/sort-array-includes': 'off',
