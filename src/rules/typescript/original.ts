@@ -75,61 +75,9 @@ export = {
 
     // Require a consistent member declaration order
     // https://typescript-eslint.io/rules/member-ordering
-    '@typescript-eslint/member-ordering': [
-      'error',
-      {
-        default: [
-          'signature',
-          'call-signature',
-
-          'static-field',
-          'protected-static-field',
-          'private-static-field',
-          '#private-static-field',
-
-          'static-initialization',
-
-          ['static-get', 'static-set'],
-          'static-method',
-
-          ['protected-static-get', 'protected-static-set'],
-          'protected-static-method',
-
-          ['private-static-get', 'private-static-set'],
-          'private-static-method',
-          ['#private-static-get', '#private-static-set'],
-          '#private-static-method',
-
-          'field',
-
-          'protected-field',
-
-          'private-field',
-          '#private-field',
-
-          'constructor',
-          'public-constructor',
-          'protected-constructor',
-          'private-constructor',
-
-          ['get', 'set'],
-
-          ['protected-get', 'protected-set'],
-
-          ['private-get', 'private-set'],
-          ['#private-get', '#private-set'],
-
-          'method',
-
-          'protected-method',
-
-          'private-method',
-          '#private-method',
-        ],
-        interfaces: ['field', 'constructor', 'method'],
-        typeLiterals: ['field', 'constructor', 'method'],
-      },
-    ],
+    // EXPLANATION: To activate the opinionated member sorting, add `vaadin/sort`
+    // rule set.
+    '@typescript-eslint/member-ordering': 'off',
 
     // Enforces using a particular method signature syntax
     // https://typescript-eslint.io/rules/method-signature-style
