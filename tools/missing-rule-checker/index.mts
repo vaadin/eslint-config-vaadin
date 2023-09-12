@@ -4,7 +4,7 @@ import checkImports from './imports.mjs';
 import checkTypeScript from './typescript.mjs';
 
 try {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: "new" });
 
   const results = await Promise.all([checkEslint(browser), checkTypeScript(browser), checkImports(browser)]);
 

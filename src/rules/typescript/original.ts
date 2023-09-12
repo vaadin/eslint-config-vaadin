@@ -99,6 +99,16 @@ export = {
     // https://typescript-eslint.io/rules/no-empty-interface
     '@typescript-eslint/no-empty-interface': 'error',
 
+    // Disallow duplicate constituents of union or intersection types.
+    // https://typescript-eslint.io/rules/no-duplicate-type-constituents
+    '@typescript-eslint/no-duplicate-type-constituents': ['error', {
+      ignoreIntersections: true
+    }],
+
+    // Disallow comparing an enum value with a non-enum value.
+    // https://typescript-eslint.io/rules/no-unsafe-enum-comparison
+    "@typescript-eslint/no-unsafe-enum-comparison": "error",
+
     // Disallow usage of any type
     // https://typescript-eslint.io/rules/no-explicit-any
     // EXPLANATION: Too strict
@@ -111,11 +121,6 @@ export = {
     // Forbids the use of classes as namespaces
     // https://typescript-eslint.io/rules/no-extraneous-class
     '@typescript-eslint/no-extraneous-class': 'error',
-
-    // Disallow usage of the implicit any type in catch clauses.
-    // https://typescript-eslint.io/rules/no-implicit-any-catch
-    // EXPLANATION: Deprecated
-    '@typescript-eslint/no-implicit-any-catch': 'off',
 
     // Enforce the use of top-level import type qualifier when an import
     // only has specifiers with inline type qualifiers.
@@ -154,11 +159,6 @@ export = {
     // https://typescript-eslint.io/rules/no-non-null-assertion
     // EXPLANATION: ! postfix operator is usually quite useful
     '@typescript-eslint/no-non-null-assertion': 'off',
-
-    // Disallow the use of parameter properties in class constructors
-    // https://typescript-eslint.io/rules/no-parameter-properties
-    // EXPLANATION: Deprecated
-    '@typescript-eslint/no-parameter-properties': 'off',
 
     // Disallows invocation of require()
     // https://typescript-eslint.io/rules/no-require-imports
@@ -231,10 +231,6 @@ export = {
     // Enforce constituents of a type union/intersection to be sorted alphabetically
     // https://typescript-eslint.io/rules/sort-type-constituents
     '@typescript-eslint/sort-type-constituents': 'error',
-
-    // Enforces that members of a type union/intersection are sorted alphabetically
-    // https://typescript-eslint.io/rules/sort-type-union-intersection-members
-    '@typescript-eslint/sort-type-union-intersection-members': 'error',
 
     // Sets preference level for triple slash directives versus ES6-style import declarations
     // https://typescript-eslint.io/rules/triple-slash-reference

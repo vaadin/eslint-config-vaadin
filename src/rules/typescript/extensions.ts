@@ -19,8 +19,6 @@ export = {
     // https://typescript-eslint.io/rules/no-array-constructor
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
-    // Deprecated in favor of "import/no-duplicates"
-    '@typescript-eslint/no-duplicate-imports': 'off',
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
     '@typescript-eslint/no-extra-parens': layoutFormatting['no-extra-parens'],
     '@typescript-eslint/no-extra-semi': suggestions['no-extra-semi'],
@@ -49,6 +47,12 @@ export = {
     '@typescript-eslint/space-before-blocks': layoutFormatting['space-before-blocks'],
     '@typescript-eslint/space-before-function-paren': layoutFormatting['space-before-function-paren'],
     '@typescript-eslint/space-infix-ops': layoutFormatting['space-infix-ops'],
+    'lines-around-comment': 'off',
+    '@typescript-eslint/lines-around-comment': layoutFormatting['lines-around-comment'],
+    '@typescript-eslint/class-methods-use-this': ['error', {
+      ignoreOverrideMethods: true,
+      ignoreClassesThatImplementAnInterface: true,
+    }],
     // Enforce consistent brace style for blocks
     // https://typescript-eslint.io/rules/brace-style
     'brace-style': 'off',
@@ -79,9 +83,6 @@ export = {
     // Disallow duplicate class members
     // https://typescript-eslint.io/rules/no-dupe-class-members
     'no-dupe-class-members': 'off',
-    // Disallow duplicate imports
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicate-imports
-    'no-duplicate-imports': 'off',
     // Disallow Empty Functions
     // https://typescript-eslint.io/rules/no-empty-function
     'no-empty-function': 'off',
