@@ -1,11 +1,17 @@
 const layoutFormatting = require('../eslint/layout-formatting').rules;
 const possibleProblems = require('../eslint/possible-problems').rules;
 const suggestions = require('../eslint/suggestions').rules;
-
 export = {
   rules: {
     '@typescript-eslint/block-spacing': layoutFormatting['block-spacing'],
     '@typescript-eslint/brace-style': layoutFormatting['brace-style'],
+    '@typescript-eslint/class-methods-use-this': [
+      'error',
+      {
+        ignoreOverrideMethods: true,
+        ignoreClassesThatImplementAnInterface: true,
+      },
+    ],
     '@typescript-eslint/comma-dangle': layoutFormatting['comma-dangle'],
     '@typescript-eslint/comma-spacing': layoutFormatting['comma-spacing'],
     '@typescript-eslint/default-param-last': suggestions['default-param-last'],
@@ -14,6 +20,7 @@ export = {
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
     '@typescript-eslint/key-spacing': layoutFormatting['key-spacing'],
     '@typescript-eslint/keyword-spacing': layoutFormatting['keyword-spacing'],
+    '@typescript-eslint/lines-around-comment': layoutFormatting['lines-around-comment'],
     '@typescript-eslint/lines-between-class-members': layoutFormatting['lines-between-class-members'],
     // Disallow generic Array constructors
     // https://typescript-eslint.io/rules/no-array-constructor
@@ -47,12 +54,6 @@ export = {
     '@typescript-eslint/space-before-blocks': layoutFormatting['space-before-blocks'],
     '@typescript-eslint/space-before-function-paren': layoutFormatting['space-before-function-paren'],
     '@typescript-eslint/space-infix-ops': layoutFormatting['space-infix-ops'],
-    'lines-around-comment': 'off',
-    '@typescript-eslint/lines-around-comment': layoutFormatting['lines-around-comment'],
-    '@typescript-eslint/class-methods-use-this': ['error', {
-      ignoreOverrideMethods: true,
-      ignoreClassesThatImplementAnInterface: true,
-    }],
     // Enforce consistent brace style for blocks
     // https://typescript-eslint.io/rules/brace-style
     'brace-style': 'off',
@@ -77,6 +78,7 @@ export = {
     // Enforce consistent spacing before and after keywords
     // https://typescript-eslint.io/rules/keyword-spacing
     'keyword-spacing': 'off',
+    'lines-around-comment': 'off',
     // Require or disallow an empty line between class members
     // https://typescript-eslint.io/rules/lines-between-class-members
     'lines-between-class-members': 'off',
