@@ -7,7 +7,7 @@ import fsWalk from './fsWalk.mjs';
 import { transform } from './utils.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const root = resolve(__dirname, '../../');
+const root = resolve(__dirname, '../../src');
 
 const rulesDir = resolve(root, 'rules');
 
@@ -39,7 +39,7 @@ await fromAsync(fsWalk(rulesDir), async ([file]) => {
     contents,
     { languageVersion: ts.ScriptTarget.ESNext, impliedNodeFormat: ts.ModuleKind.CommonJS },
     false,
-    ts.ScriptKind.JS,
+    ts.ScriptKind.TS,
   );
 
   sourceFile = ts.transform(sourceFile, [

@@ -1,11 +1,17 @@
 const layoutFormatting = require('../eslint/layout-formatting').rules;
 const possibleProblems = require('../eslint/possible-problems').rules;
 const suggestions = require('../eslint/suggestions').rules;
-
 export = {
   rules: {
     '@typescript-eslint/block-spacing': layoutFormatting['block-spacing'],
     '@typescript-eslint/brace-style': layoutFormatting['brace-style'],
+    '@typescript-eslint/class-methods-use-this': [
+      'error',
+      {
+        ignoreOverrideMethods: true,
+        ignoreClassesThatImplementAnInterface: true,
+      },
+    ],
     '@typescript-eslint/comma-dangle': layoutFormatting['comma-dangle'],
     '@typescript-eslint/comma-spacing': layoutFormatting['comma-spacing'],
     '@typescript-eslint/default-param-last': suggestions['default-param-last'],
@@ -14,13 +20,12 @@ export = {
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
     '@typescript-eslint/key-spacing': layoutFormatting['key-spacing'],
     '@typescript-eslint/keyword-spacing': layoutFormatting['keyword-spacing'],
+    '@typescript-eslint/lines-around-comment': layoutFormatting['lines-around-comment'],
     '@typescript-eslint/lines-between-class-members': layoutFormatting['lines-between-class-members'],
     // Disallow generic Array constructors
     // https://typescript-eslint.io/rules/no-array-constructor
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
-    // Deprecated in favor of "import/no-duplicates"
-    '@typescript-eslint/no-duplicate-imports': 'off',
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
     '@typescript-eslint/no-extra-parens': layoutFormatting['no-extra-parens'],
     '@typescript-eslint/no-extra-semi': suggestions['no-extra-semi'],
@@ -73,15 +78,13 @@ export = {
     // Enforce consistent spacing before and after keywords
     // https://typescript-eslint.io/rules/keyword-spacing
     'keyword-spacing': 'off',
+    'lines-around-comment': 'off',
     // Require or disallow an empty line between class members
     // https://typescript-eslint.io/rules/lines-between-class-members
     'lines-between-class-members': 'off',
     // Disallow duplicate class members
     // https://typescript-eslint.io/rules/no-dupe-class-members
     'no-dupe-class-members': 'off',
-    // Disallow duplicate imports
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicate-imports
-    'no-duplicate-imports': 'off',
     // Disallow Empty Functions
     // https://typescript-eslint.io/rules/no-empty-function
     'no-empty-function': 'off',
