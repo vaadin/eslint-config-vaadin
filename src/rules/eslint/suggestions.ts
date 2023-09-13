@@ -197,8 +197,7 @@ export = {
     // handled by Prettier
     'quote-props': 'off',
     radix: 'error',
-    // forbids returning promises which is not useful
-    'require-await': 'off',
+    'require-await': 'error',
     'require-unicode-regexp': 'error',
     'require-yield': 'error',
     // handled by "eslint-plugin-import" rules
