@@ -105,9 +105,6 @@ export = {
     // Enforce valid definition of new and constructor
     // https://typescript-eslint.io/rules/no-misused-new
     '@typescript-eslint/no-misused-new': 'error',
-    // Disallow enums from having both number and string members.
-    // https://typescript-eslint.io/rules/no-mixed-enums
-    '@typescript-eslint/no-mixed-enums': 'error',
     // Disallow the use of custom TypeScript modules and namespaces
     // https://typescript-eslint.io/rules/no-namespace
     '@typescript-eslint/no-namespace': ['error', { allowDefinitionFiles: true }],
