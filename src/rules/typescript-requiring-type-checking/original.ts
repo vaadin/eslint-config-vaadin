@@ -38,6 +38,9 @@ export = {
     // Avoid using promises in places not designed to handle them
     // https://typescript-eslint.io/rules/no-misused-promises
     '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: true, checksConditionals: true }],
+    // Disallow enums from having both number and string members.
+    // https://typescript-eslint.io/rules/no-mixed-enums
+    '@typescript-eslint/no-mixed-enums': 'error',
     // Disallow members of unions and intersections that do nothing or override type information.
     // https://typescript-eslint.io/rules/no-redundant-type-constituents
     '@typescript-eslint/no-redundant-type-constituents': 'error',
