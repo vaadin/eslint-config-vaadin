@@ -13,26 +13,26 @@ declare global {
   }
 }
 
-export type Rules<R extends string> = Readonly<{
+export type Rules = Readonly<{
   modernRules: readonly string[];
-  existingRules: readonly R[];
+  existingRules: readonly string[];
   deprecatedRules?: readonly string[];
 }>;
 
-export type Filters<R extends string> = Readonly<{
-  filterMissingRules?: (value: R, index: number, array: string[]) => boolean;
-  filterWrongSetRules?: (value: R, index: number, array: string[]) => boolean;
-  filterDeprecatedRules?: (value: R, index: number, array: string[]) => boolean;
+export type Filters = Readonly<{
+  filterMissingRules?: (value: string, index: number, array: string[]) => boolean;
+  filterWrongSetRules?: (value: string, index: number, array: string[]) => boolean;
+  filterDeprecatedRules?: (value: string, index: number, array: string[]) => boolean;
 }>;
 
-export function checkRules<R extends string>(
+export function checkRules(
   setName: string,
-  { modernRules, existingRules, deprecatedRules = [] }: Rules<R>,
+  { modernRules, existingRules, deprecatedRules = [] }: Rules,
   {
     filterMissingRules = () => true,
     filterWrongSetRules = () => true,
     filterDeprecatedRules = () => true,
-  }: Filters<R> = {},
+  }: Filters = {},
 ) {
   let currentMissingRules = [];
   let currentWrongSetRules = [];
@@ -41,7 +41,6 @@ export function checkRules<R extends string>(
   const header = `SET: ${setName}\n`;
 
   for (const rule of modernRules) {
-    // @ts-expect-error: too generic
     if (!(existingRules.includes(rule))) {
       currentMissingRules.push(rule);
     }
@@ -53,17 +52,13 @@ export function checkRules<R extends string>(
     }
   }
 
-  for (const ruleAndReplacement of deprecatedRules) {
-    const [rule] = ruleAndReplacement;
-
-    if (rule in existingRules) {
-      currentDeprecatedRules.push(ruleAndReplacement);
+  for (const rule of deprecatedRules) {
+    if (existingRules.includes(rule)) {
+      currentDeprecatedRules.push(rule);
     }
   }
-  // @ts-expect-error: too generic
   currentMissingRules = currentMissingRules.filter(filterMissingRules);
   currentWrongSetRules = currentWrongSetRules.filter(filterWrongSetRules);
-  // @ts-expect-error: too generic
   currentDeprecatedRules = currentDeprecatedRules.filter(filterDeprecatedRules);
 
   const hasMissingRules = currentMissingRules.length > 0;

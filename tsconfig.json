@@ -1,15 +1,10 @@
 {
+  "extends": "./src/tsconfig.recommended.json",
   "compilerOptions": {
-    "esModuleInterop": true,
     "target": "es2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "lib": ["es2022", "dom"],
-    "strict": true,
-    "noImplicitOverride": true,
-    "useDefineForClassFields": true,
-    "useUnknownInCatchVariables": true,
-    "verbatimModuleSyntax": true
   },
   "include": ["src", "tools"]
 }

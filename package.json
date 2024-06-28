@@ -64,7 +64,8 @@
     "format": "prettier . --write",
     "prepack": "npm run build",
     "sort": "tsx tools/sorter/index.mts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.24.7",
