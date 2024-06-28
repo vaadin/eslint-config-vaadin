@@ -59,7 +59,7 @@ export = {
     ],
     // Require a specific member delimiter style for interfaces and type literals
     // https://typescript-eslint.io/rules/member-delimiter-style
-    // EXPLANATION: Handled by Prettier
+    // DEPRECATED
     '@typescript-eslint/member-delimiter-style': 'off',
     // Require a consistent member declaration order
     // https://typescript-eslint.io/rules/member-ordering
@@ -126,7 +126,7 @@ export = {
     '@typescript-eslint/no-this-alias': ['error', { allowDestructuring: true, allowedNames: ['self'] }],
     // Disallow the use of type aliases
     // https://typescript-eslint.io/rules/no-type-alias
-    // EXPLANATION: conflicts with @typescript-eslint/consistent-type-definitions
+    // DEPRECATED
     '@typescript-eslint/no-type-alias': 'off',
     // Disallows unnecessary constraints on generic types
     // https://typescript-eslint.io/rules/no-unnecessary-type-constraint
@@ -169,16 +169,18 @@ export = {
     '@typescript-eslint/prefer-optional-chain': 'error',
     // Prefer using type parameter when calling Array#reduce instead of casting
     // https://typescript-eslint.io/rules/prefer-reduce-type-parameter
-    '@typescript-eslint/prefer-ts-expect-error': 'error',
+    // DEPRECATED
+    '@typescript-eslint/prefer-ts-expect-error': 'off',
     // Enforce constituents of a type union/intersection to be sorted alphabetically
     // https://typescript-eslint.io/rules/sort-type-constituents
-    '@typescript-eslint/sort-type-constituents': 'error',
+    // DEPRECATED
+    '@typescript-eslint/sort-type-constituents': 'off',
     // Sets preference level for triple slash directives versus ES6-style import declarations
     // https://typescript-eslint.io/rules/triple-slash-reference
     '@typescript-eslint/triple-slash-reference': ['error', { path: 'never', types: 'never', lib: 'never' }],
     // Require consistent spacing around type annotations
     // https://typescript-eslint.io/rules/type-annotation-spacing
-    // handled by Prettier
+    // DEPRECATED
     '@typescript-eslint/type-annotation-spacing': 'off',
     // Requires type annotations to exist
     // https://typescript-eslint.io/rules/typedef

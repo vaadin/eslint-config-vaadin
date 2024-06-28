@@ -1,10 +1,17 @@
-const layoutFormatting = require('../eslint/layout-formatting').rules;
 const possibleProblems = require('../eslint/possible-problems').rules;
 const suggestions = require('../eslint/suggestions').rules;
 export = {
   rules: {
-    '@typescript-eslint/block-spacing': layoutFormatting['block-spacing'],
-    '@typescript-eslint/brace-style': layoutFormatting['brace-style'],
+    '@typescript-eslint/consistent-return': suggestions['consistent-return'],
+    'consistent-return': 'off',
+    '@typescript-eslint/max-params': suggestions['max-params'],
+    'max-params': 'off',
+    '@typescript-eslint/no-array-delete': suggestions['no-array-delete'],
+
+    // DEPRECATED
+    '@typescript-eslint/block-spacing': 'off',
+    // DEPRECATED
+    '@typescript-eslint/brace-style': 'off',
     '@typescript-eslint/class-methods-use-this': [
       'error',
       {
@@ -12,23 +19,33 @@ export = {
         ignoreClassesThatImplementAnInterface: true,
       },
     ],
-    '@typescript-eslint/comma-dangle': layoutFormatting['comma-dangle'],
-    '@typescript-eslint/comma-spacing': layoutFormatting['comma-spacing'],
+    // DEPRECATED
+    '@typescript-eslint/comma-dangle': 'off',
+    // DEPRECATED
+    '@typescript-eslint/comma-spacing': 'off',
     '@typescript-eslint/default-param-last': suggestions['default-param-last'],
-    '@typescript-eslint/func-call-spacing': layoutFormatting['func-call-spacing'],
-    '@typescript-eslint/indent': layoutFormatting['indent'],
+    // DEPRECATED
+    '@typescript-eslint/func-call-spacing': 'off',
+    // DEPRECATED
+    '@typescript-eslint/indent': 'off',
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
-    '@typescript-eslint/key-spacing': layoutFormatting['key-spacing'],
-    '@typescript-eslint/keyword-spacing': layoutFormatting['keyword-spacing'],
-    '@typescript-eslint/lines-around-comment': layoutFormatting['lines-around-comment'],
-    '@typescript-eslint/lines-between-class-members': layoutFormatting['lines-between-class-members'],
+    // DEPRECATED
+    '@typescript-eslint/key-spacing': 'off',
+    // DEPRECATED
+    '@typescript-eslint/keyword-spacing': 'off',
+    // DEPRECATED
+    '@typescript-eslint/lines-around-comment': 'off',
+    // DEPRECATED
+    '@typescript-eslint/lines-between-class-members': 'off',
     // Disallow generic Array constructors
     // https://typescript-eslint.io/rules/no-array-constructor
     '@typescript-eslint/no-array-constructor': 'error',
     '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
-    '@typescript-eslint/no-extra-parens': layoutFormatting['no-extra-parens'],
-    '@typescript-eslint/no-extra-semi': suggestions['no-extra-semi'],
+    // DEPRECATED
+    '@typescript-eslint/no-extra-parens': 'off',
+    // DEPRECATED
+    '@typescript-eslint/no-extra-semi': 'off',
     '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'],
     '@typescript-eslint/no-loop-func': suggestions['no-loop-func'],
     '@typescript-eslint/no-loss-of-precision': possibleProblems['no-loss-of-precision'],
@@ -47,13 +64,20 @@ export = {
       },
     ],
     '@typescript-eslint/no-useless-constructor': 'error',
-    '@typescript-eslint/object-curly-spacing': layoutFormatting['object-curly-spacing'],
-    '@typescript-eslint/padding-line-between-statements': layoutFormatting['padding-line-between-statements'],
-    '@typescript-eslint/quotes': layoutFormatting['quotes'],
-    '@typescript-eslint/semi': layoutFormatting['semi'],
-    '@typescript-eslint/space-before-blocks': layoutFormatting['space-before-blocks'],
-    '@typescript-eslint/space-before-function-paren': layoutFormatting['space-before-function-paren'],
-    '@typescript-eslint/space-infix-ops': layoutFormatting['space-infix-ops'],
+    // DEPRECATED
+    '@typescript-eslint/object-curly-spacing': 'off',
+    // DEPRECATED
+    '@typescript-eslint/padding-line-between-statements': 'off',
+    // DEPRECATED
+    '@typescript-eslint/quotes': 'off',
+    // DEPRECATED
+    '@typescript-eslint/semi': 'off',
+    // DEPRECATED
+    '@typescript-eslint/space-before-blocks': 'off',
+    // DEPRECATED
+    '@typescript-eslint/space-before-function-paren': 'off',
+    // DEPRECATED
+    '@typescript-eslint/space-infix-ops': 'off',
     // Enforce consistent brace style for blocks
     // https://typescript-eslint.io/rules/brace-style
     'brace-style': 'off',

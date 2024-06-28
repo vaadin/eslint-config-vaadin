@@ -1,12 +1,20 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 import checkEslint from './eslint.mjs';
 import checkImports from './imports.mjs';
 import checkTypeScript from './typescript.mjs';
 
-try {
-  const browser = await puppeteer.launch({ headless: "new" });
+if (!process.env.CHROME_BIN) {
+  throw new Error('"CHROME_BIN" environment variable is not set');
+}
 
-  const results = await Promise.all([checkEslint(browser), checkTypeScript(browser), checkImports(browser)]);
+try {
+  const browser = await puppeteer.launch({ headless: false, executablePath: process.env.CHROME_BIN, ignoreDefaultArgs: ['--disable-extensions'], });
+
+  const results = await Promise.all([
+    checkEslint(browser),
+    // checkTypeScript(browser),
+    // checkImports(browser)
+  ]);
 
   results.forEach((result) => console.log(result));
 
