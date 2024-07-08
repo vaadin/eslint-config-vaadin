@@ -59,6 +59,7 @@
     "./utils"
   ],
   "scripts": {
+    "clear": "git clean -fx . -e node_modules -e .idea -e .vscode",
     "build": "tsc -p tsconfig.build.json",
     "check": "tsx tools/missing-rule-checker/index.mts",
     "format": "prettier . --write",
