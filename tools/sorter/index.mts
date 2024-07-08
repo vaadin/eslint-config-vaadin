@@ -50,7 +50,7 @@ await fromAsync(fsWalk(rulesDir), async ([file]) => {
         return node;
       }
     }),
-  ]).transformed[0];
+  ]).transformed[0]!;
 
   const printed = printer.printFile(sourceFile);
 

@@ -107,9 +107,9 @@ export = {
     'no-nested-ternary': 'off',
     'no-new': 'error',
     'no-new-func': 'error',
-    'no-new-object': 'error',
     'no-new-wrappers': 'error',
     'no-nonoctal-decimal-escape': 'error',
+    'no-object-constructor': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
     'no-param-reassign': ['error', { props: false }],
@@ -205,9 +205,11 @@ export = {
     'sort-keys': 'off',
     // handled by "one-var" rule
     'sort-vars': 'off',
-    'spaced-comment': ['error', 'always'],
     strict: 'off',
     'symbol-description': 'off',
+    // ESLint recommends using `never` since UTF-8 is the default encoding, and it doesn't require a BOM
+    // https://eslint.org/docs/latest/rules/unicode-bom
+    'unicode-bom': ['error', 'never'],
     // handled by "no-vars" rule
     'vars-on-top': 'off',
     yoda: ['error', 'never'],

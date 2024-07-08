@@ -80,9 +80,18 @@ export = {
     // EXPLANATION: Sometimes there is no other way except for using "any" in
     // return
     '@typescript-eslint/no-unsafe-return': 'off',
+    // Require unary negation to take a number
+    // https://typescript-eslint.io/rules/no-unsafe-unary-minus
+    '@typescript-eslint/no-unsafe-unary-minus': 'error',
+    // Disallow unnecessary template expressions
+    // https://typescript-eslint.io/rules/no-useless-template-literals
+    '@typescript-eslint/no-useless-template-literals': 'error',
     // Prefers a non-null assertion over explicit type cast when possible
     // https://typescript-eslint.io/rules/non-nullable-type-assertion-style
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
+    // Enforce the use of Array.prototype.find() over Array.prototype.filter() followed by [0] when looking for a single result
+    // https://typescript-eslint.io/rules/prefer-find
+    '@typescript-eslint/prefer-find': 'error',
     // Enforce includes method over indexOf method
     // https://typescript-eslint.io/rules/prefer-includes
     '@typescript-eslint/prefer-includes': 'error',
@@ -131,5 +140,8 @@ export = {
     // Enforces unbound methods are called with their expected scope
     // https://typescript-eslint.io/rules/unbound-method
     '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+    // Enforce typing arguments in .catch() callbacks as unknown
+    // https://typescript-eslint.io/rules/use-unknown-in-catch-callback-variable
+    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
   },
 } as const;

@@ -69,6 +69,7 @@ export = {
       },
     ],
     'no-use-before-define': ['error', { classes: true, functions: true, variables: true }],
+    'no-useless-assignment': 'error',
     'no-useless-backreference': 'error',
     // appears to be too problematic to use
     'require-atomic-updates': 'off',

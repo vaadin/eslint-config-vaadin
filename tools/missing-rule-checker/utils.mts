@@ -1,4 +1,4 @@
-import type { Browser } from 'puppeteer';
+import type { Browser } from 'puppeteer-core';
 
 declare global {
   interface Window {
@@ -11,32 +11,28 @@ declare global {
     findNextSibling(selector: string): Element | null;
     findNextSiblings(selector: string, finishSelector?: string): Generator<Element, void>;
   }
-
-  interface Array<T> {
-    filterEmptyItems(): T extends undefined | null ? never : Array<T>;
-  }
 }
 
-export type Rules<R extends Record<string, unknown>> = Readonly<{
+export type Rules = Readonly<{
   modernRules: readonly string[];
-  existingRules: R;
+  existingRules: readonly string[];
   deprecatedRules?: readonly string[];
 }>;
 
-export type Filters<R extends Record<string, unknown>> = Readonly<{
-  filterMissingRules?: (value: keyof R, index: number, array: string[]) => boolean;
-  filterWrongSetRules?: (value: keyof R, index: number, array: string[]) => boolean;
-  filterDeprecatedRules?: (value: keyof R, index: number, array: string[]) => boolean;
+export type Filters = Readonly<{
+  filterMissingRules?: (value: string, index: number, array: string[]) => boolean;
+  filterWrongSetRules?: (value: string, index: number, array: string[]) => boolean;
+  filterDeprecatedRules?: (value: string, index: number, array: string[]) => boolean;
 }>;
 
-export function checkRules<R extends Record<string, unknown>>(
+export function checkRules(
   setName: string,
-  { modernRules, existingRules, deprecatedRules = [] }: Rules<R>,
+  { modernRules, existingRules, deprecatedRules = [] }: Rules,
   {
     filterMissingRules = () => true,
     filterWrongSetRules = () => true,
     filterDeprecatedRules = () => true,
-  }: Filters<R> = {},
+  }: Filters = {},
 ) {
   let currentMissingRules = [];
   let currentWrongSetRules = [];
@@ -45,25 +41,22 @@ export function checkRules<R extends Record<string, unknown>>(
   const header = `SET: ${setName}\n`;
 
   for (const rule of modernRules) {
-    if (!(rule in existingRules)) {
+    if (!(existingRules.includes(rule))) {
       currentMissingRules.push(rule);
     }
   }
 
-  for (const rule in existingRules) {
-    if (!modernRules.includes(rule)) {
+  for (const rule of existingRules) {
+    if (!modernRules.includes(rule) && !deprecatedRules.includes(rule)) {
       currentWrongSetRules.push(rule);
     }
   }
 
-  for (const ruleAndReplacement of deprecatedRules) {
-    const [rule] = ruleAndReplacement;
-
-    if (rule in existingRules) {
-      currentDeprecatedRules.push(ruleAndReplacement);
+  for (const rule of deprecatedRules) {
+    if (existingRules.includes(rule)) {
+      currentDeprecatedRules.push(rule);
     }
   }
-
   currentMissingRules = currentMissingRules.filter(filterMissingRules);
   currentWrongSetRules = currentWrongSetRules.filter(filterWrongSetRules);
   currentDeprecatedRules = currentDeprecatedRules.filter(filterDeprecatedRules);
@@ -83,7 +76,7 @@ export function checkRules<R extends Record<string, unknown>>(
 
     const deprecationMessage = hasDeprecatedRules
       ? `DEPRECATED RULES:\n${currentDeprecatedRules
-          .map(([rule, replacement]) => `\t${rule} || REPLACEMENT: ${replacement}`)
+          .map((rule) => `\t${rule}`)
           .join('\n')}\n`
       : '';
 
@@ -105,7 +98,7 @@ export async function init(browser: Browser, url: string) {
         cb = console.error;
         type = 'ERROR';
         break;
-      case 'warning':
+      case 'warn':
         cb = console.warn;
         type = 'WARNING';
         break;
@@ -145,10 +138,6 @@ export async function init(browser: Browser, url: string) {
 
         sibling = sibling.nextElementSibling;
       }
-    };
-
-    Array.prototype.filterEmptyItems = function () {
-      return this.filter(Boolean);
     };
   });
 

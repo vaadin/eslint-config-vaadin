@@ -1,8 +1,18 @@
-import ts, { type Node, type TransformationContext, type TransformerFactory } from 'typescript';
+import ts, { type Node, type TransformationContext, type TransformerFactory, type VisitResult } from 'typescript';
 
-export function transform<T extends Node>(transformer: (node: Node) => Node | undefined): TransformerFactory<T> {
+export function transform<T extends Node>(
+  transformer: (node: Node) => VisitResult<Node | undefined>,
+): TransformerFactory<T> {
   return (context: TransformationContext) => (root: T) => {
-    const visitor = (node: Node): Node | undefined => ts.visitEachChild(transformer(node), visitor, context);
-    return ts.visitNode(root, visitor);
+    const visitor = (node: Node): VisitResult<Node | undefined> => {
+      const transformed = transformer(node);
+
+      if (transformed !== node) {
+        return transformed;
+      }
+
+      return ts.visitEachChild(transformed, visitor, context);
+    };
+    return ts.visitEachChild(root, visitor, context);
   };
 }

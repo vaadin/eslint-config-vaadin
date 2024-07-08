@@ -1,10 +1,7 @@
-const layoutFormatting = require('../eslint/layout-formatting').rules;
 const possibleProblems = require('../eslint/possible-problems').rules;
 const suggestions = require('../eslint/suggestions').rules;
 export = {
   rules: {
-    '@typescript-eslint/block-spacing': layoutFormatting['block-spacing'],
-    '@typescript-eslint/brace-style': layoutFormatting['brace-style'],
     '@typescript-eslint/class-methods-use-this': [
       'error',
       {
@@ -12,23 +9,16 @@ export = {
         ignoreClassesThatImplementAnInterface: true,
       },
     ],
-    '@typescript-eslint/comma-dangle': layoutFormatting['comma-dangle'],
-    '@typescript-eslint/comma-spacing': layoutFormatting['comma-spacing'],
+    '@typescript-eslint/consistent-return': suggestions['consistent-return'],
     '@typescript-eslint/default-param-last': suggestions['default-param-last'],
-    '@typescript-eslint/func-call-spacing': layoutFormatting['func-call-spacing'],
-    '@typescript-eslint/indent': layoutFormatting['indent'],
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
-    '@typescript-eslint/key-spacing': layoutFormatting['key-spacing'],
-    '@typescript-eslint/keyword-spacing': layoutFormatting['keyword-spacing'],
-    '@typescript-eslint/lines-around-comment': layoutFormatting['lines-around-comment'],
-    '@typescript-eslint/lines-between-class-members': layoutFormatting['lines-between-class-members'],
+    '@typescript-eslint/max-params': suggestions['max-params'],
     // Disallow generic Array constructors
     // https://typescript-eslint.io/rules/no-array-constructor
     '@typescript-eslint/no-array-constructor': 'error',
+    '@typescript-eslint/no-array-delete': suggestions['no-array-delete'],
     '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
-    '@typescript-eslint/no-extra-parens': layoutFormatting['no-extra-parens'],
-    '@typescript-eslint/no-extra-semi': suggestions['no-extra-semi'],
     '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'],
     '@typescript-eslint/no-loop-func': suggestions['no-loop-func'],
     '@typescript-eslint/no-loss-of-precision': possibleProblems['no-loss-of-precision'],
@@ -47,53 +37,20 @@ export = {
       },
     ],
     '@typescript-eslint/no-useless-constructor': 'error',
-    '@typescript-eslint/object-curly-spacing': layoutFormatting['object-curly-spacing'],
-    '@typescript-eslint/padding-line-between-statements': layoutFormatting['padding-line-between-statements'],
-    '@typescript-eslint/quotes': layoutFormatting['quotes'],
-    '@typescript-eslint/semi': layoutFormatting['semi'],
-    '@typescript-eslint/space-before-blocks': layoutFormatting['space-before-blocks'],
-    '@typescript-eslint/space-before-function-paren': layoutFormatting['space-before-function-paren'],
-    '@typescript-eslint/space-infix-ops': layoutFormatting['space-infix-ops'],
-    // Enforce consistent brace style for blocks
-    // https://typescript-eslint.io/rules/brace-style
-    'brace-style': 'off',
-    // Require or disallow trailing comma
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/comma-dangle
-    'comma-dangle': 'off',
-    // Enforces consistent spacing before and after commas
-    // https://typescript-eslint.io/rules/comma-spacing
-    'comma-spacing': 'off',
+    'consistent-return': 'off',
     // Enforce default parameters to be last
     // https://typescript-eslint.io/rules/default-param-last
     'default-param-last': 'off',
-    // Require or disallow spacing between function identifiers and their invocations
-    // https://typescript-eslint.io/rules/func-call-spacing
-    'func-call-spacing': 'off',
-    // Enforce consistent indentation
-    // https://typescript-eslint.io/rules/indent
-    indent: 'off',
     // Require or disallow initialization in variable declarations
     // https://typescript-eslint.io/rules/init-declarations
     'init-declarations': 'off',
-    // Enforce consistent spacing before and after keywords
-    // https://typescript-eslint.io/rules/keyword-spacing
-    'keyword-spacing': 'off',
-    'lines-around-comment': 'off',
-    // Require or disallow an empty line between class members
-    // https://typescript-eslint.io/rules/lines-between-class-members
-    'lines-between-class-members': 'off',
+    'max-params': 'off',
     // Disallow duplicate class members
     // https://typescript-eslint.io/rules/no-dupe-class-members
     'no-dupe-class-members': 'off',
     // Disallow Empty Functions
     // https://typescript-eslint.io/rules/no-empty-function
     'no-empty-function': 'off',
-    // Disallow unnecessary parentheses
-    // https://typescript-eslint.io/rules/no-extra-parens
-    'no-extra-parens': 'off',
-    // Disallow unnecessary semicolons
-    // https://typescript-eslint.io/rules/no-extra-semi
-    'no-extra-semi': 'off',
     // Disallow this keywords outside of classes or class-like objects
     // https://typescript-eslint.io/rules/no-invalid-this
     'no-invalid-this': 'off',
@@ -128,27 +85,6 @@ export = {
     // Disallow unnecessary constructors
     // https://typescript-eslint.io/rules/no-useless-constructor
     'no-useless-constructor': 'off',
-    // Enforce consistent spacing inside braces
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/object-curly-spacing
-    'object-curly-spacing': 'off',
-    // Require or disallow padding lines between statements
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/padding-line-between-statements
-    'padding-line-between-statements': 'off',
-    // Enforce the consistent use of either backticks, double, or single quotes
-    // https://typescript-eslint.io/rules/quotes
-    quotes: 'off',
-    // Require or disallow semicolons instead of ASI
-    // https://typescript-eslint.io/rules/semi
-    semi: 'off',
-    // Enforces consistent spacing before blocks
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/space-before-blocks
-    'space-before-blocks': 'off',
-    // Enforces consistent spacing before function parenthesis
-    // https://typescript-eslint.io/rules/space-before-function-paren
-    'space-before-function-paren': 'off',
-    // This rule is aimed at ensuring there are spaces around infix operators
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/space-infix-ops
-    'space-infix-ops': 'off',
   },
   overrides: [
     {
