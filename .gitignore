@@ -14,13 +14,6 @@
 # Generated sources
 /rules
 /utils
-/imports.js
-/imports-typescript.js
-/javascript.js
-/lit.js
-/prettier.js
-/sort.js
-/testing.js
-/typescript.js
-/typescript-requiring-type-checking.js
+/*.js
+/*.js.map
 /*.tgz
