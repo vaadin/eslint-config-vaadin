@@ -68,6 +68,9 @@ export = {
     // Disallow non-null assertion in locations that may be confusing
     // https://typescript-eslint.io/rules/no-confusing-non-null-assertion
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+    // Disallow using the delete operator on array values
+    // https://typescript-eslint.io/rules/no-array-delete
+    '@typescript-eslint/no-array-delete': 'error',
     // Disallow duplicate enum member values.
     // https://typescript-eslint.io/rules/no-duplicate-enum-values
     '@typescript-eslint/no-duplicate-enum-values': 'error',
