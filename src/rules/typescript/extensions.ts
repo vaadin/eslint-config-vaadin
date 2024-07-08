@@ -16,7 +16,6 @@ export = {
     // Disallow generic Array constructors
     // https://typescript-eslint.io/rules/no-array-constructor
     '@typescript-eslint/no-array-constructor': 'error',
-    '@typescript-eslint/no-array-delete': suggestions['no-array-delete'],
     '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
     '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
     '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'],

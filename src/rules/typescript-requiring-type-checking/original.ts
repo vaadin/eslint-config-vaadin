@@ -130,6 +130,9 @@ export = {
     // Enforce template literal expressions to be of string type
     // https://typescript-eslint.io/rules/restrict-template-expressions
     '@typescript-eslint/restrict-template-expressions': 'error',
+    // Enforce consistent awaiting of returned promises
+    // https://typescript-eslint.io/rules/return-await
+    '@typescript-eslint/return-await': ['error', 'always'],
     // Restricts the types allowed in boolean expressions
     // https://typescript-eslint.io/rules/strict-boolean-expressions
     // EXPLANATION: Too strict

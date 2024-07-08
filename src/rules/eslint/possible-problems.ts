@@ -69,7 +69,8 @@ export = {
       },
     ],
     'no-use-before-define': ['error', { classes: true, functions: true, variables: true }],
-    'no-useless-assignment': 'error',
+    // TODO: enable when eslint v9 is adopted
+    'no-useless-assignment': 'off',
     'no-useless-backreference': 'error',
     // appears to be too problematic to use
     'require-atomic-updates': 'off',

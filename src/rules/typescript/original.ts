@@ -65,6 +65,9 @@ export = {
     // Enforces using a particular method signature syntax
     // https://typescript-eslint.io/rules/method-signature-style
     '@typescript-eslint/method-signature-style': ['error', 'method'],
+    // Disallow using the delete operator on array values
+    // https://typescript-eslint.io/rules/no-array-delete
+    '@typescript-eslint/no-array-delete': 'error',
     // Disallow non-null assertion in locations that may be confusing
     // https://typescript-eslint.io/rules/no-confusing-non-null-assertion
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
