@@ -44,7 +44,7 @@ export = {
     'max-lines-per-function': 'off',
     // too strict
     'max-nested-callbacks': 'off',
-    'max-params': ['error', 4],
+    'max-params': ['error', { max: 4 }],
     // too strict
     'max-statements': 'off',
     // single-line comment will be forced to be multiline too, not good
