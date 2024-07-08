@@ -19,12 +19,8 @@ export = {
     // Disallow async functions which have no await expression
     // https://typescript-eslint.io/rules/require-await
     '@typescript-eslint/require-await': suggestions['require-await'],
-    // Enforce consistent awaiting of returned promises
-    // https://typescript-eslint.io/rules/return-await
-    '@typescript-eslint/return-await': suggestions['no-return-await'],
     'dot-notation': 'off',
     'no-implied-eval': 'off',
-    'no-return-await': 'off',
     'no-throw-literal': 'off',
     'prefer-destructuring': 'off',
     'prefer-promise-reject-errors': 'off',

@@ -1,5 +1,8 @@
 export = {
   rules: {
+    // Enforce consistent awaiting of returned promises
+    // https://typescript-eslint.io/rules/return-await
+    '@typescript-eslint/return-await': ['error', 'always'],
     // Disallows awaiting a value that is not a Promise
     // https://typescript-eslint.io/rules/await-thenable
     '@typescript-eslint/await-thenable': 'error',
