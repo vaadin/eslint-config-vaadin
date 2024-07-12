@@ -1,21 +1,20 @@
 import type { Dirent } from 'fs';
 import { opendir } from 'node:fs/promises';
-import { join } from 'node:path';
 
-export type FsWalkResult = readonly [path: string, entry: Dirent];
+export type FsWalkResult = readonly [path: URL, entry: Dirent];
 
-export default async function* fsWalk(dir: string): AsyncGenerator<FsWalkResult, void> {
+export default async function* fsWalk(dir: URL): AsyncGenerator<FsWalkResult, void> {
   const subDirs = [];
 
   for await (const entry of await opendir(dir)) {
     if (entry.isDirectory()) {
       subDirs.push(entry);
     } else if (entry.isFile()) {
-      yield [join(dir, entry.name), entry];
+      yield [new URL(entry.name, dir), entry];
     }
   }
 
   for (const subdir of subDirs) {
-    yield* fsWalk(join(dir, subdir.name));
+    yield* fsWalk(new URL(`${subdir.name}/`, dir));
   }
 }
