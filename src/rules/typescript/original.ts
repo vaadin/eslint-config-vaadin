@@ -46,7 +46,10 @@ export = {
     // https://typescript-eslint.io/rules/consistent-type-assertions
     '@typescript-eslint/consistent-type-assertions': [
       'error',
-      { assertionStyle: 'as', objectLiteralTypeAssertions: 'allow-as-parameter' },
+      {
+        assertionStyle: 'as',
+        objectLiteralTypeAssertions: 'allow-as-parameter',
+      },
     ],
     // Consistent with type definition either interface or type
     // https://typescript-eslint.io/rules/consistent-type-definitions
@@ -55,7 +58,11 @@ export = {
     // https://typescript-eslint.io/rules/consistent-type-imports
     '@typescript-eslint/consistent-type-imports': [
       'error',
-      { prefer: 'type-imports', disallowTypeAnnotations: true, fixStyle: 'inline-type-imports' },
+      {
+        prefer: 'type-imports',
+        disallowTypeAnnotations: true,
+        fixStyle: 'inline-type-imports',
+      },
     ],
     // Require a consistent member declaration order
     // https://typescript-eslint.io/rules/member-ordering
@@ -65,9 +72,6 @@ export = {
     // Enforces using a particular method signature syntax
     // https://typescript-eslint.io/rules/method-signature-style
     '@typescript-eslint/method-signature-style': ['error', 'method'],
-    // Disallow using the delete operator on array values
-    // https://typescript-eslint.io/rules/no-array-delete
-    '@typescript-eslint/no-array-delete': 'error',
     // Disallow non-null assertion in locations that may be confusing
     // https://typescript-eslint.io/rules/no-confusing-non-null-assertion
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
