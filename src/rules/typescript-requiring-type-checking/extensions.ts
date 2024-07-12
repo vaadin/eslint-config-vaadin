@@ -1,6 +1,9 @@
 const suggestions = require('../eslint/suggestions').rules;
 export = {
   rules: {
+    // Require `return` statements to either always or never specify values.
+    // https://typescript-eslint.io/rules/consistent-return/
+    '@typescript-eslint/consistent-return': suggestions['consistent-return'],
     // Enforce dot notation whenever possible
     // https://typescript-eslint.io/rules/dot-notation
     '@typescript-eslint/dot-notation': suggestions['dot-notation'],
