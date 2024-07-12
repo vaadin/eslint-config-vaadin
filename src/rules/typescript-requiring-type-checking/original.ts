@@ -10,6 +10,9 @@ export = {
     // https://typescript-eslint.io/rules/naming-convention
     // it is hard to configure this rule accurately
     '@typescript-eslint/naming-convention': 'off',
+    // Disallow using the delete operator on array values
+    // https://typescript-eslint.io/rules/no-array-delete
+    '@typescript-eslint/no-array-delete': 'error',
     // Requires that .toString() is only called on objects which provide useful
     // information when stringified.
     // https://typescript-eslint.io/rules/no-base-to-string

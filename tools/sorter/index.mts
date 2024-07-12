@@ -1,18 +1,20 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+import { basename } from 'node:path';
 import ts, { type Node, type ObjectLiteralExpression, type PropertyAssignment } from 'typescript';
+import * as prettier from 'prettier';
 import fromAsync from './fromAsync.mjs';
 import fsWalk from './fsWalk.mjs';
 import { transform } from './utils.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const root = resolve(__dirname, '../../src');
+const root = new URL('../../', import.meta.url);
+const srcDir = new URL('src/', root);
 
-const rulesDir = resolve(root, 'rules');
+const rulesDir = new URL('rules/', srcDir);
 
 const comparator = new Intl.Collator('en-US', { sensitivity: 'base' });
 const printer = ts.createPrinter();
+const prettierOptions = { ...(await prettier.resolveConfig(new URL('.prettierrc.json', root))), parser: 'typescript' };
 
 function sortRules(rulesNode: PropertyAssignment): Node {
   const obj = rulesNode.initializer as ObjectLiteralExpression;
@@ -32,10 +34,9 @@ function sortRules(rulesNode: PropertyAssignment): Node {
 }
 
 await fromAsync(fsWalk(rulesDir), async ([file]) => {
-  const path = resolve(rulesDir, file);
-  const contents = await readFile(path, 'utf8');
+  const contents = await readFile(file, 'utf8');
   let sourceFile = ts.createSourceFile(
-    file,
+    basename(fileURLToPath(file)),
     contents,
     { languageVersion: ts.ScriptTarget.ESNext, impliedNodeFormat: ts.ModuleKind.CommonJS },
     false,
@@ -52,7 +53,7 @@ await fromAsync(fsWalk(rulesDir), async ([file]) => {
     }),
   ]).transformed[0]!;
 
-  const printed = printer.printFile(sourceFile);
+  const printed = await prettier.format(printer.printFile(sourceFile), prettierOptions);
 
-  await writeFile(path, printed, 'utf8');
+  await writeFile(file, printed, 'utf8');
 });

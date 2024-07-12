@@ -36,6 +36,7 @@ export = {
       },
     ],
     '@typescript-eslint/no-useless-constructor': 'error',
+    'class-methods-use-this': 'off',
     'consistent-return': 'off',
     // Enforce default parameters to be last
     // https://typescript-eslint.io/rules/default-param-last
