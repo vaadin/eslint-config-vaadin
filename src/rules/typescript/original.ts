@@ -162,9 +162,6 @@ export = {
     // https://typescript-eslint.io/rules/prefer-namespace-keyword
     // EXPLANATION: Unusable with ES modules
     '@typescript-eslint/prefer-namespace-keyword': 'off',
-    // Prefer using concise optional chain expressions instead of chained logical ands
-    // https://typescript-eslint.io/rules/prefer-optional-chain
-    '@typescript-eslint/prefer-optional-chain': 'error',
     // Sets preference level for triple slash directives versus ES6-style import declarations
     // https://typescript-eslint.io/rules/triple-slash-reference
     '@typescript-eslint/triple-slash-reference': ['error', { path: 'never', types: 'never', lib: 'never' }],
