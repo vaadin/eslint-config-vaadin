@@ -9,7 +9,6 @@ export = {
         ignoreClassesThatImplementAnInterface: true,
       },
     ],
-    '@typescript-eslint/consistent-return': suggestions['consistent-return'],
     '@typescript-eslint/default-param-last': suggestions['default-param-last'],
     '@typescript-eslint/init-declarations': suggestions['init-declarations'],
     '@typescript-eslint/max-params': suggestions['max-params'],
