@@ -25,8 +25,7 @@ export = {
     '@typescript-eslint/no-restricted-imports': suggestions['no-restricted-imports'],
     '@typescript-eslint/no-shadow': suggestions['no-shadow'],
     '@typescript-eslint/no-unused-expressions': suggestions['no-unused-expressions'],
-    // Disabled due to the following issue: https://github.com/typescript-eslint/typescript-eslint/issues/1856
-    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': suggestions['no-unused-vars'],
     '@typescript-eslint/no-use-before-define': [
       'error',
       {
