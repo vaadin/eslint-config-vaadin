@@ -30,9 +30,6 @@ export = {
     // Bans // tslint:<rule-flag> comments from being used.
     // https://typescript-eslint.io/rules/ban-tslint-comment
     '@typescript-eslint/ban-tslint-comment': 'error',
-    // Bans specific types from being used
-    // https://typescript-eslint.io/rules/ban-types
-    '@typescript-eslint/ban-types': 'error',
     // Ensures that literals on classes are exposed in a consistent style
     // https://typescript-eslint.io/rules/class-literal-property-style
     '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
@@ -84,6 +81,9 @@ export = {
     // Disallow the declaration of empty interfaces
     // https://typescript-eslint.io/rules/no-empty-interface
     '@typescript-eslint/no-empty-interface': 'error',
+    // Disallow using `{}`, or "empty object" type
+    // https://typescript-eslint.io/rules/no-empty-object-type
+    '@typescript-eslint/no-empty-object-type': 'error',
     // Disallow usage of any type
     // https://typescript-eslint.io/rules/no-explicit-any
     // EXPLANATION: Too strict
@@ -123,6 +123,9 @@ export = {
     // Disallows invocation of require()
     // https://typescript-eslint.io/rules/no-require-imports
     '@typescript-eslint/no-require-imports': 'error',
+    // Bans specific types from being used (no options enabled by default)
+    // https://typescript-eslint.io/rules/no-restricted-types
+    '@typescript-eslint/no-restricted-types': 'error',
     // Disallow aliasing this
     // https://typescript-eslint.io/rules/no-this-alias
     '@typescript-eslint/no-this-alias': ['error', { allowDestructuring: true, allowedNames: ['self'] }],
@@ -133,6 +136,9 @@ export = {
     // https://typescript-eslint.io/rules/no-unsafe-declaration-merging
     // Too strict
     '@typescript-eslint/no-unsafe-declaration-merging': 'off',
+    // Disallow using built-in `Function` type
+    // https://typescript-eslint.io/rules/no-unsafe-function-type
+    '@typescript-eslint/no-unsafe-function-type': 'error',
     // Disallow empty exports that don't change anything in a module file
     // https://typescript-eslint.io/rules/no-useless-empty-export
     '@typescript-eslint/no-useless-empty-export': 'error',
@@ -140,6 +146,9 @@ export = {
     // https://typescript-eslint.io/rules/no-var-requires
     // EXPLANATION: handled by @typescript-eslint/no-require-imports
     '@typescript-eslint/no-var-requires': 'off',
+    // Disallow using built-in uppercase types e.g. `Object`, `Number` etc
+    // https://typescript-eslint.io/rules/no-wrapper-object-types
+    '@typescript-eslint/no-wrapper-object-types': 'error',
     // Require or disallow parameter properties in class constructors.
     // https://typescript-eslint.io/rules/parameter-properties
     '@typescript-eslint/parameter-properties': 'error',
