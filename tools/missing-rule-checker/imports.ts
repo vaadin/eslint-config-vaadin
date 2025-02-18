@@ -1,6 +1,6 @@
 import type { Browser } from 'puppeteer-core';
 import existingRules from '../../src/rules/imports.js';
-import { checkRules, createHeader, init } from './utils.mjs';
+import { checkRules, createHeader, init } from './utils.js';
 
 const url = 'https://github.com/import-js/eslint-plugin-import/blob/main/README.md';
 
@@ -18,7 +18,7 @@ export default async function checkImports(browser: Browser) {
 
   const result = checkRules('Rules', {
     modernRules,
-    existingRules: Object.keys(existingRules.rules).map((name) => name.replace(importPluginPrefixPattern, '')),
+    existingRules: Object.keys(existingRules).map((name) => name.replace(importPluginPrefixPattern, '')),
   });
 
   return `${header}\n\n${result}`;

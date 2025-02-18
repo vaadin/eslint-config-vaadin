@@ -1,7 +1,15 @@
-export = {
-  extends: ['prettier'],
-  plugins: ['prettier'],
-  rules: {
-    'prettier/prettier': 'error',
+import type { Linter } from 'eslint';
+import config from 'eslint-config-prettier';
+import prettier from 'eslint-plugin-prettier';
+
+export default [
+  config,
+  {
+    plugins: {
+      prettier,
+    },
+    rules: {
+      'prettier/prettier': 'error',
+    },
   },
-} as const;
+] satisfies readonly Linter.Config[];

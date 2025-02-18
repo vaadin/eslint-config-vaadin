@@ -1,11 +1,9 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { glob, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { basename } from 'node:path';
+import { createTransformer } from 'tsc-template';
 import ts, { type Node, type ObjectLiteralExpression, type PropertyAssignment } from 'typescript';
 import * as prettier from 'prettier';
-import fromAsync from './fromAsync.mjs';
-import fsWalk from './fsWalk.mjs';
-import { transform } from './utils.mjs';
 
 const root = new URL('../../', import.meta.url);
 const srcDir = new URL('src/', root);
@@ -33,18 +31,19 @@ function sortRules(rulesNode: PropertyAssignment): Node {
   return ts.factory.createPropertyAssignment(rulesNode.name, ts.factory.createObjectLiteralExpression(props, true));
 }
 
-await fromAsync(fsWalk(rulesDir), async ([file]) => {
-  const contents = await readFile(file, 'utf8');
+for await (const file of glob('**/*', { cwd: fileURLToPath(rulesDir) })) {
+  const url = new URL(file, rulesDir);
+  const contents = await readFile(url, 'utf8');
   let sourceFile = ts.createSourceFile(
     basename(fileURLToPath(file)),
     contents,
-    { languageVersion: ts.ScriptTarget.ESNext, impliedNodeFormat: ts.ModuleKind.CommonJS },
+    { languageVersion: ts.ScriptTarget.ESNext },
     false,
     ts.ScriptKind.TS,
   );
 
   sourceFile = ts.transform(sourceFile, [
-    transform((node) => {
+    createTransformer((node) => {
       if (ts.isPropertyAssignment(node) && ts.isIdentifier(node.name) && node.name.text === 'rules') {
         return sortRules(node);
       } else {
@@ -55,5 +54,5 @@ await fromAsync(fsWalk(rulesDir), async ([file]) => {
 
   const printed = await prettier.format(printer.printFile(sourceFile), prettierOptions);
 
-  await writeFile(file, printed, 'utf8');
-});
+  await writeFile(url, printed, 'utf8');
+}
