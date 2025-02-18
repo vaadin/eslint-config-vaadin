@@ -11,10 +11,13 @@ const tsExtensions = ['ts', 'tsx', 'mts', 'cts', 'mtsx', 'ctsx'];
 export default [
   ...javascript,
   {
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+    },
     languageOptions: {
       parser,
-      plugins: {
-        typescriptEslint,
+      parserOptions: {
+        project: `${process.cwd()}/tsconfig.json`,
       },
     },
   },

@@ -15,7 +15,7 @@ export default [
       '**/*.test.tsx',
     ],
     plugins: {
-      chaiFriendly,
+      'chai-friendly': chaiFriendly,
     },
     rules,
   },

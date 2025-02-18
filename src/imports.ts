@@ -1,10 +1,14 @@
 import { type Linter } from 'eslint';
 import rules from './rules/imports';
+import importPlugin from 'eslint-plugin-import';
 
 export default [
   {
     files: ['**/*.{js,jsx,mjs,cjs}'],
     rules,
+    plugins: {
+      import: importPlugin,
+    },
     languageOptions: {
       env: {
         es6: true,
