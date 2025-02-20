@@ -1,10 +1,10 @@
 import parser from '@babel/eslint-parser';
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import possibleProblems from './rules/eslint/possible-problems.js';
 import suggestions from './rules/eslint/suggestions.js';
 import { jsExtensions } from './utils.js';
 
-export default tsEslint.config({
+const config: ConfigArray = tsEslint.config({
   files: [`**/*.{${jsExtensions.join(',')}}`],
   rules: {
     ...possibleProblems,
@@ -18,3 +18,5 @@ export default tsEslint.config({
     },
   },
 });
+
+export default config;

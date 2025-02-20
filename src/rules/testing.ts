@@ -1,8 +1,10 @@
-import type { Linter } from 'eslint';
+import { Linter } from 'eslint';
 
-export default {
+const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-unused-expressions': 'off',
   'chai-friendly/no-unused-expressions': 'error',
   'max-classes-per-file': 'off',
   'no-unused-expressions': 'off',
-} satisfies Linter.RulesRecord;
+};
+
+export default rules;

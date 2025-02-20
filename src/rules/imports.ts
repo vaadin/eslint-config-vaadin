@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 
-export default {
+const rules: Linter.RulesRecord = {
   // disabled by default; enable if necessary
   'dynamic-import-chunkname': 'off',
   // this rule either forces to write many `type` or duplicate imports
@@ -83,4 +83,6 @@ export default {
   'import-x/unambiguous': 'error',
   // default exports are useful
   'no-default-export': 'off',
-} satisfies Linter.RulesRecord;
+};
+
+export default rules;

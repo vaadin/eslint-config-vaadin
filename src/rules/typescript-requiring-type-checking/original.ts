@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 
-export default {
+const rules: Linter.RulesRecord = {
   // Disallows awaiting a value that is not a Promise
   // https://typescript-eslint.io/rules/await-thenable
   '@typescript-eslint/await-thenable': 'error',
@@ -24,12 +24,7 @@ export default {
   '@typescript-eslint/no-confusing-void-expression': 'off',
   // Disallow duplicate constituents of union or intersection types.
   // https://typescript-eslint.io/rules/no-duplicate-type-constituents
-  '@typescript-eslint/no-duplicate-type-constituents': [
-    'error',
-    {
-      ignoreIntersections: true,
-    },
-  ],
+  '@typescript-eslint/no-duplicate-type-constituents': ['error', { ignoreIntersections: true }],
   // Requires Promise-like values to be handled appropriately
   // https://typescript-eslint.io/rules/no-floating-promises
   '@typescript-eslint/no-floating-promises': 'error',
@@ -153,4 +148,6 @@ export default {
   // Enforce typing arguments in .catch() callbacks as unknown
   // https://typescript-eslint.io/rules/use-unknown-in-catch-callback-variable
   '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
-} satisfies Linter.RulesRecord;
+};
+
+export default rules;

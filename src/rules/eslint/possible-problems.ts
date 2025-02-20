@@ -1,6 +1,8 @@
 import type { Linter } from 'eslint';
 
-export default {
+export const noUseBeforeDefineOptions = { classes: true, functions: true, variables: true };
+
+const rules: Linter.RulesRecord = {
   'array-callback-return': 'error',
   'constructor-super': 'error',
   'for-direction': 'error',
@@ -69,7 +71,7 @@ export default {
       varsIgnorePattern: '^_',
     },
   ],
-  'no-use-before-define': ['error', { classes: true, functions: true, variables: true }],
+  'no-use-before-define': ['error', noUseBeforeDefineOptions],
   // TODO: enable when eslint v9 is adopted
   'no-useless-assignment': 'off',
   'no-useless-backreference': 'error',
@@ -77,4 +79,6 @@ export default {
   'require-atomic-updates': 'off',
   'use-isnan': 'error',
   'valid-typeof': ['error', { requireStringLiterals: false }],
-} satisfies Linter.RulesRecord;
+};
+
+export default rules;

@@ -1,11 +1,11 @@
 import { join } from 'path';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import importPlugin from 'eslint-plugin-import-x';
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import rules from './rules/imports.js';
 import { tsExtensions } from './utils.js';
 
-export default tsEslint.config({
+const config: ConfigArray = tsEslint.config({
   files: ['**/*.{ts,tsx,mts,cts}'],
   rules,
   plugins: {
@@ -21,3 +21,5 @@ export default tsEslint.config({
     ],
   },
 });
+
+export default config;

@@ -1,8 +1,8 @@
 import chaiFriendly from 'eslint-plugin-chai-friendly';
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import rules from './rules/testing.js';
 
-export default tsEslint.config({
+const config: ConfigArray = tsEslint.config({
   files: [
     '**/*.spec.js',
     '**/*.spec.ts',
@@ -18,3 +18,5 @@ export default tsEslint.config({
   },
   rules,
 });
+
+export default config;

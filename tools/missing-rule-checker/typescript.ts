@@ -15,7 +15,7 @@ const existingRules = {
   ...extensions,
 } satisfies Linter.RulesRecord;
 
-export default async function checkTypeScript(browser: Browser) {
+export default async function checkTypeScript(browser: Browser): Promise<string> {
   const page = await init(browser, url);
 
   const header = createHeader('@typescript-eslint', url);

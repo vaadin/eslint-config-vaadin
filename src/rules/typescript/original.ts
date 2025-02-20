@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 
-export const common = {
+export const common: Linter.RulesRecord = {
   // Require that member overloads be consecutive
   // https://typescript-eslint.io/rules/adjacent-overload-signatures
   '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -175,10 +175,10 @@ export const common = {
   // Warns for any two overloads that could be unified into one by using a union or an optional/rest parameter
   // https://typescript-eslint.io/rules/unified-signatures
   '@typescript-eslint/unified-signatures': 'error',
-} satisfies Linter.RulesRecord;
+};
 
 // Use rules ONLY for TS(X) files and ignore JS(X)
-export const specific = {
+export const specific: Linter.RulesRecord = {
   // Require explicit return types on functions and class methods
   // https://typescript-eslint.io/rules/explicit-function-return-type
   // EXPLANATION: @typescript-eslint/explicit-module-boundary-types is
@@ -198,4 +198,4 @@ export const specific = {
       allowTypedFunctionExpressions: true,
     },
   ],
-} satisfies Linter.RulesRecord;
+};

@@ -1,8 +1,8 @@
 import type { Linter } from 'eslint';
-import possibleProblems from '../eslint/possible-problems.js';
+import possibleProblems, { noUseBeforeDefineOptions } from '../eslint/possible-problems.js';
 import suggestions from '../eslint/suggestions.js';
 
-export const common = {
+export const common: Linter.RulesRecord = {
   '@typescript-eslint/class-methods-use-this': [
     'error',
     {
@@ -10,26 +10,26 @@ export const common = {
       ignoreClassesThatImplementAnInterface: true,
     },
   ],
-  '@typescript-eslint/default-param-last': suggestions['default-param-last'],
-  '@typescript-eslint/init-declarations': suggestions['init-declarations'],
-  '@typescript-eslint/max-params': suggestions['max-params'],
+  '@typescript-eslint/default-param-last': suggestions['default-param-last'] ?? 'off',
+  '@typescript-eslint/init-declarations': suggestions['init-declarations'] ?? 'off',
+  '@typescript-eslint/max-params': suggestions['max-params'] ?? 'off',
   // Disallow generic Array constructors
   // https://typescript-eslint.io/rules/no-array-constructor
   '@typescript-eslint/no-array-constructor': 'error',
-  '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'],
-  '@typescript-eslint/no-empty-function': suggestions['no-empty-function'],
-  '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'],
-  '@typescript-eslint/no-loop-func': suggestions['no-loop-func'],
+  '@typescript-eslint/no-dupe-class-members': possibleProblems['no-dupe-class-members'] ?? 'off',
+  '@typescript-eslint/no-empty-function': suggestions['no-empty-function'] ?? 'off',
+  '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'] ?? 'off',
+  '@typescript-eslint/no-loop-func': suggestions['no-loop-func'] ?? 'off',
   '@typescript-eslint/no-magic-numbers': 'off',
-  '@typescript-eslint/no-redeclare': suggestions['no-redeclare'],
-  '@typescript-eslint/no-restricted-imports': suggestions['no-restricted-imports'],
-  '@typescript-eslint/no-shadow': suggestions['no-shadow'],
-  '@typescript-eslint/no-unused-expressions': suggestions['no-unused-expressions'],
-  '@typescript-eslint/no-unused-vars': possibleProblems['no-unused-vars'],
+  '@typescript-eslint/no-redeclare': suggestions['no-redeclare'] ?? 'off',
+  '@typescript-eslint/no-restricted-imports': suggestions['no-restricted-imports'] ?? 'off',
+  '@typescript-eslint/no-shadow': suggestions['no-shadow'] ?? 'off',
+  '@typescript-eslint/no-unused-expressions': suggestions['no-unused-expressions'] ?? 'off',
+  '@typescript-eslint/no-unused-vars': possibleProblems['no-unused-vars'] ?? 'off',
   '@typescript-eslint/no-use-before-define': [
     'error',
     {
-      ...possibleProblems['no-use-before-define'][1],
+      ...noUseBeforeDefineOptions,
       typedefs: true,
     },
   ],
@@ -83,10 +83,10 @@ export const common = {
   // Disallow unnecessary constructors
   // https://typescript-eslint.io/rules/no-useless-constructor
   'no-useless-constructor': 'off',
-} satisfies Linter.RulesRecord;
+};
 
 // Use rules ONLY for TS(X) files and ignore JS(X)
-export const specific = {
+export const specific: Linter.RulesRecord = {
   // ts(2335), ts(2377)
   'constructor-super': 'off',
   // ts(2378)
@@ -117,4 +117,4 @@ export const specific = {
   'no-unsafe-negation': 'off',
   // ts(2367)
   'valid-typeof': 'off',
-} satisfies Linter.RulesRecord;
+};

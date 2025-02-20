@@ -1,6 +1,6 @@
 import type { Linter } from 'eslint';
 
-export default {
+const rules: Linter.RulesRecord = {
   'accessor-pairs': 'error',
   'arrow-body-style': ['error', 'as-needed'],
   // handled by "no-var" rule
@@ -214,4 +214,6 @@ export default {
   // handled by "no-vars" rule
   'vars-on-top': 'off',
   yoda: ['error', 'never'],
-} satisfies Linter.RulesRecord;
+};
+
+export default rules;

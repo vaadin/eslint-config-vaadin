@@ -7,7 +7,7 @@ const url = 'https://eslint.org/docs/latest/rules/';
 
 const ruleListNames = ['possible-problems', 'suggestions', 'deprecated', 'removed'];
 
-export default async function checkEslint(browser: Browser) {
+export default async function checkEslint(browser: Browser): Promise<string> {
   const page = await init(browser, url);
 
   const header = createHeader('eslint', url);

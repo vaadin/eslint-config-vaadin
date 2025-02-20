@@ -1,7 +1,7 @@
 {
   "extends": "./src/tsconfig.recommended.json",
   "compilerOptions": {
-    "isolatedDeclarations": false,
+    "isolatedDeclarations": true,
     "target": "es2022",
     "module": "esnext",
     "moduleResolution": "bundler",

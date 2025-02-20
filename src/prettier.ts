@@ -1,8 +1,8 @@
-import config from 'eslint-config-prettier';
+import prettierConfig from 'eslint-config-prettier';
 import prettier from 'eslint-plugin-prettier';
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 
-export default tsEslint.config(config, {
+const config: ConfigArray = tsEslint.config(prettierConfig, {
   plugins: {
     prettier,
   },
@@ -10,3 +10,5 @@ export default tsEslint.config(config, {
     'prettier/prettier': 'error',
   },
 });
+
+export default config;

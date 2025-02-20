@@ -6,7 +6,7 @@ const url = 'https://github.com/import-js/eslint-plugin-import/blob/main/README.
 
 const importPluginPrefixPattern = /import\//u;
 
-export default async function checkImports(browser: Browser) {
+export default async function checkImports(browser: Browser): Promise<string> {
   const page = await init(browser, url);
 
   const header = createHeader('eslint-import-plugin', url);

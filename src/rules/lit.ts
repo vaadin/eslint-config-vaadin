@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint';
+import { Linter } from 'eslint';
 
-export default {
+const rules: Linter.RulesRecord = {
   // Disallows unencoded HTML entities in attribute values
   // https://github.com/43081j/eslint-plugin-lit/blob/master/docs/rules/attribute-value-entities.md
   'lit/attribute-value-entities': 'error',
@@ -45,4 +45,6 @@ export default {
   // Detects usages of the value attribute
   // https://github.com/43081j/eslint-plugin-lit/blob/master/docs/rules/no-value-attribute.md
   'lit/no-value-attribute': 'error',
-} satisfies Linter.RulesRecord;
+};
+
+export default rules;

@@ -1,10 +1,10 @@
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import javascript from './javascript.js';
 import * as extensions from './rules/typescript/extensions.js';
 import * as original from './rules/typescript/original.js';
 import { jsExtensions, tsExtensions } from './utils.js';
 
-export default tsEslint.config(
+const config: ConfigArray = tsEslint.config(
   javascript,
   tsEslint.configs.base,
   {
@@ -30,3 +30,5 @@ export default tsEslint.config(
     },
   },
 );
+
+export default config;

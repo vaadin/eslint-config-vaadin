@@ -1,9 +1,9 @@
 import importPlugin from 'eslint-plugin-import-x';
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import rules from './rules/imports';
 import { jsExtensions } from './utils.js';
 
-export default tsEslint.config({
+const config: ConfigArray = tsEslint.config({
   files: ['**/*.{js,jsx,mjs,cjs}'],
   rules,
   plugins: {
@@ -26,3 +26,5 @@ export default tsEslint.config({
     'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
   },
 });
+
+export default config;

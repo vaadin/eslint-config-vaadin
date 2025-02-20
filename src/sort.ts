@@ -1,10 +1,9 @@
-import type { ESLint } from 'eslint';
 import perfectionist from 'eslint-plugin-perfectionist';
-import tsEslint from 'typescript-eslint';
+import tsEslint, { type ConfigArray } from 'typescript-eslint';
 
-export default tsEslint.config({
+const config: ConfigArray = tsEslint.config({
   plugins: {
-    perfectionist: perfectionist as ESLint.Plugin,
+    perfectionist: perfectionist,
   },
   rules: {
     // Require a consistent member declaration order
@@ -89,3 +88,5 @@ export default tsEslint.config({
     'perfectionist/sort-union-types': 'off',
   },
 });
+
+export default config;
