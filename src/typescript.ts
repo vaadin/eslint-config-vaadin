@@ -10,7 +10,6 @@ const config: ConfigArray = tsEslint.config(
   {
     languageOptions: {
       parserOptions: {
-        project: `${process.cwd()}/tsconfig.json`,
         projectService: true,
       },
     },
