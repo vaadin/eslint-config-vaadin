@@ -73,28 +73,24 @@
   "dependencies": {
     "@babel/core": "7.26.9",
     "@babel/eslint-parser": "7.26.8",
-    "@eslint/js": "9.20.0",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.24.1",
     "eslint-config-prettier": "10.0.1",
     "eslint-import-resolver-typescript": "3.8.3",
     "eslint-plugin-chai-friendly": "1.0.1",
-    "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-import-x": "^4.6.1",
+    "eslint-plugin-import-x": "4.6.1",
     "eslint-plugin-lit": "1.15.0",
     "eslint-plugin-perfectionist": "4.9.0",
     "eslint-plugin-prettier": "5.2.3",
-    "typescript-eslint": "^8.24.1"
+    "typescript-eslint": "8.24.1"
   },
   "devDependencies": {
-    "@types/eslint": "^9.6.1",
-    "@types/eslint-config-prettier": "^6.11.3",
-    "prettier-plugin-packagejson": "^2.5.8",
-    "puppeteer-core": "^24.2.1",
-    "rimraf": "^6.0.1",
-    "tsc-template": "^0.2.1",
-    "tsx": "^4.19.3",
-    "typescript": "^5.7.3"
+    "@types/eslint": "9.6.1",
+    "@types/eslint-config-prettier": "6.11.3",
+    "prettier-plugin-packagejson": "2.5.8",
+    "puppeteer-core": "24.2.1",
+    "rimraf": "6.0.1",
+    "tsc-template": "0.2.1",
+    "tsx": "4.19.3",
+    "typescript": "5.7.3"
   },
   "peerDependencies": {
     "eslint": "^9",
