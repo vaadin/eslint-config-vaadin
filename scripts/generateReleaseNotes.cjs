@@ -4,7 +4,7 @@
  * Create release notes.
  *
  * Example
- *   ./scripts/generateReleaseNotes.js --from from_tag --to to_tag --compact
+ *   ./scripts/generateReleaseNotes.cjs --from from_tag --to to_tag --compact
  *
  * When --to is not given the latest tag is selected.
  * When --from is not given the previous tag is selected.
