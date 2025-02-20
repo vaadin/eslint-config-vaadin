@@ -1,38 +1,32 @@
-import type { Linter } from 'eslint';
-import parser from '@typescript-eslint/parser';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import tsEslint from 'typescript-eslint';
+import javascript from './javascript.js';
 import * as extensions from './rules/typescript/extensions.js';
 import * as original from './rules/typescript/original.js';
-import javascript from './javascript.js';
+import { jsExtensions, tsExtensions } from './utils.js';
 
-const jsExtensions = ['js', 'jsx', 'mjs', 'cjs', 'mjsx', 'cjsx'];
-const tsExtensions = ['ts', 'tsx', 'mts', 'cts', 'mtsx', 'ctsx'];
-
-export default [
-  ...javascript,
+export default tsEslint.config(
+  javascript,
+  tsEslint.configs.base,
   {
-    plugins: {
-      '@typescript-eslint': typescriptEslint,
-    },
     languageOptions: {
-      parser,
       parserOptions: {
         project: `${process.cwd()}/tsconfig.json`,
+        projectService: true,
       },
     },
   },
   {
-    files: [`**/*.+(${jsExtensions.join(',')})`, `**/*.+(${tsExtensions.join(',')})`],
+    files: [`**/*.{${jsExtensions.join(',')}}`, `**/*.{${tsExtensions.join(',')}}`],
     rules: {
       ...extensions.common,
       ...original.common,
     },
   },
   {
-    files: [`**/*.+(${tsExtensions.join(',')})`],
+    files: [`**/*.{${tsExtensions.join(',')}}`],
     rules: {
       ...extensions.specific,
       ...original.specific,
     },
   },
-] as readonly Linter.Config[];
+);

@@ -4,25 +4,25 @@ export default {
   // disabled by default; enable if necessary
   'dynamic-import-chunkname': 'off',
   // this rule either forces to write many `type` or duplicate imports
-  'import/consistent-type-specifier-style': 'off',
-  'import/default': 'error',
-  'import/export': 'error',
+  'import-x/consistent-type-specifier-style': 'off',
+  'import-x/default': 'error',
+  'import-x/export': 'error',
   // it's better to group mutually dependent elements together which could
   // break this rule
-  'import/exports-last': 'off',
+  'import-x/exports-last': 'off',
   // since there can be browser-style approach as well as node approach
-  'import/extensions': 'off',
-  'import/first': 'error',
+  'import-x/extensions': 'off',
+  'import-x/first': 'error',
   // better not to group them instead of grouping
-  'import/group-exports': 'off',
+  'import-x/group-exports': 'off',
   // deprecated
-  'import/imports-first': 'off',
+  'import-x/imports-first': 'off',
   // who knows how many dependencies are needed
-  'import/max-dependencies': 'off',
-  'import/named': 'error',
-  'import/namespace': 'error',
-  'import/newline-after-import': 'error',
-  'import/no-absolute-path': [
+  'import-x/max-dependencies': 'off',
+  'import-x/named': 'error',
+  'import-x/namespace': 'error',
+  'import-x/newline-after-import': 'error',
+  'import-x/no-absolute-path': [
     'error',
     {
       // there can be loading files by http/2
@@ -31,45 +31,45 @@ export default {
     },
   ],
   // disabled by default; enable if necessary
-  'import/no-amd': 'off',
-  'import/no-anonymous-default-export': 'error',
+  'import-x/no-amd': 'off',
+  'import-x/no-anonymous-default-export': 'error',
   // disabled by default; enable if necessary
-  'import/no-commonjs': 'off',
-  'import/no-cycle': 'error',
+  'import-x/no-commonjs': 'off',
+  'import-x/no-cycle': 'error',
   // disabled by default; enable if necessary
-  'import/no-deprecated': 'off',
-  'import/no-duplicates': ['error', { 'prefer-inline': true }],
+  'import-x/no-deprecated': 'off',
+  'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
   // dynamic require can be useful
-  'import/no-dynamic-require': 'off',
-  'import/no-empty-named-blocks': 'error',
-  'import/no-extraneous-dependencies': 'error',
-  'import/no-import-module-exports': 'error',
+  'import-x/no-dynamic-require': 'off',
+  'import-x/no-empty-named-blocks': 'error',
+  'import-x/no-extraneous-dependencies': 'error',
+  'import-x/no-import-module-exports': 'error',
   // common pattern to use internal modules
-  'import/no-internal-modules': 'off',
-  'import/no-mutable-exports': 'error',
+  'import-x/no-internal-modules': 'off',
+  'import-x/no-mutable-exports': 'error',
   // breaks the main idea of default exports to be named freely
-  'import/no-named-as-default': 'off',
-  'import/no-named-as-default-member': 'error',
-  'import/no-named-default': 'error',
+  'import-x/no-named-as-default': 'off',
+  'import-x/no-named-as-default-member': 'error',
+  'import-x/no-named-default': 'error',
   // named exports are useful
-  'import/no-named-export': 'off',
+  'import-x/no-named-export': 'off',
   // namespaces are useful
-  'import/no-namespace': 'off',
+  'import-x/no-namespace': 'off',
   // disabled by default; enable if necessary
-  'import/no-nodejs-modules': 'off',
-  'import/no-relative-packages': 'error',
+  'import-x/no-nodejs-modules': 'off',
+  'import-x/no-relative-packages': 'error',
   // relative imports are the basics of es6-imports, they cannot be disabled
-  'import/no-relative-parent-imports': 'off',
+  'import-x/no-relative-parent-imports': 'off',
   // no restricted paths by default
-  'import/no-restricted-paths': 'off',
-  'import/no-self-import': 'error',
-  'import/no-unassigned-import': 'error',
-  'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
+  'import-x/no-restricted-paths': 'off',
+  'import-x/no-self-import': 'error',
+  'import-x/no-unassigned-import': 'error',
+  'import-x/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
   // disabled by default: usually it does IDE for you; enable if necessary
-  'import/no-unused-modules': 'off',
-  'import/no-useless-path-segments': 'error',
-  'import/no-webpack-loader-syntax': 'error',
-  'import/order': [
+  'import-x/no-unused-modules': 'off',
+  'import-x/no-useless-path-segments': 'error',
+  'import-x/no-webpack-loader-syntax': 'error',
+  'import-x/order': [
     'error',
     {
       alphabetize: {
@@ -79,8 +79,8 @@ export default {
       },
     },
   ],
-  'import/prefer-default-export': 'error',
-  'import/unambiguous': 'error',
+  'import-x/prefer-default-export': 'error',
+  'import-x/unambiguous': 'error',
   // default exports are useful
   'no-default-export': 'off',
 } satisfies Linter.RulesRecord;

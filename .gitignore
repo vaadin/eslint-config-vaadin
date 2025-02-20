@@ -15,5 +15,6 @@
 /rules
 /utils
 /*.js
+/*.d.ts
 /*.js.map
 /*.tgz

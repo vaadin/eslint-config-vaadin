@@ -1,15 +1,12 @@
-import type { Linter } from 'eslint';
 import config from 'eslint-config-prettier';
 import prettier from 'eslint-plugin-prettier';
+import tsEslint from 'typescript-eslint';
 
-export default [
-  config,
-  {
-    plugins: {
-      prettier,
-    },
-    rules: {
-      'prettier/prettier': 'error',
-    },
+export default tsEslint.config(config, {
+  plugins: {
+    prettier,
   },
-] satisfies readonly Linter.Config[];
+  rules: {
+    'prettier/prettier': 'error',
+  },
+});
