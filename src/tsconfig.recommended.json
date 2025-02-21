@@ -10,6 +10,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "inlineSources": true,
+    "isolatedModules": true,
+    "isolatedDeclarations": true,
     /*
      Automatically enables these options:
 

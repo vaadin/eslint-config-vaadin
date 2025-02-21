@@ -2,10 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": ".",
-    "declaration": false,
+    "declaration": true,
     "declarationMap": false,
-    "module": "CommonJS",
-    "moduleResolution": "node"
   },
   "include": ["src"],
   "exclude": []

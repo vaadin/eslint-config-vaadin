@@ -1,13 +1,13 @@
 import type { Browser } from 'puppeteer-core';
 import possibleProblems from '../../src/rules/eslint/possible-problems.js';
 import suggestions from '../../src/rules/eslint/suggestions.js';
-import { checkRules, createHeader, init } from './utils.mjs';
+import { checkRules, createHeader, init } from './utils.js';
 
 const url = 'https://eslint.org/docs/latest/rules/';
 
 const ruleListNames = ['possible-problems', 'suggestions', 'deprecated', 'removed'];
 
-export default async function checkEslint(browser: Browser) {
+export default async function checkEslint(browser: Browser): Promise<string> {
   const page = await init(browser, url);
 
   const header = createHeader('eslint', url);
@@ -32,12 +32,12 @@ export default async function checkEslint(browser: Browser) {
       'Possible Problems',
       {
         modernRules: possibleProblemsLoadedSet!,
-        existingRules: Object.keys(possibleProblems.rules),
+        existingRules: Object.keys(possibleProblems),
         deprecatedRules: commonDeprecations,
       },
       {
         filterDeprecatedRules(rule) {
-          return possibleProblems.rules[rule as keyof typeof possibleProblems.rules] !== 'off';
+          return possibleProblems[rule as keyof typeof possibleProblems] !== 'off';
         },
       },
     ),
@@ -45,12 +45,12 @@ export default async function checkEslint(browser: Browser) {
       'Suggestions',
       {
         modernRules: suggestionsLoadedSet!,
-        existingRules: Object.keys(suggestions.rules),
+        existingRules: Object.keys(suggestions),
         deprecatedRules: commonDeprecations,
       },
       {
         filterDeprecatedRules(rule) {
-          return suggestions.rules[rule as keyof typeof suggestions.rules] !== 'off';
+          return suggestions[rule as keyof typeof suggestions] !== 'off';
         },
       },
     ),

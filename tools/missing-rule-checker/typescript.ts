@@ -1,28 +1,21 @@
+import type { Linter } from 'eslint';
 import type { Browser } from 'puppeteer-core';
 import _extensionsTC from '../../src/rules/typescript-requiring-type-checking/extensions.js';
 import _originalTC from '../../src/rules/typescript-requiring-type-checking/original.js';
-import _extensions from '../../src/rules/typescript/extensions.js';
-import _original from '../../src/rules/typescript/original.js';
-import { checkRules, createHeader, init } from './utils.mjs';
+import * as _extensions from '../../src/rules/typescript/extensions.js';
+import * as _original from '../../src/rules/typescript/original.js';
+import { checkRules, createHeader, init } from './utils.js';
 
 const url = 'https://typescript-eslint.io/rules';
-const extensions = {
-  rules: { ..._extensions.rules, ..._extensionsTC.rules },
-  overrides: _extensions.overrides,
-} as const;
-const original = {
-  rules: { ..._original.rules, ..._originalTC.rules },
-  overrides: _original.overrides,
-} as const;
+const extensions = { ..._extensions.common, ..._extensions.specific, ..._extensionsTC } satisfies Linter.RulesRecord;
+const original = { ..._original.common, ..._original.specific, ..._originalTC } satisfies Linter.RulesRecord;
 
-const existingRules: Record<string, unknown> = {
-  ...original.rules,
-  ...Object.assign({}, ...original.overrides.map(({ rules }) => rules)),
-  ...extensions.rules,
-  ...Object.assign({}, ...extensions.overrides.map(({ rules }) => rules)),
-};
+const existingRules = {
+  ...original,
+  ...extensions,
+} satisfies Linter.RulesRecord;
 
-export default async function checkTypeScript(browser: Browser) {
+export default async function checkTypeScript(browser: Browser): Promise<string> {
   const page = await init(browser, url);
 
   const header = createHeader('@typescript-eslint', url);
@@ -56,7 +49,7 @@ export default async function checkTypeScript(browser: Browser) {
       },
       {
         filterWrongSetRules(rule) {
-          return existingRules[rule] !== 'off';
+          return existingRules[rule as keyof typeof existingRules] !== 'off';
         },
       },
     ),

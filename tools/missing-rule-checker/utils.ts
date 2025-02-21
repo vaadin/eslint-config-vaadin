@@ -1,4 +1,4 @@
-import type { Browser } from 'puppeteer-core';
+import type { Browser, Page } from 'puppeteer-core';
 
 declare global {
   interface Window {
@@ -33,7 +33,7 @@ export function checkRules(
     filterWrongSetRules = () => true,
     filterDeprecatedRules = () => true,
   }: Filters = {},
-) {
+): string {
   let currentMissingRules = [];
   let currentWrongSetRules = [];
   let currentDeprecatedRules = [];
@@ -41,7 +41,7 @@ export function checkRules(
   const header = `SET: ${setName}\n`;
 
   for (const rule of modernRules) {
-    if (!(existingRules.includes(rule))) {
+    if (!existingRules.includes(rule)) {
       currentMissingRules.push(rule);
     }
   }
@@ -75,9 +75,7 @@ export function checkRules(
       : '';
 
     const deprecationMessage = hasDeprecatedRules
-      ? `DEPRECATED RULES:\n${currentDeprecatedRules
-          .map((rule) => `\t${rule}`)
-          .join('\n')}\n`
+      ? `DEPRECATED RULES:\n${currentDeprecatedRules.map((rule) => `\t${rule}`).join('\n')}\n`
       : '';
 
     return `${header}${missingRulesMessage}${wrongSetRulesMessage}${deprecationMessage}`;
@@ -86,7 +84,7 @@ export function checkRules(
   return `${header}EVERYTHING OK`;
 }
 
-export async function init(browser: Browser, url: string) {
+export async function init(browser: Browser, url: string): Promise<Page> {
   const page = await browser.newPage();
 
   page.on('console', (msg) => {
