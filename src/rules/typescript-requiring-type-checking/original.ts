@@ -20,7 +20,7 @@ const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-base-to-string': 'error',
   // Requires expressions of type void to appear in statement position.
   // https://typescript-eslint.io/rules/no-confusing-void-expression
-  // Too strict
+  // EXPLANATION: Too strict
   '@typescript-eslint/no-confusing-void-expression': 'off',
   // Disallow duplicate constituents of union or intersection types.
   // https://typescript-eslint.io/rules/no-duplicate-type-constituents
@@ -31,9 +31,24 @@ const rules: Linter.RulesRecord = {
   // Disallow iterating over an array with a for-in loop
   // https://typescript-eslint.io/rules/no-for-in-array
   '@typescript-eslint/no-for-in-array': 'error',
+  // Disallow using code marked as @deprecated.
+  // https://typescript-eslint.io/rules/no-deprecated
+  '@typescript-eslint/no-deprecated': 'error',
+  // Disallow using the spread operator when it might cause unexpected behavior.
+  // https://typescript-eslint.io/rules/no-misused-spread
+  '@typescript-eslint/no-misused-spread': 'error',
+  // Disallow type parameters that aren't used multiple times.
+  // https://typescript-eslint.io/rules/no-unnecessary-type-parameters
+  '@typescript-eslint/no-unnecessary-type-parameters': 'error',
   // Disallow the void operator except when used to discard a value.
   // https://typescript-eslint.io/rules/no-meaningless-void-operator
   '@typescript-eslint/no-meaningless-void-operator': ['error', { checkNever: false }],
+  // Disallow type assertions that narrow a type.
+  // https://typescript-eslint.io/rules/no-unsafe-type-assertion
+  '@typescript-eslint/no-unsafe-type-assertion': 'error',
+  // Enforce that get() types should be assignable to their equivalent set() type.
+  // https://typescript-eslint.io/rules/related-getter-setter-pairs
+  '@typescript-eslint/related-getter-setter-pairs': 'error',
   // Avoid using promises in places not designed to handle them
   // https://typescript-eslint.io/rules/no-misused-promises
   '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: true, checksConditionals: true }],

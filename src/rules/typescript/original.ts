@@ -13,6 +13,10 @@ export const common: Linter.RulesRecord = {
       readonly: 'array-simple',
     },
   ],
+  // Disallow unnecessary assignment of constructor property parameter.
+  // https://typescript-eslint.io/rules/no-unnecessary-parameter-property-assignment
+  // EXPLANATION: We don't use parameter properties.
+  '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'off',
   // Bans // @ts-<directive> comments from being used or requires descriptions
   // after directive
   // https://typescript-eslint.io/rules/ban-ts-comment
