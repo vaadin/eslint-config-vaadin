@@ -52,6 +52,9 @@ const rules: Linter.RulesRecord = {
   // Warns when a namespace qualifier is unnecessary
   // https://typescript-eslint.io/rules/no-unnecessary-qualifier
   '@typescript-eslint/no-unnecessary-qualifier': 'error',
+  // Disallow unnecessary template expressions
+  // https://typescript-eslint.io/rules/no-unnecessary-template-expression
+  '@typescript-eslint/no-unnecessary-template-expression': 'error',
   // Warns if an explicitly specified type argument is the default for that type parameter
   // https://typescript-eslint.io/rules/no-unnecessary-type-arguments
   '@typescript-eslint/no-unnecessary-type-arguments': 'error',
@@ -82,9 +85,6 @@ const rules: Linter.RulesRecord = {
   // Require unary negation to take a number
   // https://typescript-eslint.io/rules/no-unsafe-unary-minus
   '@typescript-eslint/no-unsafe-unary-minus': 'error',
-  // Disallow unnecessary template expressions
-  // https://typescript-eslint.io/rules/no-unnecessary-template-expression
-  '@typescript-eslint/no-unnecessary-template-expression': 'error',
   // Prefers a non-null assertion over explicit type cast when possible
   // https://typescript-eslint.io/rules/non-nullable-type-assertion-style
   '@typescript-eslint/non-nullable-type-assertion-style': 'error',
