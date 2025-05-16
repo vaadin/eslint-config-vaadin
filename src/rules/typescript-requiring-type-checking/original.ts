@@ -20,8 +20,11 @@ const rules: Linter.RulesRecord = {
   '@typescript-eslint/no-base-to-string': 'error',
   // Requires expressions of type void to appear in statement position.
   // https://typescript-eslint.io/rules/no-confusing-void-expression
-  // Too strict
+  // EXPLANATION: Too strict
   '@typescript-eslint/no-confusing-void-expression': 'off',
+  // Disallow using code marked as @deprecated.
+  // https://typescript-eslint.io/rules/no-deprecated
+  '@typescript-eslint/no-deprecated': 'error',
   // Disallow duplicate constituents of union or intersection types.
   // https://typescript-eslint.io/rules/no-duplicate-type-constituents
   '@typescript-eslint/no-duplicate-type-constituents': ['error', { ignoreIntersections: true }],
@@ -37,6 +40,9 @@ const rules: Linter.RulesRecord = {
   // Avoid using promises in places not designed to handle them
   // https://typescript-eslint.io/rules/no-misused-promises
   '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: true, checksConditionals: true }],
+  // Disallow using the spread operator when it might cause unexpected behavior.
+  // https://typescript-eslint.io/rules/no-misused-spread
+  '@typescript-eslint/no-misused-spread': 'error',
   // Disallow enums from having both number and string members.
   // https://typescript-eslint.io/rules/no-mixed-enums
   '@typescript-eslint/no-mixed-enums': 'error',
@@ -61,6 +67,9 @@ const rules: Linter.RulesRecord = {
   // Warns if a type assertion does not change the type of expression
   // https://typescript-eslint.io/rules/no-unnecessary-type-assertion
   '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+  // Disallow type parameters that aren't used multiple times.
+  // https://typescript-eslint.io/rules/no-unnecessary-type-parameters
+  '@typescript-eslint/no-unnecessary-type-parameters': 'error',
   // Disallows calling a function with an any type value
   // https://typescript-eslint.io/rules/no-unsafe-argument
   // Too strict
@@ -82,6 +91,9 @@ const rules: Linter.RulesRecord = {
   // EXPLANATION: Sometimes there is no other way except for using "any" in
   // return
   '@typescript-eslint/no-unsafe-return': 'off',
+  // Disallow type assertions that narrow a type.
+  // https://typescript-eslint.io/rules/no-unsafe-type-assertion
+  '@typescript-eslint/no-unsafe-type-assertion': 'error',
   // Require unary negation to take a number
   // https://typescript-eslint.io/rules/no-unsafe-unary-minus
   '@typescript-eslint/no-unsafe-unary-minus': 'error',
@@ -123,6 +135,9 @@ const rules: Linter.RulesRecord = {
   // Requires any function or method that returns a Promise to be marked async
   // https://typescript-eslint.io/rules/promise-function-async
   '@typescript-eslint/promise-function-async': 'error',
+  // Enforce that get() types should be assignable to their equivalent set() type.
+  // https://typescript-eslint.io/rules/related-getter-setter-pairs
+  '@typescript-eslint/related-getter-setter-pairs': 'error',
   // Enforce giving compare argument to Array#sort
   // https://typescript-eslint.io/rules/require-array-sort-compare
   '@typescript-eslint/require-array-sort-compare': 'error',
