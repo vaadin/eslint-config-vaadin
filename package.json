@@ -61,7 +61,7 @@
     "./rules",
     "./sort.{js,d.ts,js.map}",
     "./testing.{js,d.ts,js.map}",
-    "./tsconfig.recommendation.json",
+    "./tsconfig.recommended.json",
     "./typescript-requiring-type-checking.{js,d.ts,js.map}",
     "./typescript.{js,d.ts,js.map}",
     "./utils.{js,d.ts,js.map}"
