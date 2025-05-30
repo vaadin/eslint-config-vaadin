@@ -1,11 +1,11 @@
 import type { Linter } from 'eslint';
 
 const rules: Linter.RulesRecord = {
-  // disabled by default; enable if necessary
-  'import-x/dynamic-import-chunkname': 'off',
   // this rule either forces to write many `type` or duplicate imports
   'import-x/consistent-type-specifier-style': 'off',
   'import-x/default': 'error',
+  // disabled by default; enable if necessary
+  'import-x/dynamic-import-chunkname': 'off',
   'import-x/export': 'error',
   // it's better to group mutually dependent elements together which could
   // break this rule
@@ -36,6 +36,8 @@ const rules: Linter.RulesRecord = {
   // disabled by default; enable if necessary
   'import-x/no-commonjs': 'off',
   'import-x/no-cycle': 'error',
+  // default exports are useful
+  'import-x/no-default-export': 'off',
   // disabled by default; enable if necessary
   'import-x/no-deprecated': 'off',
   'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
@@ -60,6 +62,7 @@ const rules: Linter.RulesRecord = {
   'import-x/no-relative-packages': 'error',
   // relative imports are the basics of es6-imports, they cannot be disabled
   'import-x/no-relative-parent-imports': 'off',
+  'import-x/no-rename-default': 'error',
   // no restricted paths by default
   'import-x/no-restricted-paths': 'off',
   'import-x/no-self-import': 'error',
@@ -81,9 +84,6 @@ const rules: Linter.RulesRecord = {
   ],
   'import-x/prefer-default-export': 'error',
   'import-x/unambiguous': 'error',
-  // default exports are useful
-  'import-x/no-default-export': 'off',
-  'import-x/no-rename-default': 'error',
 };
 
 export default rules;

@@ -7,7 +7,6 @@ const rules: Linter.RulesRecord = {
   'constructor-super': 'error',
   'for-direction': 'error',
   'getter-return': 'error',
-  'no-unassigned-vars': 'error',
   'no-async-promise-executor': 'error',
   'no-await-in-loop': 'error',
   'no-class-assign': 'error',
@@ -50,6 +49,7 @@ const rules: Linter.RulesRecord = {
   'no-sparse-arrays': 'error',
   'no-template-curly-in-string': 'error',
   'no-this-before-super': 'error',
+  'no-unassigned-vars': 'error',
   'no-undef': 'error',
   // handled by Prettier
   'no-unexpected-multiline': 'off',

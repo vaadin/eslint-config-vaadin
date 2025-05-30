@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": ".",
     "declaration": true,
-    "declarationMap": false,
+    "declarationMap": false
   },
   "include": ["src"],
   "exclude": []
