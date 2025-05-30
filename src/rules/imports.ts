@@ -2,7 +2,7 @@ import type { Linter } from 'eslint';
 
 const rules: Linter.RulesRecord = {
   // disabled by default; enable if necessary
-  'dynamic-import-chunkname': 'off',
+  'import-x/dynamic-import-chunkname': 'off',
   // this rule either forces to write many `type` or duplicate imports
   'import-x/consistent-type-specifier-style': 'off',
   'import-x/default': 'error',
@@ -82,7 +82,8 @@ const rules: Linter.RulesRecord = {
   'import-x/prefer-default-export': 'error',
   'import-x/unambiguous': 'error',
   // default exports are useful
-  'no-default-export': 'off',
+  'import-x/no-default-export': 'off',
+  'import-x/no-rename-default': 'error',
 };
 
 export default rules;

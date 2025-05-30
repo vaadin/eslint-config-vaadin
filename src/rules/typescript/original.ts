@@ -1,6 +1,9 @@
 import type { Linter } from 'eslint';
 
 export const common: Linter.RulesRecord = {
+  // Disallow conversion idioms when they do not change the type or value of the expression.
+  // https://typescript-eslint.io/rules/no-unnecessary-type-conversion
+  '@typescript-eslint/no-unnecessary-type-conversion': 'error',
   // Require that member overloads be consecutive
   // https://typescript-eslint.io/rules/adjacent-overload-signatures
   '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -168,10 +171,6 @@ export const common: Linter.RulesRecord = {
   // Sets preference level for triple slash directives versus ES6-style import declarations
   // https://typescript-eslint.io/rules/triple-slash-reference
   '@typescript-eslint/triple-slash-reference': ['error', { path: 'never', types: 'never', lib: 'never' }],
-  // Requires type annotations to exist
-  // https://typescript-eslint.io/rules/typedef
-  // EXPLANATION: Typescript compiler rules are preferred
-  '@typescript-eslint/typedef': 'off',
   // Warns for any two overloads that could be unified into one by using a union or an optional/rest parameter
   // https://typescript-eslint.io/rules/unified-signatures
   '@typescript-eslint/unified-signatures': 'error',
