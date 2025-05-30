@@ -1,9 +1,6 @@
 import type { Linter } from 'eslint';
 
 export const common: Linter.RulesRecord = {
-  // Disallow conversion idioms when they do not change the type or value of the expression.
-  // https://typescript-eslint.io/rules/no-unnecessary-type-conversion
-  '@typescript-eslint/no-unnecessary-type-conversion': 'error',
   // Require that member overloads be consecutive
   // https://typescript-eslint.io/rules/adjacent-overload-signatures
   '@typescript-eslint/adjacent-overload-signatures': 'error',
