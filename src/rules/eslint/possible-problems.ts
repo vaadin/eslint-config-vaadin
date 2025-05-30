@@ -7,6 +7,7 @@ const rules: Linter.RulesRecord = {
   'constructor-super': 'error',
   'for-direction': 'error',
   'getter-return': 'error',
+  'no-unassigned-vars': 'error',
   'no-async-promise-executor': 'error',
   'no-await-in-loop': 'error',
   'no-class-assign': 'error',
