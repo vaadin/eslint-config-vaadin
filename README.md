@@ -28,11 +28,11 @@ This config requires `vaadin/prettier` which must be added after any other confi
 
 ```json5
 {
-  "extends": [
-    "vaadin/javascript",
+  extends: [
+    'vaadin/javascript',
     // ... other project configs
-    "vaadin/prettier"
-  ]
+    'vaadin/prettier',
+  ],
 }
 ```
 
@@ -44,11 +44,11 @@ This config requires `vaadin/prettier` which must be added after any other confi
 
 ```json5
 {
-  "extends": [
-    "vaadin/typescript",
+  extends: [
+    'vaadin/typescript',
     // ... other project configs
-    "vaadin/prettier"
-  ]
+    'vaadin/prettier',
+  ],
 }
 ```
 
@@ -64,14 +64,14 @@ This config requires `vaadin/prettier` which must be added after any other confi
 
 ```json5
 {
-  "parserOptions": {
-    "project": "path/to/your/tsconfig.json"
+  parserOptions: {
+    project: 'path/to/your/tsconfig.json',
   },
-  "extends": [
-    "vaadin/typescript-requiring-type-checking",
+  extends: [
+    'vaadin/typescript-requiring-type-checking',
     // ... other project configs
-    "vaadin/prettier"
-  ]
+    'vaadin/prettier',
+  ],
 }
 ```
 
@@ -85,9 +85,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 
 ```json
 {
-  "extends": [
-    "vaadin/lit"
-  ]
+  "extends": ["vaadin/lit"]
 }
 ```
 
@@ -101,9 +99,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 
 ```json
 {
-  "extends": [
-    "vaadin/imports"
-  ]
+  "extends": ["vaadin/imports"]
 }
 ```
 
@@ -115,9 +111,7 @@ This config is supposed to be used in combination with `vaadin/javascript` or `v
 
 ```json
 {
-  "extends": [
-    "vaadin/testing"
-  ]
+  "extends": ["vaadin/testing"]
 }
 ```
 
@@ -127,9 +121,7 @@ A config that enables alphabetical sorting for objects, enums, JSX props, and ex
 
 ```json
 {
-  "extends": [
-    "vaadin/sort"
-  ]
+  "extends": ["vaadin/sort"]
 }
 ```
 
@@ -139,12 +131,7 @@ A config that enables alphabetical sorting for objects, enums, JSX props, and ex
 
 ```json
 {
-  "extends": [
-    "vaadin/javascript",
-    "vaadin/lit",
-    "vaadin/testing",
-    "vaadin/prettier"
-  ]
+  "extends": ["vaadin/javascript", "vaadin/lit", "vaadin/testing", "vaadin/prettier"]
 }
 ```
 
@@ -152,12 +139,7 @@ A config that enables alphabetical sorting for objects, enums, JSX props, and ex
 
 ```json
 {
-  "extends": [
-    "vaadin/typescript",
-    "vaadin/lit",
-    "vaadin/testing",
-    "vaadin/prettier"
-  ]
+  "extends": ["vaadin/typescript", "vaadin/lit", "vaadin/testing", "vaadin/prettier"]
 }
 ```
 
@@ -165,12 +147,7 @@ Or, you can use a more strict config that requires type information:
 
 ```json
 {
-  "extends": [
-    "vaadin/typescript-requiring-type-checking",
-    "vaadin/lit",
-    "vaadin/testing",
-    "vaadin/prettier"
-  ]
+  "extends": ["vaadin/typescript-requiring-type-checking", "vaadin/lit", "vaadin/testing", "vaadin/prettier"]
 }
 ```
 

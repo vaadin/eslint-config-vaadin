@@ -67,6 +67,9 @@ const rules: Linter.RulesRecord = {
   // Warns if a type assertion does not change the type of expression
   // https://typescript-eslint.io/rules/no-unnecessary-type-assertion
   '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+  // Disallow conversion idioms when they do not change the type or value of the expression.
+  // https://typescript-eslint.io/rules/no-unnecessary-type-conversion
+  '@typescript-eslint/no-unnecessary-type-conversion': 'error',
   // Disallow type parameters that aren't used multiple times.
   // https://typescript-eslint.io/rules/no-unnecessary-type-parameters
   '@typescript-eslint/no-unnecessary-type-parameters': 'error',
