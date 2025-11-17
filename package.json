@@ -80,31 +80,31 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@babel/core": "7.27.3",
-    "@babel/eslint-parser": "7.27.1",
+    "@babel/core": "7.28.5",
+    "@babel/eslint-parser": "7.28.5",
     "@types/eslint": "9.6.1",
-    "eslint-config-prettier": "10.1.5",
-    "eslint-import-resolver-typescript": "4.4.1",
-    "eslint-plugin-chai-friendly": "1.0.1",
-    "eslint-plugin-import-x": "4.13.3",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-chai-friendly": "1.1.0",
+    "eslint-plugin-import-x": "4.16.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-lit": "2.1.1",
-    "eslint-plugin-perfectionist": "4.13.0",
-    "eslint-plugin-prettier": "5.4.1",
+    "eslint-plugin-perfectionist": "4.15.1",
+    "eslint-plugin-prettier": "5.5.4",
     "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-react-perf": "3.3.3",
-    "typescript-eslint": "8.33.0"
+    "typescript-eslint": "8.46.4"
   },
   "devDependencies": {
     "@types/eslint-config-prettier": "6.11.3",
-    "concurrently": "9.1.2",
-    "prettier-plugin-packagejson": "2.5.14",
-    "puppeteer-core": "24.9.0",
-    "rimraf": "6.0.1",
+    "concurrently": "9.2.1",
+    "prettier-plugin-packagejson": "2.5.19",
+    "puppeteer-core": "24.30.0",
+    "rimraf": "6.1.0",
     "tsc-template": "0.2.3",
-    "tsx": "4.19.4",
-    "typescript": "5.8.3"
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
   },
   "peerDependencies": {
     "eslint": "^9",

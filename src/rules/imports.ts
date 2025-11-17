@@ -83,6 +83,7 @@ const rules: Linter.RulesRecord = {
     },
   ],
   'import-x/prefer-default-export': 'error',
+  'import-x/prefer-namespace-import': 'error',
   'import-x/unambiguous': 'error',
 };
 
