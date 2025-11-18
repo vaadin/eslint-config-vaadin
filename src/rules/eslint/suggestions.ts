@@ -194,7 +194,7 @@ const rules: Linter.RulesRecord = {
   'prefer-rest-params': 'error',
   'prefer-spread': 'error',
   'prefer-template': 'error',
-  'preserve-caught-error': 'error',
+  'preserve-caught-error': ['error', { requireCatchParameter: true }],
   // handled by Prettier
   'quote-props': 'off',
   radix: 'error',
