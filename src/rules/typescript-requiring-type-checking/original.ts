@@ -100,6 +100,9 @@ const rules: Linter.RulesRecord = {
   // Require unary negation to take a number
   // https://typescript-eslint.io/rules/no-unsafe-unary-minus
   '@typescript-eslint/no-unsafe-unary-minus': 'error',
+  // Disallow default values that will never be used.
+  // https://typescript-eslint.io/rules/no-useless-default-assignment
+  '@typescript-eslint/no-useless-default-assignment': 'error',
   // Prefers a non-null assertion over explicit type cast when possible
   // https://typescript-eslint.io/rules/non-nullable-type-assertion-style
   '@typescript-eslint/non-nullable-type-assertion-style': 'error',
