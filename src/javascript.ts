@@ -1,10 +1,10 @@
 import parser from '@babel/eslint-parser';
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import possibleProblems from './rules/eslint/possible-problems.js';
 import suggestions from './rules/eslint/suggestions.js';
 import { jsExtensions } from './utils.js';
+import { defineConfig, type Config } from 'eslint/config';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   files: [`**/*.{${jsExtensions.join(',')}}`],
   rules: {
     ...possibleProblems,

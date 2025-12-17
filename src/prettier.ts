@@ -1,8 +1,8 @@
+import { defineConfig, type Config } from 'eslint/config';
 import prettierConfig from 'eslint-config-prettier';
 import prettier from 'eslint-plugin-prettier';
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
 
-const config: ConfigArray = tsEslint.config(prettierConfig, {
+const config: readonly Config[] = defineConfig(prettierConfig, {
   plugins: {
     prettier,
   },

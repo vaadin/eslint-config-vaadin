@@ -1,8 +1,8 @@
+import { defineConfig, type Config } from 'eslint/config';
 import chaiFriendly from 'eslint-plugin-chai-friendly';
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
 import rules from './rules/testing.js';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   files: [
     '**/*.spec.js',
     '**/*.spec.ts',
