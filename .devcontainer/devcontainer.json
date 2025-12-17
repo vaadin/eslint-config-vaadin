@@ -1,0 +1,31 @@
+{
+  "name": "eslint-config-vaadin",
+  "image": "node:25-bookworm-slim",
+  "runArgs": ["--name=eslincfgvaadin_dev"],
+  "containerEnv": {
+    "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "1",
+    "BROWSER_HOST": "host.docker.internal",
+    "BROWSER_PORT": "39273"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "installOhMyZsh": false,
+      "installOhMyZshConfig": false
+    }
+  },
+  "remoteUser": "node",
+  "mounts": [
+    {
+      "source": "${localWorkspaceFolderBasename}_nodemodules",
+      "target": "${containerWorkspaceFolder}/node_modules",
+      "type": "volume"
+    }
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "EditorConfig.EditorConfig", "YoavBls.pretty-ts-errors"]
+    }
+  },
+  "postCreateCommand": "sudo chown -R node:node /workspaces/eslint-config-vaadin"
+}
