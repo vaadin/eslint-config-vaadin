@@ -1,15 +1,16 @@
 import { join } from 'path';
+import { defineConfig, type Config } from 'eslint/config';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import importPlugin from 'eslint-plugin-import-x';
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
+import importX from 'eslint-plugin-import-x';
 import rules from './rules/imports.js';
 import { tsExtensions } from './utils.js';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   files: ['**/*.{ts,tsx,mts,cts}'],
   rules,
   plugins: {
-    'import-x': importPlugin,
+    // @ts-expect-error: https://github.com/un-ts/eslint-plugin-import-x/issues/439
+    'import-x': importX,
   },
   settings: {
     'import-x/resolver-next': [

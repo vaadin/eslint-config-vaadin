@@ -1,13 +1,14 @@
-import importPlugin from 'eslint-plugin-import-x';
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
+import importX from 'eslint-plugin-import-x';
 import rules from './rules/imports';
 import { jsExtensions } from './utils.js';
+import { defineConfig, type Config } from 'eslint/config';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   files: ['**/*.{js,jsx,mjs,cjs}'],
   rules,
   plugins: {
-    'import-x': importPlugin,
+    // @ts-expect-error: https://github.com/un-ts/eslint-plugin-import-x/issues/439
+    'import-x': importX,
   },
   languageOptions: {
     parserOptions: {

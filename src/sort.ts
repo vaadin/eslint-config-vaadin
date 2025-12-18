@@ -1,7 +1,7 @@
+import { defineConfig, type Config } from 'eslint/config';
 import perfectionist from 'eslint-plugin-perfectionist';
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   plugins: {
     perfectionist: perfectionist,
   },

@@ -1,8 +1,8 @@
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
+import { defineConfig, type Config } from 'eslint/config';
 import reactPerf from 'eslint-plugin-react-perf';
 import rules from './rules/react/react-perf.js';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   plugins: {
     'react-perf': reactPerf,
   },

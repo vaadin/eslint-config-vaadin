@@ -1,4 +1,4 @@
-import tsEslint, { type ConfigArray } from 'typescript-eslint';
+import { defineConfig, type Config } from 'eslint/config';
 import react from 'eslint-plugin-react';
 import reactPerf from 'eslint-plugin-react-perf';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -8,7 +8,7 @@ import reactRules from './rules/react/react.js';
 import reactPerfRules from './rules/react/react-perf.js';
 import reactHooksRules from './rules/react/react-hooks.js';
 
-const config: ConfigArray = tsEslint.config({
+const config: readonly Config[] = defineConfig({
   plugins: {
     react,
     'react-hooks': reactHooks,
