@@ -106,8 +106,6 @@ export const specific: Linter.RulesRecord = {
   'no-func-assign': 'off',
   // ts(2539), ts(2540)
   'no-import-assign': 'off',
-  // ts(7009)
-  'no-new-symbol': 'off',
   // ts(2349)
   'no-obj-calls': 'off',
   // ts(2408)

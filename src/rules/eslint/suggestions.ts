@@ -58,8 +58,6 @@ const rules: Linter.RulesRecord = {
   'no-bitwise': 'error',
   'no-caller': 'error',
   'no-case-declarations': 'error',
-  // handled by Prettier
-  'no-confusing-arrow': 'off',
   'no-console': ['error', { allow: ['warn', 'error'] }],
   // continue is useful and reduces unnecessary nesting
   'no-continue': 'off',
@@ -78,10 +76,6 @@ const rules: Linter.RulesRecord = {
   'no-extra-boolean-cast': 'error',
   // handled by "no-label" rule
   'no-extra-label': 'off',
-  // handled by Prettier
-  'no-extra-semi': 'off',
-  // handled by Prettier
-  'no-floating-decimal': 'off',
   'no-global-assign': 'error',
   'no-implicit-coercion': ['error', { allow: ['!!'] }],
   'no-implicit-globals': 'error',
@@ -98,8 +92,6 @@ const rules: Linter.RulesRecord = {
   'no-loop-func': 'error',
   // too strict to use
   'no-magic-numbers': 'off',
-  // handled by Prettier
-  'no-mixed-operators': 'off',
   'no-multi-assign': 'error',
   'no-multi-str': 'error',
   // sometimes negated condition is more explicit

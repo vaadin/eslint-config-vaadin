@@ -38,8 +38,6 @@ const rules: Linter.RulesRecord = {
   'no-loss-of-precision': 'error',
   'no-misleading-character-class': 'error',
   'no-new-native-nonconstructor': 'error',
-  // handled by "no-new-native-nonconstructor"
-  'no-new-symbol': 'off',
   'no-obj-calls': 'error',
   'no-promise-executor-return': 'error',
   'no-prototype-builtins': 'error',
@@ -73,8 +71,7 @@ const rules: Linter.RulesRecord = {
     },
   ],
   'no-use-before-define': ['error', noUseBeforeDefineOptions],
-  // TODO: enable when eslint v9 is adopted
-  'no-useless-assignment': 'off',
+  'no-useless-assignment': 'error',
   'no-useless-backreference': 'error',
   // appears to be too problematic to use
   'require-atomic-updates': 'off',
