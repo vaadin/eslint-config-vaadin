@@ -160,6 +160,9 @@ const rules: Linter.RulesRecord = {
   // https://typescript-eslint.io/rules/strict-boolean-expressions
   // EXPLANATION: Too strict
   '@typescript-eslint/strict-boolean-expressions': 'off',
+  // Disallows passing a value-returning function in a position accepting a void function
+  // https://typescript-eslint.io/rules/strict-void-return
+  '@typescript-eslint/strict-void-return': 'error',
   // Exhaustiveness checking in switch with union type
   // https://typescript-eslint.io/rules/switch-exhaustiveness-check
   '@typescript-eslint/switch-exhaustiveness-check': 'error',
