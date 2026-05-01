@@ -7,7 +7,6 @@ const config: readonly Config[] = defineConfig({
   files: ['**/*.{js,jsx,mjs,cjs}'],
   rules,
   plugins: {
-    // @ts-expect-error: https://github.com/un-ts/eslint-plugin-import-x/issues/439
     'import-x': importX,
   },
   languageOptions: {
