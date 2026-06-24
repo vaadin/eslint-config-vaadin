@@ -80,7 +80,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@babel/core": "7.29.0",
+    "@babel/core": "7.29.6",
     "@babel/eslint-parser": "7.28.6",
     "@types/eslint": "9.6.1",
     "eslint-config-prettier": "10.1.8",
