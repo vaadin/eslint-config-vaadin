@@ -173,8 +173,9 @@ const rules: Linter.RulesRecord = {
   // Disallow JSX prop spreading (react/jsx-props-no-spreading)
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
   // EXPLANATION: Overall, this rule is too strict; however, it can forbid "explicitSpread", so we keep
-  // it enabled.
-  'react/jsx-props-no-spreading': ['error', { html: 'ignore', custom: 'ignore', explicitSpread: 'enforce' }],
+  // it enabled. The exceptions array is a workaround for eslint-plugin-react v7.37+ schema validation
+  // which requires at least one exception when both html and custom are set to 'ignore'.
+  'react/jsx-props-no-spreading': ['error', { html: 'ignore', custom: 'ignore', explicitSpread: 'enforce', exceptions: ['_ExplicitSpreadWorkaround'] }],
   // Enforce props alphabetical sorting (react/jsx-sort-props)
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
   // EXPLANATION: Disabled by default, enable if you need it.
