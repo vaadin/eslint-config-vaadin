@@ -29,9 +29,6 @@ export const common: Linter.RulesRecord = {
   // Disallow this keywords outside of classes or class-like objects
   // https://typescript-eslint.io/rules/no-invalid-this
   '@typescript-eslint/no-invalid-this': suggestions['no-invalid-this'] ?? 'off',
-  // Disallow function declarations that contain unsafe references inside loop statements
-  // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-loop-func
-  '@typescript-eslint/no-loop-func': suggestions['no-loop-func'] ?? 'off',
   // Disallows magic numbers
   // https://typescript-eslint.io/rules/no-magic-numbers
   // EXPLANATION: Too strict
@@ -39,9 +36,6 @@ export const common: Linter.RulesRecord = {
   // Disallow variable redeclaration
   // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare
   '@typescript-eslint/no-redeclare': suggestions['no-redeclare'] ?? 'off',
-  // Disallow specified modules when loaded by import
-  // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-restricted-imports
-  '@typescript-eslint/no-restricted-imports': suggestions['no-restricted-imports'] ?? 'off',
   // Disallow variable declarations from shadowing variables declared in the outer scope
   // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-shadow
   '@typescript-eslint/no-shadow': suggestions['no-shadow'] ?? 'off',
@@ -74,14 +68,22 @@ export const common: Linter.RulesRecord = {
   'no-dupe-class-members': 'off',
   'no-empty-function': 'off',
   'no-invalid-this': 'off',
-  'no-loop-func': 'off',
+  // Disallow function declarations that contain unsafe references inside loop statements
+  // The "@typescript-eslint/no-loop-func" extension rule is deprecated since v8.64.0,
+  // so the base rule is used for TS(X) files as well
+  // https://typescript-eslint.io/rules/no-loop-func
+  'no-loop-func': suggestions['no-loop-func'] ?? 'off',
   // Disallow literal numbers that lose precision
   // https://typescript-eslint.io/rules/no-loss-of-precision
   // DEPRECATED AND REMOVED FROM CONFIG
   'no-loss-of-precision': 'off',
   'no-magic-numbers': 'off',
   'no-redeclare': 'off',
-  'no-restricted-imports': 'off',
+  // Disallow specified modules when loaded by import
+  // The "@typescript-eslint/no-restricted-imports" extension rule is deprecated since v8.64.0,
+  // so the base rule is used for TS(X) files as well
+  // https://typescript-eslint.io/rules/no-restricted-imports
+  'no-restricted-imports': suggestions['no-restricted-imports'] ?? 'off',
   'no-shadow': 'off',
   'no-unused-expressions': 'off',
   'no-unused-private-class-members': 'off',
