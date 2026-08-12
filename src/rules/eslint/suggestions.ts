@@ -148,7 +148,7 @@ const rules: Linter.RulesRecord = {
   'no-script-url': 'error',
   'no-sequences': 'error',
   'no-shadow': 'error',
-  'no-shadow-restricted-names': 'error',
+  'no-shadow-restricted-names': ['error', { reportGlobalThis: true }],
   // ternaries are very useful
   'no-ternary': 'off',
   'no-throw-literal': 'error',

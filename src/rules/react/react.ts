@@ -172,9 +172,11 @@ const rules: Linter.RulesRecord = {
   'react/jsx-props-no-spread-multi': 'error',
   // Disallow JSX prop spreading (react/jsx-props-no-spreading)
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
-  // EXPLANATION: Overall, this rule is too strict; however, it can forbid "explicitSpread", so we keep
-  // it enabled.
-  'react/jsx-props-no-spreading': ['error', { html: 'ignore', custom: 'ignore', explicitSpread: 'enforce' }],
+  // EXPLANATION: Overall, this rule is too strict. We only wanted it for "explicitSpread", but the
+  // rule schema rejects combining that with ignored html and custom tags, and even when accepted the
+  // ignored tags short-circuit the check before "explicitSpread" is ever evaluated. Use
+  // "react/jsx-props-no-spread-multi" above instead.
+  'react/jsx-props-no-spreading': 'off',
   // Enforce props alphabetical sorting (react/jsx-sort-props)
   // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
   // EXPLANATION: Disabled by default, enable if you need it.
