@@ -1,5 +1,5 @@
 import importX from 'eslint-plugin-import-x';
-import rules from './rules/imports';
+import rules from './rules/imports.js';
 import { jsExtensions } from './utils.js';
 import { defineConfig, type Config } from 'eslint/config';
 

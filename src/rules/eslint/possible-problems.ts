@@ -73,8 +73,7 @@ const rules: Linter.RulesRecord = {
     },
   ],
   'no-use-before-define': ['error', noUseBeforeDefineOptions],
-  // TODO: enable when eslint v9 is adopted
-  'no-useless-assignment': 'off',
+  'no-useless-assignment': 'error',
   'no-useless-backreference': 'error',
   // appears to be too problematic to use
   'require-atomic-updates': 'off',

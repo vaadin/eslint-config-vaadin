@@ -80,8 +80,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@babel/core": "7.29.6",
-    "@babel/eslint-parser": "7.28.6",
+    "@babel/core": "8.0.1",
+    "@babel/eslint-parser": "8.0.1",
+    "@eslint/compat": "2.1.0",
     "@types/eslint": "9.6.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-typescript": "4.4.4",
@@ -107,12 +108,24 @@
     "typescript": "6.0.3"
   },
   "peerDependencies": {
-    "eslint": "^9",
+    "eslint": "^10",
     "prettier": "^3"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
   },
   "overrides": {
     "tsc-template": {
       "typescript": "$typescript"
+    },
+    "eslint-plugin-jsx-a11y": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-react-perf": {
+      "eslint": "$eslint"
     }
   }
 }
