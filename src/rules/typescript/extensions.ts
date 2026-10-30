@@ -65,6 +65,7 @@ export const common: Linter.RulesRecord = {
   'default-param-last': 'off',
   'init-declarations': 'off',
   'max-params': 'off',
+  'no-array-constructor': 'off',
   'no-dupe-class-members': 'off',
   'no-empty-function': 'off',
   'no-invalid-this': 'off',
