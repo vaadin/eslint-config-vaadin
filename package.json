@@ -80,9 +80,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@babel/core": "8.0.1",
-    "@babel/eslint-parser": "8.0.1",
-    "@eslint/compat": "2.1.0",
+    "@babel/core": "8.0.10",
+    "@babel/eslint-parser": "8.0.7",
+    "@eslint/compat": "2.1.1",
     "@types/eslint": "9.6.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-typescript": "4.4.5",
@@ -90,19 +90,19 @@
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-lit": "2.3.1",
-    "eslint-plugin-perfectionist": "5.10.1",
-    "eslint-plugin-prettier": "5.5.6",
+    "eslint-plugin-perfectionist": "5.13.0",
+    "eslint-plugin-prettier": "5.5.7",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-react-perf": "3.3.3",
-    "typescript-eslint": "8.67.0"
+    "typescript-eslint": "8.72.1"
   },
   "devDependencies": {
     "@types/eslint-config-prettier": "6.11.3",
     "@types/node": "25.6.0",
     "concurrently": "10.0.6",
     "prettier-plugin-packagejson": "3.0.2",
-    "puppeteer-core": "24.42.0",
+    "puppeteer-core": "25.16.0",
     "tsc-template": "0.2.3",
     "tsx": "4.22.4",
     "typescript": "6.0.3"
