@@ -44,7 +44,7 @@ export default async function checkTypeScript(browser: Browser): Promise<string>
       'Rules',
       {
         modernRules,
-        existingRules: Object.keys(existingRules),
+        existingRules: Object.keys(existingRules).filter((rule) => rule.startsWith('@typescript-eslint/')),
         deprecatedRules,
       },
       {

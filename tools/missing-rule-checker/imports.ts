@@ -13,7 +13,7 @@ export default async function checkImports(browser: Browser): Promise<string> {
 
   const modernRules = await page
     .locator(() => document.querySelectorAll('table tr td:first-child'))
-    .map((rules) => Array.from(rules, ({ textContent }) => textContent!))
+    .map((rules) => Array.from(rules, ({ textContent }) => textContent!.trim()).filter((rule) => rule !== ''))
     .wait();
 
   const result = checkRules('Rules', {
