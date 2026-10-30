@@ -34,6 +34,9 @@ const rules: Linter.RulesRecord = {
   // Disallow iterating over an array with a for-in loop
   // https://typescript-eslint.io/rules/no-for-in-array
   '@typescript-eslint/no-for-in-array': 'error',
+  // Disallow type operations that resolve to the "empty object" type.
+  // https://typescript-eslint.io/rules/no-generated-empty-object-type
+  '@typescript-eslint/no-generated-empty-object-type': 'error',
   // Disallow the void operator except when used to discard a value.
   // https://typescript-eslint.io/rules/no-meaningless-void-operator
   '@typescript-eslint/no-meaningless-void-operator': ['error', { checkNever: false }],
@@ -83,6 +86,9 @@ const rules: Linter.RulesRecord = {
   // Disallows calling an any type value
   // https://typescript-eslint.io/rules/no-unsafe-call
   '@typescript-eslint/no-unsafe-call': 'error',
+  // Disallow assigning non-enum values to enum typed locations.
+  // https://typescript-eslint.io/rules/no-unsafe-enum-assignment
+  '@typescript-eslint/no-unsafe-enum-assignment': 'error',
   // Disallow comparing an enum value with a non-enum value.
   // https://typescript-eslint.io/rules/no-unsafe-enum-comparison
   '@typescript-eslint/no-unsafe-enum-comparison': 'error',
