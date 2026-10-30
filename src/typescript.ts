@@ -1,5 +1,7 @@
 import tsEslint from 'typescript-eslint';
 import javascript from './javascript.js';
+import possibleProblems from './rules/eslint/possible-problems.js';
+import suggestions from './rules/eslint/suggestions.js';
 import * as extensions from './rules/typescript/extensions.js';
 import * as original from './rules/typescript/original.js';
 import { jsExtensions, tsExtensions } from './utils.js';
@@ -13,6 +15,13 @@ const config: readonly Config[] = defineConfig(
       parserOptions: {
         projectService: true,
       },
+    },
+  },
+  {
+    files: [`**/*.{${tsExtensions.join(',')}}`],
+    rules: {
+      ...possibleProblems,
+      ...suggestions,
     },
   },
   {
