@@ -15,6 +15,7 @@ const config: readonly Config[] = defineConfig({
     parserOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
+      requireConfigFile: false,
     },
   },
 });
